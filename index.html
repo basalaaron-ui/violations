@@ -1,0 +1,1570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PropFolio — Property Manager</title>
+<style>
+  :root {
+    --surface-1: #fcfcfb;
+    --page: #f2f2ef;
+    --text-primary: #0b0b0b;
+    --text-secondary: #52514e;
+    --text-muted: #898781;
+    --grid: #e1e0d9;
+    --baseline: #c3c2b7;
+    --border: rgba(11,11,11,0.10);
+    --series-1: #2a78d6;
+    --accent: #0f766e;
+    --accent-soft: rgba(15,118,110,0.10);
+    --sidebar-bg: #1f2d3d;
+    --sidebar-ink: #b9c4d0;
+    --sidebar-active: #2c3e52;
+    --good: #0ca30c;       --good-ink: #006300;
+    --warning: #fab219;    --warning-ink: #7a5200;
+    --critical: #d03b3b;   --critical-ink: #a02020;
+    --pill-good-bg: rgba(12,163,12,0.12);
+    --pill-warn-bg: rgba(250,178,25,0.16);
+    --pill-crit-bg: rgba(208,59,59,0.12);
+    --pill-neutral-bg: rgba(11,11,11,0.06);
+    --shadow: 0 1px 3px rgba(11,11,11,0.07);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --surface-1: #1a1a19;
+      --page: #0d0d0d;
+      --text-primary: #ffffff;
+      --text-secondary: #c3c2b7;
+      --text-muted: #898781;
+      --grid: #2c2c2a;
+      --baseline: #383835;
+      --border: rgba(255,255,255,0.10);
+      --series-1: #3987e5;
+      --accent: #2aa79b;
+      --accent-soft: rgba(42,167,155,0.15);
+      --sidebar-bg: #141d28;
+      --sidebar-ink: #9aa8b6;
+      --sidebar-active: #22303f;
+      --good-ink: #4cc44c;
+      --warning-ink: #fab219;
+      --critical-ink: #e66767;
+      --pill-good-bg: rgba(12,163,12,0.20);
+      --pill-warn-bg: rgba(250,178,25,0.16);
+      --pill-crit-bg: rgba(208,59,59,0.22);
+      --pill-neutral-bg: rgba(255,255,255,0.08);
+      --shadow: none;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: var(--page);
+    color: var(--text-primary);
+    font-size: 14px;
+  }
+  a { color: var(--accent); }
+
+  .layout { display: flex; min-height: 100vh; }
+
+  /* ---------- Sidebar ---------- */
+  .sidebar {
+    width: 220px; flex-shrink: 0;
+    background: var(--sidebar-bg); color: var(--sidebar-ink);
+    display: flex; flex-direction: column;
+    position: sticky; top: 0; height: 100vh;
+  }
+  .logo {
+    display: flex; align-items: center; gap: 10px;
+    padding: 18px 16px; font-size: 17px; font-weight: 700; color: #fff;
+  }
+  .logo-mark {
+    width: 30px; height: 30px; border-radius: 7px;
+    background: linear-gradient(135deg, #14b8a6, #0f766e);
+    display: grid; place-items: center;
+    color: #fff; font-size: 15px; font-weight: 800;
+  }
+  .nav { padding: 8px; display: flex; flex-direction: column; gap: 2px; }
+  .nav button {
+    display: flex; align-items: center; gap: 11px;
+    width: 100%; padding: 10px 12px; border: 0; border-radius: 7px;
+    background: none; color: inherit; font: inherit; font-weight: 500;
+    cursor: pointer; text-align: left;
+  }
+  .nav button:hover { background: rgba(255,255,255,0.06); color: #fff; }
+  .nav button.active { background: var(--sidebar-active); color: #fff; }
+  .nav button.active svg { color: #2dd4bf; }
+  .nav svg { width: 17px; height: 17px; flex-shrink: 0; }
+  .sidebar-foot {
+    margin-top: auto; padding: 14px 16px; font-size: 12px;
+    color: rgba(255,255,255,0.35); border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  /* ---------- Main ---------- */
+  .main { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+  .topbar {
+    display: flex; align-items: center; gap: 14px;
+    padding: 12px 24px; background: var(--surface-1);
+    border-bottom: 1px solid var(--border);
+    position: sticky; top: 0; z-index: 20;
+  }
+  .topbar h1 { font-size: 17px; font-weight: 650; margin: 0; }
+  .live-badge {
+    display: inline-flex; align-items: center; gap: 7px;
+    padding: 4px 11px; border-radius: 999px; font-size: 12px; font-weight: 600;
+    background: var(--pill-neutral-bg); color: var(--text-secondary);
+    white-space: nowrap;
+  }
+  .live-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--text-muted); }
+  .live-badge.live .dot { background: var(--good); box-shadow: 0 0 0 3px var(--pill-good-bg); }
+  .live-badge.live { color: var(--good-ink); background: var(--pill-good-bg); }
+  .live-badge.reconnect .dot { background: var(--warning); }
+  .live-badge.reconnect { color: var(--warning-ink); background: var(--pill-warn-bg); }
+  .search-wrap { margin-left: auto; position: relative; }
+  .search-wrap svg {
+    position: absolute; left: 10px; top: 50%; transform: translateY(-50%);
+    width: 14px; height: 14px; color: var(--text-muted); pointer-events: none;
+  }
+  .search-wrap input {
+    width: 280px; padding: 8px 12px 8px 32px;
+    border: 1px solid var(--border); border-radius: 8px;
+    background: var(--page); color: var(--text-primary); font: inherit;
+  }
+  .search-wrap input:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+  .avatar {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: var(--accent); color: #fff;
+    display: grid; place-items: center; font-weight: 700; font-size: 13px;
+  }
+  .content { padding: 24px; display: flex; flex-direction: column; gap: 20px; }
+  .view { display: none; }
+  .view.active { display: flex; flex-direction: column; gap: 20px; }
+
+  /* ---------- Cards & tiles ---------- */
+  .card {
+    background: var(--surface-1); border: 1px solid var(--border);
+    border-radius: 10px; box-shadow: var(--shadow);
+  }
+  .card-head {
+    display: flex; align-items: baseline; justify-content: space-between;
+    padding: 16px 18px 0;
+  }
+  .card-head h2 { font-size: 14px; font-weight: 650; margin: 0; }
+  .card-head .sub { font-size: 12px; color: var(--text-muted); }
+  .card-body { padding: 14px 18px 18px; }
+
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; }
+  .tile { padding: 16px 18px; }
+  .tile .label { font-size: 12.5px; color: var(--text-secondary); font-weight: 500; }
+  .tile .value { font-size: 27px; font-weight: 700; margin-top: 5px; letter-spacing: -0.02em; }
+  .tile .hint { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+  .tile .hint.bad { color: var(--critical-ink); }
+
+  .grid-2 { display: grid; grid-template-columns: 3fr 2fr; gap: 20px; }
+  @media (max-width: 1000px) { .grid-2 { grid-template-columns: 1fr; } }
+
+  /* ---------- Tables ---------- */
+  table { width: 100%; border-collapse: collapse; }
+  th {
+    text-align: left; font-size: 11.5px; text-transform: uppercase;
+    letter-spacing: 0.05em; color: var(--text-muted); font-weight: 600;
+    padding: 10px 12px; border-bottom: 1px solid var(--grid);
+    white-space: nowrap;
+  }
+  th.sortable { cursor: pointer; user-select: none; }
+  th.sortable:hover { color: var(--text-primary); }
+  th.sortable .arrow { display: inline-block; min-width: 11px; color: var(--accent); font-size: 10px; }
+  th.sortable .arrow:empty::before { content: "↕"; color: var(--text-muted); opacity: 0.55; }
+  td {
+    padding: 10px 12px; border-bottom: 1px solid var(--grid);
+    vertical-align: middle;
+  }
+  tr:last-child td { border-bottom: 0; }
+  tbody tr.rowlink { cursor: pointer; }
+  tbody tr.rowlink:hover { background: var(--accent-soft); }
+  .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  th.num { text-align: right; }
+  .strong { font-weight: 600; }
+  .muted { color: var(--text-muted); }
+  .small { font-size: 12.5px; }
+  .table-scroll { overflow-x: auto; }
+  .empty { padding: 32px; text-align: center; color: var(--text-muted); }
+
+  /* ---------- Pills ---------- */
+  .pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 3px 9px; border-radius: 999px;
+    font-size: 11.5px; font-weight: 600; white-space: nowrap;
+  }
+  .pill::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+  .pill.crit { background: var(--pill-crit-bg); color: var(--critical-ink); }
+  .pill.warn { background: var(--pill-warn-bg); color: var(--warning-ink); }
+  .pill.good { background: var(--pill-good-bg); color: var(--good-ink); }
+  .pill.neutral { background: var(--pill-neutral-bg); color: var(--text-secondary); }
+
+  /* ---------- Filters & buttons ---------- */
+  .filters { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .filters select, .filters input, .field input, .field select {
+    padding: 8px 10px; border: 1px solid var(--border); border-radius: 8px;
+    background: var(--surface-1); color: var(--text-primary); font: inherit;
+  }
+  .filters input[type="search"] { min-width: 200px; }
+  .filters input[type="number"] { width: 90px; }
+  .filters .chk {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 13px; color: var(--text-secondary); white-space: nowrap;
+    padding: 8px 4px; cursor: pointer;
+  }
+  .filters .chk input { accent-color: var(--accent); }
+  .filters .count { margin-left: auto; color: var(--text-muted); font-size: 12.5px; }
+  .tile.link { cursor: pointer; transition: border-color .15s; }
+  .tile.link:hover { border-color: var(--accent); }
+  .btn {
+    padding: 8px 14px; border: 1px solid var(--border); border-radius: 8px;
+    background: var(--surface-1); color: var(--text-primary); font: inherit;
+    font-weight: 550; cursor: pointer;
+  }
+  .btn:hover { background: var(--accent-soft); border-color: var(--accent); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .btn.primary:hover { filter: brightness(1.08); }
+  .btn:disabled { opacity: 0.5; cursor: default; }
+  .link-out { text-decoration: none; font-weight: 600; font-size: 12.5px; white-space: nowrap; }
+
+  /* ---------- Charts ---------- */
+  .chart-svg { width: 100%; height: auto; display: block; }
+  .chart-svg text { font-family: inherit; }
+  .bar-hit { cursor: pointer; }
+  #tooltip {
+    position: fixed; z-index: 100; pointer-events: none; display: none;
+    background: var(--text-primary); color: var(--page);
+    padding: 7px 10px; border-radius: 7px; font-size: 12px; line-height: 1.5;
+    max-width: 260px; box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  }
+  #tooltip .tt-title { font-weight: 700; }
+
+  .hbar-row { display: grid; grid-template-columns: 130px 1fr 44px; align-items: center; gap: 10px; padding: 5px 0; }
+  .hbar-label { font-size: 12.5px; color: var(--text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .hbar-track { height: 14px; position: relative; }
+  .hbar-fill { height: 100%; border-radius: 0 4px 4px 0; background: var(--series-1); min-width: 2px; }
+  .hbar-val { font-size: 12.5px; font-variant-numeric: tabular-nums; text-align: right; color: var(--text-primary); }
+
+  /* ---------- Drawer ---------- */
+  .drawer-veil {
+    position: fixed; inset: 0; background: rgba(11,11,11,0.35);
+    z-index: 50; display: none;
+  }
+  .drawer {
+    position: fixed; top: 0; right: 0; bottom: 0; width: min(560px, 92vw);
+    background: var(--surface-1); z-index: 51; display: none;
+    flex-direction: column; box-shadow: -8px 0 24px rgba(0,0,0,0.15);
+  }
+  .drawer.open { display: flex; }
+  .drawer-veil.open { display: block; }
+  .drawer-head {
+    padding: 18px 22px; border-bottom: 1px solid var(--border);
+    display: flex; align-items: flex-start; gap: 12px;
+  }
+  .drawer-head h2 { margin: 0; font-size: 17px; }
+  .drawer-head .close, .modal-head .close {
+    margin-left: auto; border: 0; background: none; cursor: pointer;
+    font-size: 20px; color: var(--text-muted); line-height: 1; padding: 2px 6px;
+  }
+  .drawer-head .close:hover, .modal-head .close:hover { color: var(--text-primary); }
+  .drawer-stats { display: flex; gap: 22px; padding: 14px 22px; border-bottom: 1px solid var(--border); }
+  .drawer-stats .ds .l { font-size: 11.5px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; }
+  .drawer-stats .ds .v { font-size: 19px; font-weight: 700; margin-top: 2px; }
+  .drawer-body { overflow-y: auto; padding: 6px 22px 22px; }
+  .vio-item { padding: 13px 0; border-bottom: 1px solid var(--grid); }
+  .vio-item:last-child { border-bottom: 0; }
+  .vio-top { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .vio-desc { margin-top: 5px; font-size: 13px; color: var(--text-secondary); }
+  .vio-meta { margin-top: 4px; font-size: 12px; color: var(--text-muted); }
+
+  /* ---------- Modal ---------- */
+  .modal-veil {
+    position: fixed; inset: 0; background: rgba(11,11,11,0.40);
+    z-index: 60; display: none;
+  }
+  .modal-veil.open { display: block; }
+  .modal {
+    position: fixed; z-index: 61; inset: 0; display: none;
+    align-items: flex-start; justify-content: center; padding: 6vh 16px;
+    pointer-events: none;
+  }
+  .modal.open { display: flex; }
+  .modal-card {
+    pointer-events: auto; width: 640px; max-width: 100%;
+    max-height: 86vh; display: flex; flex-direction: column;
+    background: var(--surface-1); border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3); border: 1px solid var(--border);
+  }
+  .modal-head { display: flex; align-items: center; padding: 16px 20px 0; }
+  .modal-head h2 { margin: 0; font-size: 16px; }
+  .tabs { display: flex; gap: 4px; padding: 12px 20px 0; border-bottom: 1px solid var(--grid); }
+  .tabs button {
+    border: 0; background: none; font: inherit; font-weight: 600; cursor: pointer;
+    padding: 8px 14px; color: var(--text-muted);
+    border-bottom: 2px solid transparent; margin-bottom: -1px;
+  }
+  .tabs button.active { color: var(--accent); border-bottom-color: var(--accent); }
+  .modal-body { padding: 18px 20px; overflow-y: auto; }
+  .field { display: flex; flex-direction: column; gap: 5px; }
+  .field label { font-size: 12px; font-weight: 600; color: var(--text-secondary); }
+  .field label .req { color: var(--critical-ink); }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .form-grid .wide { grid-column: 1 / -1; }
+  .modal-foot {
+    padding: 14px 20px; border-top: 1px solid var(--grid);
+    display: flex; align-items: center; gap: 10px; justify-content: flex-end;
+  }
+  .modal-foot .note { margin-right: auto; font-size: 12px; color: var(--text-muted); }
+  textarea#batch-input {
+    width: 100%; min-height: 130px; resize: vertical;
+    padding: 10px; border: 1px solid var(--border); border-radius: 8px;
+    background: var(--page); color: var(--text-primary);
+    font-family: ui-monospace, Consolas, monospace; font-size: 12.5px;
+  }
+  .batch-help { font-size: 12px; color: var(--text-muted); line-height: 1.6; margin: 8px 0 12px; }
+  .batch-help code { background: var(--pill-neutral-bg); padding: 1px 5px; border-radius: 4px; }
+  .preview-wrap { max-height: 220px; overflow-y: auto; border: 1px solid var(--grid); border-radius: 8px; margin-top: 12px; }
+  .preview-wrap table td, .preview-wrap table th { padding: 6px 10px; font-size: 12.5px; }
+  .badge { font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
+  .badge.ok { background: var(--pill-good-bg); color: var(--good-ink); }
+  .badge.dup { background: var(--pill-warn-bg); color: var(--warning-ink); }
+  .badge.bad { background: var(--pill-crit-bg); color: var(--critical-ink); }
+  .offline-note { line-height: 1.7; color: var(--text-secondary); }
+  .offline-note code { background: var(--pill-neutral-bg); padding: 2px 6px; border-radius: 5px; }
+
+  /* ---------- Toasts ---------- */
+  #toasts {
+    position: fixed; right: 18px; bottom: 18px; z-index: 90;
+    display: flex; flex-direction: column; gap: 8px; align-items: flex-end;
+  }
+  .toast {
+    background: var(--text-primary); color: var(--page);
+    padding: 10px 14px; border-radius: 9px; font-size: 13px; font-weight: 550;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    border-left: 4px solid var(--accent);
+    opacity: 0; transform: translateY(6px);
+    transition: opacity .25s, transform .25s;
+    max-width: 340px;
+  }
+  .toast.show { opacity: 1; transform: none; }
+  .toast.warn { border-left-color: var(--warning); }
+  .toast.err { border-left-color: var(--critical); }
+</style>
+</head>
+<body>
+<div class="layout">
+
+  <aside class="sidebar">
+    <div class="logo"><span class="logo-mark">pf</span> PropFolio</div>
+    <nav class="nav" id="nav">
+      <button data-view="dashboard" class="active">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>
+        Dashboard
+      </button>
+      <button data-view="properties">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg>
+        Properties
+      </button>
+      <button data-view="violations">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l10 18H2L12 3z"/><line x1="12" y1="10" x2="12" y2="14"/><circle cx="12" cy="17.5" r="0.5" fill="currentColor"/></svg>
+        Violations
+      </button>
+      <button data-view="hpd">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><line x1="12" y1="11" x2="12" y2="15"/><circle cx="12" cy="18" r="0.5" fill="currentColor"/></svg>
+        HPD
+      </button>
+      <button data-view="reports">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+        Reports
+      </button>
+    </nav>
+    <div class="sidebar-foot">NYC violations portfolio<br>Data: citypay.nyc.gov</div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <h1 id="page-title">Dashboard</h1>
+      <span class="live-badge" id="live-badge" title="Checking for the local server…">
+        <span class="dot"></span><span id="live-text">Connecting…</span>
+      </span>
+      <button class="btn" id="btn-sync" style="display:none; padding:5px 12px; font-size:12.5px"
+        title="Pull current violations from NYC Open Data now">Sync now</button>
+      <div class="search-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
+        <input id="global-search" type="search" placeholder="Search properties…">
+      </div>
+      <div class="avatar">AB</div>
+    </header>
+
+    <div class="content">
+
+      <!-- ================= DASHBOARD ================= -->
+      <section class="view active" id="view-dashboard">
+        <div class="tiles">
+          <div class="card tile">
+            <div class="label">Total properties</div>
+            <div class="value" id="kpi-props"></div>
+            <div class="hint">in portfolio</div>
+          </div>
+          <div class="card tile">
+            <div class="label">Properties with violations</div>
+            <div class="value" id="kpi-affected"></div>
+            <div class="hint" id="kpi-affected-pct"></div>
+          </div>
+          <div class="card tile">
+            <div class="label">Open violations</div>
+            <div class="value" id="kpi-open"></div>
+            <div class="hint bad" id="kpi-defaulted"></div>
+          </div>
+          <div class="card tile">
+            <div class="label">Outstanding balance</div>
+            <div class="value" id="kpi-balance"></div>
+            <div class="hint">across all tickets</div>
+          </div>
+          <div class="card tile">
+            <div class="label">Open HPD violations</div>
+            <div class="value" id="kpi-hpd"></div>
+            <div class="hint bad" id="kpi-hpd-hint"></div>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-head"><h2>Violations issued by month</h2><span class="sub" id="month-range"></span></div>
+            <div class="card-body"><div id="chart-months"></div></div>
+          </div>
+          <div class="card">
+            <div class="card-head"><h2>Violations by agency</h2><span class="sub">all time</span></div>
+            <div class="card-body"><div id="chart-agency"></div></div>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-head"><h2>Top properties by balance</h2><span class="sub">click a row for detail</span></div>
+            <div class="table-scroll"><table id="top-props-table">
+              <thead><tr><th>Property</th><th class="num">Violations</th><th class="num">Balance</th></tr></thead>
+              <tbody></tbody>
+            </table></div>
+          </div>
+          <div class="card">
+            <div class="card-head"><h2>Recent violations</h2><span class="sub">latest 6 by issue date</span></div>
+            <div class="table-scroll"><table id="recent-table">
+              <thead><tr><th>Date</th><th>Property</th><th>Status</th><th class="num">Amount</th></tr></thead>
+              <tbody></tbody>
+            </table></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PROPERTIES ================= -->
+      <section class="view" id="view-properties">
+        <div class="filters">
+          <button class="btn primary" id="btn-add">＋ Add properties</button>
+          <input id="prop-search" type="search" placeholder="Filter by name, street, BBL…">
+          <select id="prop-filter">
+            <option value="all">All properties</option>
+            <option value="with">With ECB tickets</option>
+            <option value="hpd">With open HPD</option>
+            <option value="any">Any open issues</option>
+            <option value="clean">No records</option>
+          </select>
+          <button class="btn" id="prop-clear" title="Reset filters">Clear</button>
+          <span class="count" id="prop-count"></span>
+        </div>
+        <div class="card table-scroll">
+          <table id="props-table" data-table="props">
+            <thead><tr>
+              <th class="sortable" data-sort="name">Property <span class="arrow"></span></th>
+              <th class="sortable" data-sort="street">Street <span class="arrow"></span></th>
+              <th class="sortable" data-sort="bbl">BBL <span class="arrow"></span></th>
+              <th class="num sortable" data-sort="count">Violations <span class="arrow"></span></th>
+              <th class="num sortable" data-sort="balance">Balance <span class="arrow"></span></th>
+              <th class="num sortable" data-sort="hpd">HPD open <span class="arrow"></span></th>
+            </tr></thead>
+            <tbody></tbody>
+          </table>
+          <div class="empty" id="props-empty" style="display:none">No properties match.</div>
+        </div>
+      </section>
+
+      <!-- ================= VIOLATIONS ================= -->
+      <section class="view" id="view-violations">
+        <div class="filters">
+          <select id="vio-status"><option value="">All statuses</option></select>
+          <select id="vio-agency"><option value="">All agencies</option></select>
+          <select id="vio-prop"><option value="">All properties</option></select>
+          <select id="vio-days">
+            <option value="">All time</option>
+            <option value="7">Last 7 days</option>
+            <option value="30">Last 30 days</option>
+            <option value="90">Last 90 days</option>
+            <option value="180">Last 180 days</option>
+            <option value="365">Last year</option>
+            <option value="custom">Custom…</option>
+          </select>
+          <input id="vio-days-custom" type="number" min="1" placeholder="days" title="Number of days back" style="display:none">
+          <input id="vio-min" type="number" min="0" placeholder="Min $" title="Only tickets with at least this amount due">
+          <label class="chk"><input type="checkbox" id="vio-open"> Balance due only</label>
+          <input id="vio-search" type="search" placeholder="Search ticket, property, description…">
+          <button class="btn" id="vio-clear" title="Reset all filters">Clear</button>
+          <button class="btn" id="vio-export" title="Download the filtered rows as CSV">Export</button>
+          <span class="count" id="vio-count"></span>
+        </div>
+        <div class="card table-scroll">
+          <table id="vio-table" data-table="vios">
+            <thead><tr>
+              <th class="sortable" data-sort="date">Date <span class="arrow"></span></th>
+              <th class="sortable" data-sort="ticket">Ticket # <span class="arrow"></span></th>
+              <th class="sortable" data-sort="property">Property <span class="arrow"></span></th>
+              <th class="sortable" data-sort="description">Description <span class="arrow"></span></th>
+              <th class="sortable" data-sort="agency">Agency <span class="arrow"></span></th>
+              <th class="sortable" data-sort="status">Status <span class="arrow"></span></th>
+              <th class="num sortable" data-sort="amount">Amount <span class="arrow"></span></th>
+              <th></th>
+            </tr></thead>
+            <tbody></tbody>
+          </table>
+          <div class="empty" id="vio-empty" style="display:none">No violations match.</div>
+        </div>
+      </section>
+
+      <!-- ================= HPD ================= -->
+      <section class="view" id="view-hpd">
+        <div class="filters">
+          <select id="hpd-type">
+            <option value="">Violations & complaints</option>
+            <option value="VIOLATION">Violations only</option>
+            <option value="COMPLAINT">Complaints only</option>
+          </select>
+          <select id="hpd-class"><option value="">All classes</option></select>
+          <select id="hpd-status">
+            <option value="">All statuses</option>
+            <option>Open</option>
+            <option>Close</option>
+          </select>
+          <select id="hpd-prop"><option value="">All properties</option></select>
+          <select id="hpd-days">
+            <option value="">All time</option>
+            <option value="7">Last 7 days</option>
+            <option value="30">Last 30 days</option>
+            <option value="90">Last 90 days</option>
+            <option value="180">Last 180 days</option>
+            <option value="365">Last year</option>
+            <option value="custom">Custom…</option>
+          </select>
+          <input id="hpd-days-custom" type="number" min="1" placeholder="days" title="Number of days back" style="display:none">
+          <input id="hpd-search" type="search" placeholder="Search property, description, ID…">
+          <button class="btn" id="hpd-clear" title="Reset all filters">Clear</button>
+          <button class="btn" id="hpd-export" title="Download the filtered rows as CSV">Export</button>
+          <span class="count" id="hpd-count"></span>
+        </div>
+        <div class="card table-scroll">
+          <table id="hpd-table" data-table="hpd">
+            <thead><tr>
+              <th class="sortable" data-sort="date">Date <span class="arrow"></span></th>
+              <th class="sortable" data-sort="type">Type <span class="arrow"></span></th>
+              <th class="sortable" data-sort="cls">Class <span class="arrow"></span></th>
+              <th class="sortable" data-sort="property">Property <span class="arrow"></span></th>
+              <th class="sortable" data-sort="description">Description <span class="arrow"></span></th>
+              <th>Apt</th>
+              <th class="sortable" data-sort="status">Status <span class="arrow"></span></th>
+            </tr></thead>
+            <tbody></tbody>
+          </table>
+          <div class="empty" id="hpd-empty" style="display:none">No HPD items match.</div>
+        </div>
+      </section>
+
+      <!-- ================= REPORTS ================= -->
+      <section class="view" id="view-reports">
+        <div class="filters">
+          <span style="font-weight:600">Portfolio summary</span>
+          <button class="btn primary" id="export-csv" style="margin-left:auto">Download violations CSV</button>
+        </div>
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-head"><h2>Balance by property</h2><span class="sub">properties with violations</span></div>
+            <div class="table-scroll"><table id="report-props" data-table="report">
+              <thead><tr>
+                <th class="sortable" data-sort="name">Property <span class="arrow"></span></th>
+                <th class="num sortable" data-sort="count">Violations <span class="arrow"></span></th>
+                <th class="num sortable" data-sort="defaulted">Defaulted <span class="arrow"></span></th>
+                <th class="num sortable" data-sort="balance">Balance <span class="arrow"></span></th>
+              </tr></thead>
+              <tbody></tbody>
+            </table></div>
+          </div>
+          <div class="card">
+            <div class="card-head"><h2>Balance by status</h2><span class="sub">count · amount</span></div>
+            <div class="card-body"><div id="chart-status"></div></div>
+            <div class="card-head"><h2>Balance by agency</h2><span class="sub">count · amount</span></div>
+            <div class="table-scroll" style="padding-bottom:8px"><table id="report-agency">
+              <thead><tr><th>Agency</th><th class="num">Violations</th><th class="num">Balance</th></tr></thead>
+              <tbody></tbody>
+            </table></div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+<!-- ================= PROPERTY DRAWER ================= -->
+<div class="drawer-veil" id="drawer-veil"></div>
+<aside class="drawer" id="drawer">
+  <div class="drawer-head">
+    <div>
+      <h2 id="drawer-title"></h2>
+      <div class="muted small" id="drawer-sub"></div>
+    </div>
+    <button class="close" id="drawer-close" aria-label="Close">×</button>
+  </div>
+  <div class="drawer-stats">
+    <div class="ds"><div class="l">Violations</div><div class="v" id="drawer-count"></div></div>
+    <div class="ds"><div class="l">Defaulted</div><div class="v" id="drawer-defaulted"></div></div>
+    <div class="ds"><div class="l">Balance</div><div class="v" id="drawer-balance"></div></div>
+    <div class="ds"><div class="l">HPD open</div><div class="v" id="drawer-hpd"></div></div>
+  </div>
+  <div class="drawer-body" id="drawer-body"></div>
+</aside>
+
+<!-- ================= ADD PROPERTIES MODAL ================= -->
+<div class="modal-veil" id="modal-veil"></div>
+<div class="modal" id="add-modal">
+  <div class="modal-card">
+    <div class="modal-head">
+      <h2>Add properties</h2>
+      <button class="close" id="modal-close" aria-label="Close">×</button>
+    </div>
+    <div id="modal-online">
+      <div class="tabs" id="add-tabs">
+        <button data-tab="single" class="active">Single property</button>
+        <button data-tab="batch">Batch import</button>
+      </div>
+      <div class="modal-body">
+        <div id="tab-single">
+          <div class="form-grid">
+            <div class="field"><label>House number <span class="req">*</span></label><input id="f-house" placeholder="104-38"></div>
+            <div class="field"><label>Street <span class="req">*</span></label><input id="f-street" placeholder="164 Street"></div>
+            <div class="field"><label>Borough</label>
+              <select id="f-borough">
+                <option value=""></option>
+                <option>Manhattan</option><option>Bronx</option><option>Brooklyn</option>
+                <option>Queens</option><option>Staten Island</option>
+              </select>
+            </div>
+            <div class="field"><label>BBL</label><input id="f-bbl" placeholder="optional"></div>
+            <div class="field wide"><label>Display name</label><input id="f-name" placeholder="defaults to the address"></div>
+          </div>
+        </div>
+        <div id="tab-batch" style="display:none">
+          <div class="batch-help">
+            One property per line, or upload a CSV. Accepted line formats:<br>
+            <code>104-38 164 Street</code> (address) ·
+            <code>house, street</code> ·
+            <code>house, street, borough</code> ·
+            <code>name, house, street, borough</code> ·
+            <code>name, bbl, house, street, borough</code> (properties.csv format)
+          </div>
+          <textarea id="batch-input" placeholder="104-38 164 Street&#10;815 WESTCHESTER AVE, 2026760050, 815, WESTCHESTER, Bronx"></textarea>
+          <div style="margin-top:10px; display:flex; align-items:center; gap:10px">
+            <label class="btn" style="display:inline-block">Upload CSV…<input id="batch-file" type="file" accept=".csv,.txt" style="display:none"></label>
+            <span class="muted small" id="batch-file-name"></span>
+          </div>
+          <div class="preview-wrap" id="batch-preview" style="display:none"></div>
+        </div>
+      </div>
+      <div class="modal-foot">
+        <span class="note" id="add-note"></span>
+        <button class="btn" id="modal-cancel">Cancel</button>
+        <button class="btn primary" id="add-submit">Add property</button>
+      </div>
+    </div>
+    <div id="modal-offline" style="display:none">
+      <div class="modal-body offline-note">
+        You're viewing an <strong>offline snapshot</strong>, so the site can't write to
+        <code>properties.csv</code> from here.<br><br>
+        To add properties (and get live violation updates), start the local server:
+        double-click <code>start_webapp.bat</code> in the violations folder — or run
+        <code>python webapp/server.py</code> — then reload this page at
+        <a href="http://localhost:8642">localhost:8642</a>.
+      </div>
+      <div class="modal-foot"><button class="btn" id="modal-offline-close">Close</button></div>
+    </div>
+  </div>
+</div>
+
+<div id="tooltip"></div>
+<div id="toasts"></div>
+
+<script src="data.js"></script>
+<script>
+"use strict";
+
+/* ---------- helpers ---------- */
+const $ = (sel, el = document) => el.querySelector(sel);
+const $$ = (sel, el = document) => [...el.querySelectorAll(sel)];
+const fmtMoney = n => "$" + n.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+const fmtMoney0 = n => "$" + Math.round(n).toLocaleString("en-US");
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const parseDate = s => {
+  const m = /^(\d{2})\/(\d{2})\/(\d{4})$/.exec(s);
+  return m ? new Date(+m[3], +m[1] - 1, +m[2]) : null;
+};
+const fmtDate = d => d ? d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }) : "—";
+
+const STATUS_CLASS = s => {
+  if (s === "DEFAULTED" || s.startsWith("DOCKETED")) return "crit";
+  if (s === "NEW ISSUANCE") return "warn";
+  if (s === "HEARING COMPLETED" || s === "PAID IN FULL" || s === "DISMISSED") return "good";
+  return "neutral";
+};
+const statusPill = s => `<span class="pill ${STATUS_CLASS(s)}">${esc(s)}</span>`;
+
+const HPD_CLASS = h => {
+  const c = h.cls.toUpperCase();
+  if (h.type === "VIOLATION") return c === "C" ? "crit" : c === "B" ? "warn" : "neutral";
+  return c.includes("IMMEDIATE") ? "crit" : c.includes("EMERGENCY") ? "warn" : "neutral";
+};
+const hpdClassPill = h => `<span class="pill ${HPD_CLASS(h)}">${esc(h.cls)}</span>`;
+const hpdStatusPill = s => `<span class="pill ${s.toUpperCase() === "CLOSE" ? "good" : "warn"}">${esc(s)}</span>`;
+const hpdIsOpen = h => h.status.toUpperCase() !== "CLOSE";
+
+/* ---------- state ---------- */
+let props = [], vios = [], hpd = [], propIndex = new Map();
+let totalBalance = 0, affected = [], defaultedCount = 0, topProps = [];
+let agencyGroups = [], statusGroups = [];
+let dataVersion = null, serverMode = false;
+let drawerAddr = null;
+
+function applyData(properties, violations, hpdItems) {
+  props = properties; vios = violations; hpd = hpdItems || [];
+  vios.forEach(v => { v._date = parseDate(v.date); });
+  hpd.forEach(h => { h._date = parseDate(h.date); });
+  propIndex = new Map();
+  props.forEach(p => {
+    p.violations = []; p.balance = 0; p.defaulted = 0;
+    p.hpd = []; p.hpdOpen = 0;
+    p.address = `${p.house} ${p.street}`.trim();
+    propIndex.set(p.address.toUpperCase(), p);
+  });
+  vios.forEach(v => {
+    const p = propIndex.get(v.property.toUpperCase());
+    if (p) {
+      p.violations.push(v);
+      p.balance += v.amount;
+      if (v.status === "DEFAULTED") p.defaulted++;
+    }
+  });
+  hpd.forEach(h => {
+    const p = propIndex.get(h.property.toUpperCase());
+    if (p) {
+      p.hpd.push(h);
+      if (hpdIsOpen(h)) p.hpdOpen++;
+    }
+  });
+  totalBalance = vios.reduce((s, v) => s + v.amount, 0);
+  affected = props.filter(p => p.violations.length > 0);
+  defaultedCount = vios.filter(v => v.status === "DEFAULTED").length;
+  topProps = [...affected].sort((a, b) => b.balance - a.balance);
+  const groupBy = field => {
+    const map = new Map();
+    vios.forEach(v => {
+      const k = v[field] || "Unknown";
+      if (!map.has(k)) map.set(k, { label: k, count: 0, amount: 0 });
+      const g = map.get(k);
+      g.count++; g.amount += v.amount;
+    });
+    return [...map.values()].sort((a, b) => b.count - a.count);
+  };
+  agencyGroups = groupBy("agency");
+  statusGroups = groupBy("status");
+}
+
+/* ---------- navigation ---------- */
+$("#nav").addEventListener("click", e => {
+  const btn = e.target.closest("button[data-view]");
+  if (btn) showView(btn.dataset.view);
+});
+function showView(name) {
+  $$(".nav button").forEach(b => b.classList.toggle("active", b.dataset.view === name));
+  $$(".view").forEach(v => v.classList.toggle("active", v.id === "view-" + name));
+  $("#page-title").textContent = { dashboard: "Dashboard", properties: "Properties", violations: "Violations", hpd: "HPD Violations & Complaints", reports: "Reports" }[name];
+}
+$("#global-search").addEventListener("input", e => {
+  showView("properties");
+  $("#prop-search").value = e.target.value;
+  renderProperties();
+});
+
+/* ---------- tooltip ---------- */
+const tooltip = $("#tooltip");
+function showTip(html, x, y) {
+  tooltip.innerHTML = html;
+  tooltip.style.display = "block";
+  const pad = 14;
+  const r = tooltip.getBoundingClientRect();
+  let left = x + pad, top = y + pad;
+  if (left + r.width > innerWidth - 8) left = x - r.width - pad;
+  if (top + r.height > innerHeight - 8) top = y - r.height - pad;
+  tooltip.style.left = left + "px";
+  tooltip.style.top = top + "px";
+}
+function hideTip() { tooltip.style.display = "none"; }
+
+/* ---------- toasts ---------- */
+function toast(msg, kind = "ok") {
+  const el = document.createElement("div");
+  el.className = "toast" + (kind !== "ok" ? " " + kind : "");
+  el.textContent = msg;
+  $("#toasts").appendChild(el);
+  requestAnimationFrame(() => el.classList.add("show"));
+  setTimeout(() => {
+    el.classList.remove("show");
+    setTimeout(() => el.remove(), 300);
+  }, 4500);
+}
+
+/* ---------- date-window filter ---------- */
+function daysCutoff(selSel, customSel) {
+  const v = $(selSel).value;
+  if (!v) return null;
+  const n = v === "custom" ? parseInt($(customSel).value, 10) : parseInt(v, 10);
+  if (!n || n <= 0) return null;
+  const d = new Date();
+  d.setHours(0, 0, 0, 0);
+  d.setDate(d.getDate() - n);
+  return d;
+}
+function wireDays(selSel, customSel, render) {
+  $(selSel).addEventListener("change", () => {
+    $(customSel).style.display = $(selSel).value === "custom" ? "" : "none";
+    if ($(selSel).value === "custom") $(customSel).focus();
+    render();
+  });
+  $(customSel).addEventListener("input", render);
+}
+
+/* ---------- generic sorting ---------- */
+const sortState = {
+  props: { key: "balance", dir: -1 },
+  vios: { key: "date", dir: -1 },
+  hpd: { key: "date", dir: -1 },
+  report: { key: "balance", dir: -1 },
+};
+const NUMERIC_KEYS = new Set(["count", "balance", "amount", "date", "defaulted", "hpd"]);
+const cmp = (acc, dir) => (a, b) => {
+  const va = acc(a), vb = acc(b);
+  if (typeof va === "number" && typeof vb === "number") return (va - vb) * dir;
+  return String(va).localeCompare(String(vb)) * dir;
+};
+function wireSorting(tableSel, stateKey, renderFn) {
+  $(tableSel + " thead").addEventListener("click", e => {
+    const th = e.target.closest("th.sortable");
+    if (!th) return;
+    const key = th.dataset.sort;
+    const st = sortState[stateKey];
+    if (st.key === key) st.dir = -st.dir;
+    else { st.key = key; st.dir = NUMERIC_KEYS.has(key) ? -1 : 1; }
+    renderFn();
+  });
+}
+function paintArrows(tableSel, stateKey) {
+  const st = sortState[stateKey];
+  $$(tableSel + " th.sortable").forEach(th => {
+    $(".arrow", th).textContent = th.dataset.sort === st.key ? (st.dir === 1 ? "▲" : "▼") : "";
+  });
+}
+
+/* ---------- charts ---------- */
+function buildMonthly() {
+  const host = $("#chart-months");
+  const byMonth = new Map();
+  vios.filter(v => v._date).forEach(v => {
+    const key = v._date.getFullYear() + "-" + String(v._date.getMonth() + 1).padStart(2, "0");
+    if (!byMonth.has(key)) byMonth.set(key, { count: 0, amount: 0 });
+    const b = byMonth.get(key);
+    b.count++; b.amount += v.amount;
+  });
+  const keys = [...byMonth.keys()].sort();
+  if (!keys.length) { host.innerHTML = '<div class="empty">No dated violations.</div>'; return; }
+  const months = [];
+  let [y, m] = keys[0].split("-").map(Number);
+  const [ey, em] = keys[keys.length - 1].split("-").map(Number);
+  while (y < ey || (y === ey && m <= em)) {
+    const key = y + "-" + String(m).padStart(2, "0");
+    months.push({ key, ...(byMonth.get(key) || { count: 0, amount: 0 }) });
+    m++; if (m > 12) { m = 1; y++; }
+  }
+  const label = key => {
+    const [yy, mm] = key.split("-");
+    return new Date(+yy, +mm - 1, 1).toLocaleDateString("en-US", { month: "short" }) +
+      (mm === "01" || key === months[0].key ? " ’" + yy.slice(2) : "");
+  };
+  $("#month-range").textContent = label(months[0].key).replace("’", "20") + " – " + label(months[months.length - 1].key).replace("’", "20");
+
+  const W = 560, H = 230, padL = 30, padR = 8, padT = 12, padB = 26;
+  const plotW = W - padL - padR, plotH = H - padT - padB;
+  const max = Math.max(...months.map(d => d.count));
+  const yMax = Math.ceil(max / 10) * 10 || 10;
+  const bw = Math.min(34, plotW / months.length * 0.62);
+  const step = plotW / months.length;
+  let svg = `<svg class="chart-svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="Violations issued by month">`;
+  for (let i = 0; i <= 3; i++) {
+    const val = Math.round(yMax * i / 3);
+    const gy = padT + plotH - plotH * i / 3;
+    svg += `<line x1="${padL}" y1="${gy}" x2="${W - padR}" y2="${gy}" stroke="var(--grid)" stroke-width="1"/>`;
+    svg += `<text x="${padL - 6}" y="${gy + 4}" text-anchor="end" font-size="10.5" fill="var(--text-muted)">${val}</text>`;
+  }
+  months.forEach((d, i) => {
+    const x = padL + step * i + (step - bw) / 2;
+    const h = plotH * d.count / yMax;
+    const yTop = padT + plotH - h;
+    if (d.count > 0) {
+      const r = Math.min(4, bw / 2, h);
+      svg += `<path d="M${x},${padT + plotH} V${yTop + r} Q${x},${yTop} ${x + r},${yTop} H${x + bw - r} Q${x + bw},${yTop} ${x + bw},${yTop + r} V${padT + plotH} Z" fill="var(--series-1)"/>`;
+    }
+    if (i % Math.ceil(months.length / 9) === 0 || i === months.length - 1) {
+      svg += `<text x="${x + bw / 2}" y="${H - 8}" text-anchor="middle" font-size="10.5" fill="var(--text-muted)">${label(d.key)}</text>`;
+    }
+    svg += `<rect class="bar-hit" data-i="${i}" x="${padL + step * i}" y="${padT}" width="${step}" height="${plotH}" fill="transparent"/>`;
+  });
+  svg += `<line x1="${padL}" y1="${padT + plotH}" x2="${W - padR}" y2="${padT + plotH}" stroke="var(--baseline)" stroke-width="1"/></svg>`;
+  host.innerHTML = svg;
+  host.onmousemove = e => {
+    const hit = e.target.closest(".bar-hit");
+    if (!hit) return hideTip();
+    const d = months[+hit.dataset.i];
+    const [yy, mm] = d.key.split("-");
+    const name = new Date(+yy, +mm - 1, 1).toLocaleDateString("en-US", { month: "long", year: "numeric" });
+    showTip(`<div class="tt-title">${name}</div>${d.count} violation${d.count === 1 ? "" : "s"} · ${fmtMoney0(d.amount)} issued`, e.clientX, e.clientY);
+  };
+  host.onmouseleave = hideTip;
+}
+
+function hbarList(hostSel, rows, tipFn) {
+  const host = $(hostSel);
+  if (!rows.length) { host.innerHTML = '<div class="empty">No data.</div>'; return; }
+  const max = Math.max(...rows.map(r => r.count));
+  host.innerHTML = rows.map((r, i) => `
+    <div class="hbar-row" data-i="${i}">
+      <div class="hbar-label" title="${esc(r.label)}">${esc(r.label)}</div>
+      <div class="hbar-track"><div class="hbar-fill" style="width:${(r.count / max * 100).toFixed(1)}%"></div></div>
+      <div class="hbar-val">${r.count}</div>
+    </div>`).join("");
+  host.onmousemove = e => {
+    const row = e.target.closest(".hbar-row");
+    if (!row) return hideTip();
+    showTip(tipFn(rows[+row.dataset.i]), e.clientX, e.clientY);
+  };
+  host.onmouseleave = hideTip;
+}
+
+/* ---------- renderers ---------- */
+function renderKPIs() {
+  $("#kpi-props").textContent = props.length;
+  $("#kpi-affected").textContent = affected.length;
+  $("#kpi-affected-pct").textContent = props.length ? Math.round(affected.length / props.length * 100) + "% of portfolio" : "";
+  $("#kpi-open").textContent = vios.filter(v => v.amount > 0).length;
+  $("#kpi-defaulted").textContent = defaultedCount + " defaulted · " + vios.length + " total";
+  $("#kpi-balance").textContent = fmtMoney0(totalBalance);
+  const hpdOpen = hpd.filter(hpdIsOpen);
+  $("#kpi-hpd").textContent = hpdOpen.length;
+  $("#kpi-hpd-hint").textContent = hpdOpen.filter(h => h.cls.toUpperCase() === "C").length
+    + " class C · " + hpd.length + " total";
+}
+
+function renderDashTables() {
+  $("#top-props-table tbody").innerHTML = topProps.slice(0, 8).map(p => `
+    <tr class="rowlink" data-addr="${esc(p.address)}">
+      <td class="strong">${esc(p.name)}</td>
+      <td class="num">${p.violations.length}</td>
+      <td class="num strong">${fmtMoney(p.balance)}</td>
+    </tr>`).join("") || '<tr><td colspan="3" class="empty">No violations found.</td></tr>';
+
+  const recent = vios.filter(v => v._date).sort((a, b) => b._date - a._date).slice(0, 6);
+  $("#recent-table tbody").innerHTML = recent.map(v => `
+    <tr class="rowlink" data-addr="${esc(v.property)}">
+      <td class="small muted">${fmtDate(v._date)}</td>
+      <td class="strong">${esc(v.property)}</td>
+      <td>${statusPill(v.status)}</td>
+      <td class="num">${fmtMoney(v.amount)}</td>
+    </tr>`).join("") || '<tr><td colspan="4" class="empty">No violations found.</td></tr>';
+}
+
+const PROP_ACC = {
+  name: p => p.name, street: p => p.street, bbl: p => p.bbl,
+  count: p => p.violations.length, balance: p => p.balance, hpd: p => p.hpdOpen,
+};
+function renderProperties() {
+  const q = $("#prop-search").value.trim().toUpperCase();
+  const mode = $("#prop-filter").value;
+  const st = sortState.props;
+  const rows = props.filter(p => {
+    if (mode === "with" && !p.violations.length) return false;
+    if (mode === "hpd" && !p.hpdOpen) return false;
+    if (mode === "any" && !(p.balance > 0 || p.hpdOpen)) return false;
+    if (mode === "clean" && (p.violations.length || p.hpd.length)) return false;
+    if (q && !(p.name.toUpperCase().includes(q) || p.address.toUpperCase().includes(q) || p.bbl.includes(q))) return false;
+    return true;
+  }).sort(cmp(PROP_ACC[st.key], st.dir));
+  $("#prop-count").textContent = rows.length + " of " + props.length + " properties";
+  $("#props-empty").style.display = rows.length ? "none" : "";
+  $("#props-table tbody").innerHTML = rows.map(p => `
+    <tr class="rowlink" data-addr="${esc(p.address)}">
+      <td class="strong">${esc(p.name)}</td>
+      <td class="muted">${esc(p.street)}</td>
+      <td class="muted small">${esc(p.bbl) || "—"}</td>
+      <td class="num">${p.violations.length || '<span class="muted">0</span>'}</td>
+      <td class="num ${p.balance ? "strong" : "muted"}">${p.balance ? fmtMoney(p.balance) : "$0.00"}</td>
+      <td class="num">${p.hpdOpen || '<span class="muted">0</span>'}</td>
+    </tr>`).join("");
+  paintArrows("#props-table", "props");
+}
+
+const VIO_ACC = {
+  date: v => v._date ? v._date.getTime() : 0, ticket: v => v.ticket,
+  property: v => v.property, description: v => v.description,
+  agency: v => v.agency, status: v => v.status, amount: v => v.amount,
+};
+function rebuildFilterOptions() {
+  const rebuild = (sel, groups, allLabel) => {
+    const el = $(sel), current = el.value;
+    el.innerHTML = `<option value="">${allLabel}</option>` +
+      groups.map(g => `<option>${esc(g.label)}</option>`).join("");
+    if ([...el.options].some(o => o.value === current)) el.value = current;
+  };
+  rebuild("#vio-status", statusGroups, "All statuses");
+  rebuild("#vio-agency", agencyGroups, "All agencies");
+  const classes = [...new Set(hpd.map(h => h.cls).filter(Boolean))].sort()
+    .map(c => ({ label: c }));
+  rebuild("#hpd-class", classes, "All classes");
+  const asOpts = list => [...new Set(list)].sort().map(x => ({ label: x }));
+  rebuild("#vio-prop", asOpts(vios.map(v => v.property)), "All properties");
+  rebuild("#hpd-prop", asOpts(hpd.map(h => h.property)), "All properties");
+}
+let lastVioRows = [];
+function renderViolations() {
+  const stFilter = $("#vio-status").value, ag = $("#vio-agency").value;
+  const propSel = $("#vio-prop").value;
+  const cutoff = daysCutoff("#vio-days", "#vio-days-custom");
+  const minAmt = parseFloat($("#vio-min").value) || 0;
+  const openOnly = $("#vio-open").checked;
+  const q = $("#vio-search").value.trim().toUpperCase();
+  const st = sortState.vios;
+  const rows = vios.filter(v => {
+    if (stFilter && v.status !== stFilter) return false;
+    if (ag && v.agency !== ag) return false;
+    if (propSel && v.property !== propSel) return false;
+    if (cutoff && (!v._date || v._date < cutoff)) return false;
+    if (minAmt && v.amount < minAmt) return false;
+    if (openOnly && v.amount <= 0) return false;
+    if (q && !(v.ticket.toUpperCase().includes(q) || v.property.toUpperCase().includes(q) ||
+               v.description.toUpperCase().includes(q) || v.respondent.toUpperCase().includes(q))) return false;
+    return true;
+  }).sort(cmp(VIO_ACC[st.key], st.dir));
+  lastVioRows = rows;
+  const total = rows.reduce((s, v) => s + v.amount, 0);
+  $("#vio-count").textContent = rows.length + " violations · " + fmtMoney0(total) + " due";
+  $("#vio-empty").style.display = rows.length ? "none" : "";
+  $("#vio-table tbody").innerHTML = rows.map(v => `
+    <tr class="rowlink" data-addr="${esc(v.property)}">
+      <td class="small muted" style="white-space:nowrap">${fmtDate(v._date)}</td>
+      <td class="small">${esc(v.ticket)}</td>
+      <td class="strong">${esc(v.property)}</td>
+      <td class="small" style="max-width:260px">${esc(v.description)}</td>
+      <td class="small muted">${esc(v.agency)}</td>
+      <td>${statusPill(v.status)}</td>
+      <td class="num strong">${fmtMoney(v.amount)}</td>
+      <td>${v.url ? `<a class="link-out" href="${esc(v.url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Portal ↗</a>` : ""}</td>
+    </tr>`).join("");
+  paintArrows("#vio-table", "vios");
+}
+
+const HPD_ACC = {
+  date: h => h._date ? h._date.getTime() : 0, type: h => h.type,
+  cls: h => h.cls, property: h => h.property,
+  description: h => h.description, status: h => h.status,
+};
+let lastHpdRows = [];
+function renderHPD() {
+  const type = $("#hpd-type").value, cls = $("#hpd-class").value, stFilter = $("#hpd-status").value;
+  const propSel = $("#hpd-prop").value;
+  const cutoff = daysCutoff("#hpd-days", "#hpd-days-custom");
+  const q = $("#hpd-search").value.trim().toUpperCase();
+  const st = sortState.hpd;
+  const rows = hpd.filter(h => {
+    if (type && h.type !== type) return false;
+    if (cls && h.cls !== cls) return false;
+    if (stFilter && h.status.toUpperCase() !== stFilter.toUpperCase()) return false;
+    if (propSel && h.property !== propSel) return false;
+    if (cutoff && (!h._date || h._date < cutoff)) return false;
+    if (q && !(h.property.toUpperCase().includes(q) || h.description.toUpperCase().includes(q) ||
+               h.id.toUpperCase().includes(q))) return false;
+    return true;
+  }).sort(cmp(HPD_ACC[st.key], st.dir));
+  lastHpdRows = rows;
+  const open = rows.filter(hpdIsOpen).length;
+  $("#hpd-count").textContent = rows.length + " items · " + open + " open";
+  $("#hpd-empty").style.display = rows.length ? "none" : "";
+  $("#hpd-table tbody").innerHTML = rows.map(h => `
+    <tr class="rowlink" data-addr="${esc(h.property)}">
+      <td class="small muted" style="white-space:nowrap">${fmtDate(h._date)}</td>
+      <td class="small">${esc(h.type === "VIOLATION" ? "Violation" : "Complaint")}</td>
+      <td>${hpdClassPill(h)}</td>
+      <td class="strong">${esc(h.property)}</td>
+      <td class="small" style="max-width:340px">${esc(h.description)}</td>
+      <td class="small muted">${esc(h.apt) || "—"}</td>
+      <td>${hpdStatusPill(h.status)}</td>
+    </tr>`).join("");
+  paintArrows("#hpd-table", "hpd");
+}
+
+const REPORT_ACC = {
+  name: p => p.name, count: p => p.violations.length,
+  defaulted: p => p.defaulted, balance: p => p.balance,
+};
+function renderReports() {
+  const st = sortState.report;
+  const rows = [...affected].sort(cmp(REPORT_ACC[st.key], st.dir));
+  $("#report-props tbody").innerHTML = rows.map(p => `
+    <tr class="rowlink" data-addr="${esc(p.address)}">
+      <td class="strong">${esc(p.name)}</td>
+      <td class="num">${p.violations.length}</td>
+      <td class="num ${p.defaulted ? "" : "muted"}">${p.defaulted}</td>
+      <td class="num strong">${fmtMoney(p.balance)}</td>
+    </tr>`).join("");
+  paintArrows("#report-props", "report");
+  $("#report-agency tbody").innerHTML = agencyGroups.map(g => `
+    <tr>
+      <td>${esc(g.label)}</td>
+      <td class="num">${g.count}</td>
+      <td class="num">${fmtMoney(g.amount)}</td>
+    </tr>`).join("");
+  hbarList("#chart-status", statusGroups, r =>
+    `<div class="tt-title">${esc(r.label)}</div>${r.count} violations · ${fmtMoney0(r.amount)} due`);
+}
+
+function renderAll() {
+  renderKPIs();
+  buildMonthly();
+  hbarList("#chart-agency", agencyGroups, r =>
+    `<div class="tt-title">${esc(r.label)}</div>${r.count} violations · ${fmtMoney0(r.amount)} due`);
+  renderDashTables();
+  renderProperties();
+  rebuildFilterOptions();
+  renderViolations();
+  renderHPD();
+  renderReports();
+  if (drawerAddr && $("#drawer").classList.contains("open")) openDrawer(drawerAddr);
+}
+
+/* ---------- KPI tile click-through ---------- */
+function wireTile(valueSel, title, go) {
+  const tile = $(valueSel).closest(".tile");
+  tile.classList.add("link");
+  tile.title = title;
+  tile.addEventListener("click", go);
+}
+wireTile("#kpi-props", "View all properties", () => {
+  $("#prop-filter").value = "all"; renderProperties(); showView("properties");
+});
+wireTile("#kpi-affected", "View properties with ECB tickets", () => {
+  $("#prop-filter").value = "with"; renderProperties(); showView("properties");
+});
+wireTile("#kpi-open", "View tickets with a balance due", () => {
+  $("#vio-open").checked = true; renderViolations(); showView("violations");
+});
+wireTile("#kpi-balance", "View tickets with a balance due, largest first", () => {
+  $("#vio-open").checked = true;
+  sortState.vios = { key: "amount", dir: -1 };
+  renderViolations(); showView("violations");
+});
+wireTile("#kpi-hpd", "View open HPD violations", () => {
+  $("#hpd-status").value = "Open"; renderHPD(); showView("hpd");
+});
+
+wireSorting("#props-table", "props", renderProperties);
+wireSorting("#vio-table", "vios", renderViolations);
+wireSorting("#hpd-table", "hpd", renderHPD);
+wireSorting("#report-props", "report", renderReports);
+["#hpd-type", "#hpd-class", "#hpd-status", "#hpd-prop"].forEach(s => $(s).addEventListener("change", renderHPD));
+$("#hpd-search").addEventListener("input", renderHPD);
+wireDays("#hpd-days", "#hpd-days-custom", renderHPD);
+$("#hpd-clear").addEventListener("click", () => {
+  ["#hpd-type", "#hpd-class", "#hpd-status", "#hpd-prop", "#hpd-days"].forEach(s => $(s).value = "");
+  ["#hpd-days-custom", "#hpd-search"].forEach(s => $(s).value = "");
+  $("#hpd-days-custom").style.display = "none";
+  renderHPD();
+});
+$("#prop-search").addEventListener("input", renderProperties);
+$("#prop-filter").addEventListener("change", renderProperties);
+$("#prop-clear").addEventListener("click", () => {
+  $("#prop-search").value = "";
+  $("#prop-filter").value = "all";
+  renderProperties();
+});
+["#vio-status", "#vio-agency", "#vio-prop"].forEach(s => $(s).addEventListener("change", renderViolations));
+["#vio-search", "#vio-min"].forEach(s => $(s).addEventListener("input", renderViolations));
+$("#vio-open").addEventListener("change", renderViolations);
+wireDays("#vio-days", "#vio-days-custom", renderViolations);
+$("#vio-clear").addEventListener("click", () => {
+  ["#vio-status", "#vio-agency", "#vio-prop", "#vio-days"].forEach(s => $(s).value = "");
+  ["#vio-days-custom", "#vio-min", "#vio-search"].forEach(s => $(s).value = "");
+  $("#vio-days-custom").style.display = "none";
+  $("#vio-open").checked = false;
+  renderViolations();
+});
+
+/* ---------- CSV export ---------- */
+function downloadCSV(filename, head, rows) {
+  const cell = s => `"${String(s).replace(/"/g, '""')}"`;
+  const lines = [head.map(cell).join(",")];
+  rows.forEach(r => lines.push(r.map(cell).join(",")));
+  const blob = new Blob([lines.join("\r\n")], { type: "text/csv" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = filename;
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+const VIO_CSV_HEAD = ["Property", "Ticket #", "Respondent", "Date", "Description", "Agency", "Status", "Amount Due", "Portal URL"];
+const vioCsvRow = v => [v.property, v.ticket, v.respondent, v.date, v.description, v.agency, v.status, v.amount.toFixed(2), v.url];
+$("#export-csv").addEventListener("click", () =>
+  downloadCSV("violations_export.csv", VIO_CSV_HEAD, vios.map(vioCsvRow)));
+$("#vio-export").addEventListener("click", () =>
+  downloadCSV("violations_filtered.csv", VIO_CSV_HEAD, lastVioRows.map(vioCsvRow)));
+$("#hpd-export").addEventListener("click", () =>
+  downloadCSV("hpd_filtered.csv",
+    ["Property", "Type", "ID", "Class", "Status", "Date", "Description", "Apt", "Story"],
+    lastHpdRows.map(h => [h.property, h.type, h.id, h.cls, h.status, h.date, h.description, h.apt, h.story])));
+
+/* ---------- property drawer ---------- */
+function openDrawer(address) {
+  const p = propIndex.get(address.toUpperCase());
+  if (!p) return;
+  drawerAddr = address;
+  $("#drawer-title").textContent = p.name;
+  $("#drawer-sub").textContent = [p.address, p.bbl ? "BBL " + p.bbl : "", p.borough].filter(Boolean).join(" · ");
+  $("#drawer-count").textContent = p.violations.length;
+  $("#drawer-defaulted").textContent = p.defaulted;
+  $("#drawer-balance").textContent = fmtMoney(p.balance);
+  $("#drawer-hpd").textContent = p.hpdOpen;
+  const list = [...p.violations].sort((a, b) => (b._date || 0) - (a._date || 0));
+  const ecbHtml = (list.length ? `
+    <div style="margin-top:10px; font-weight:650; font-size:13px; padding-bottom:4px; border-bottom:1px solid var(--grid)">
+      ECB tickets (${list.length})
+    </div>` : "") + list.map(v => `
+    <div class="vio-item">
+      <div class="vio-top">
+        ${statusPill(v.status)}
+        <span class="strong">${fmtMoney(v.amount)}</span>
+        <span class="muted small">${fmtDate(v._date)}</span>
+        ${v.url ? `<a class="link-out" style="margin-left:auto" href="${esc(v.url)}" target="_blank" rel="noopener">Pay / view ↗</a>` : ""}
+      </div>
+      <div class="vio-desc">${esc(v.description)}</div>
+      <div class="vio-meta">Ticket ${esc(v.ticket)} · ${esc(v.agency)} · Respondent: ${esc(v.respondent)}</div>
+    </div>`).join("");
+  const hpdList = [...p.hpd].sort((a, b) => (b._date || 0) - (a._date || 0));
+  const hpdHtml = hpdList.length ? `
+    <div style="margin-top:16px; font-weight:650; font-size:13px; padding-bottom:4px; border-bottom:1px solid var(--grid)">
+      HPD violations &amp; complaints (${hpdList.length})
+    </div>` + hpdList.map(h => `
+    <div class="vio-item">
+      <div class="vio-top">
+        ${hpdClassPill(h)}
+        ${hpdStatusPill(h.status)}
+        <span class="muted small">${fmtDate(h._date)}</span>
+      </div>
+      <div class="vio-desc">${esc(h.description)}</div>
+      <div class="vio-meta">${esc(h.type === "VIOLATION" ? "Violation" : "Complaint")} ${esc(h.id)}${h.apt ? " · Apt " + esc(h.apt) : ""}${h.story ? " · Story " + esc(h.story) : ""}</div>
+    </div>`).join("") : "";
+  $("#drawer-body").innerHTML = (ecbHtml + hpdHtml)
+    || `<div class="empty">No violations on record — clean property.</div>`;
+  $("#drawer").classList.add("open");
+  $("#drawer-veil").classList.add("open");
+}
+function closeDrawer() {
+  drawerAddr = null;
+  $("#drawer").classList.remove("open");
+  $("#drawer-veil").classList.remove("open");
+}
+$("#drawer-close").addEventListener("click", closeDrawer);
+$("#drawer-veil").addEventListener("click", closeDrawer);
+document.addEventListener("click", e => {
+  const row = e.target.closest("tr.rowlink[data-addr]");
+  if (row) openDrawer(row.dataset.addr);
+});
+
+/* ---------- add-properties modal ---------- */
+let batchRows = [];
+
+function openModal() {
+  $("#modal-online").style.display = serverMode ? "" : "none";
+  $("#modal-offline").style.display = serverMode ? "none" : "";
+  $("#add-modal").classList.add("open");
+  $("#modal-veil").classList.add("open");
+  if (serverMode) $("#f-house").focus();
+}
+function closeModal() {
+  $("#add-modal").classList.remove("open");
+  $("#modal-veil").classList.remove("open");
+}
+$("#btn-add").addEventListener("click", openModal);
+$("#modal-close").addEventListener("click", closeModal);
+$("#modal-cancel").addEventListener("click", closeModal);
+$("#modal-offline-close").addEventListener("click", closeModal);
+$("#modal-veil").addEventListener("click", closeModal);
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") { closeModal(); closeDrawer(); }
+});
+
+let activeTab = "single";
+$("#add-tabs").addEventListener("click", e => {
+  const btn = e.target.closest("button[data-tab]");
+  if (!btn) return;
+  activeTab = btn.dataset.tab;
+  $$("#add-tabs button").forEach(b => b.classList.toggle("active", b === btn));
+  $("#tab-single").style.display = activeTab === "single" ? "" : "none";
+  $("#tab-batch").style.display = activeTab === "batch" ? "" : "none";
+  updateSubmit();
+});
+
+function parseBatch(text) {
+  const existing = new Set(props.map(p => p.address.toUpperCase()));
+  const seen = new Set();
+  const rows = [];
+  text.split(/\r?\n/).forEach(line => {
+    line = line.trim();
+    if (!line || /^property_name\b/i.test(line)) return;
+    let r = { name: "", bbl: "", house: "", street: "", borough: "" };
+    if (line.includes(",")) {
+      const c = line.split(",").map(s => s.trim());
+      if (c.length >= 5)      [r.name, r.bbl, r.house, r.street, r.borough] = c;
+      else if (c.length === 4) [r.name, r.house, r.street, r.borough] = c;
+      else if (c.length === 3) [r.house, r.street, r.borough] = c;
+      else                     [r.house, r.street] = c;
+    } else {
+      const parts = line.split(/\s+/);
+      r.house = parts.shift() || "";
+      r.street = parts.join(" ");
+    }
+    const key = `${r.house} ${r.street}`.toUpperCase().replace(/\s+/g, " ").trim();
+    let state = "ok";
+    if (!r.house || !r.street) state = "bad";
+    else if (existing.has(key)) state = "dup";
+    else if (seen.has(key)) state = "dup";
+    else seen.add(key);
+    rows.push({ ...r, _state: state, _line: line });
+  });
+  return rows;
+}
+
+function renderBatchPreview() {
+  batchRows = parseBatch($("#batch-input").value);
+  const wrap = $("#batch-preview");
+  if (!batchRows.length) { wrap.style.display = "none"; updateSubmit(); return; }
+  wrap.style.display = "";
+  const badge = s => s === "ok" ? '<span class="badge ok">ready</span>'
+    : s === "dup" ? '<span class="badge dup">duplicate</span>'
+    : '<span class="badge bad">needs house + street</span>';
+  wrap.innerHTML = `<table>
+    <thead><tr><th>Name</th><th>House</th><th>Street</th><th>Borough</th><th></th></tr></thead>
+    <tbody>${batchRows.map(r => `
+      <tr>
+        <td>${esc(r.name) || '<span class="muted">auto</span>'}</td>
+        <td>${esc(r.house)}</td><td>${esc(r.street)}</td>
+        <td>${esc(r.borough)}</td><td>${badge(r._state)}</td>
+      </tr>`).join("")}</tbody>
+  </table>`;
+  updateSubmit();
+}
+$("#batch-input").addEventListener("input", renderBatchPreview);
+$("#batch-file").addEventListener("change", e => {
+  const file = e.target.files[0];
+  if (!file) return;
+  $("#batch-file-name").textContent = file.name;
+  file.text().then(text => {
+    $("#batch-input").value = text.trim();
+    renderBatchPreview();
+  });
+});
+
+function updateSubmit() {
+  const btn = $("#add-submit"), note = $("#add-note");
+  if (activeTab === "single") {
+    btn.textContent = "Add property";
+    btn.disabled = false;
+    note.textContent = "";
+  } else {
+    const ready = batchRows.filter(r => r._state === "ok").length;
+    const dup = batchRows.filter(r => r._state === "dup").length;
+    const bad = batchRows.filter(r => r._state === "bad").length;
+    btn.textContent = ready ? `Add ${ready} propert${ready === 1 ? "y" : "ies"}` : "Add properties";
+    btn.disabled = !ready;
+    note.textContent = [dup ? `${dup} duplicate${dup === 1 ? "" : "s"} skipped` : "",
+                        bad ? `${bad} invalid` : ""].filter(Boolean).join(" · ");
+  }
+}
+["#f-house", "#f-street"].forEach(s => $(s).addEventListener("input", updateSubmit));
+
+async function submitProperties(rows) {
+  const btn = $("#add-submit");
+  btn.disabled = true;
+  try {
+    const res = await fetch("/api/properties", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ properties: rows }),
+    });
+    const d = await res.json();
+    if (!res.ok || d.error) { toast("Error: " + (d.error || res.status), "err"); return; }
+    toast(`Added ${d.added} propert${d.added === 1 ? "y" : "ies"} — portfolio now ${d.total}`
+      + (d.skipped.length ? ` · ${d.skipped.length} skipped` : ""), d.added ? "ok" : "warn");
+    closeModal();
+    ["#f-name", "#f-house", "#f-street", "#f-bbl"].forEach(s => $(s).value = "");
+    $("#f-borough").value = "";
+    $("#batch-input").value = ""; $("#batch-file-name").textContent = "";
+    renderBatchPreview();
+    await refreshData(false);
+    showView("properties");
+  } catch (err) {
+    toast("Could not reach the server — is it still running?", "err");
+  } finally {
+    btn.disabled = false;
+    updateSubmit();
+  }
+}
+
+$("#add-submit").addEventListener("click", () => {
+  if (activeTab === "single") {
+    const row = {
+      name: $("#f-name").value, bbl: $("#f-bbl").value,
+      house: $("#f-house").value, street: $("#f-street").value,
+      borough: $("#f-borough").value,
+    };
+    if (!row.house.trim() || !row.street.trim()) {
+      toast("House number and street are required.", "err");
+      return;
+    }
+    submitProperties([row]);
+  } else {
+    submitProperties(batchRows.filter(r => r._state === "ok")
+      .map(({ _state, _line, ...r }) => r));
+  }
+});
+
+/* ---------- manual sync ---------- */
+$("#btn-sync").addEventListener("click", async () => {
+  const btn = $("#btn-sync");
+  btn.disabled = true;
+  btn.textContent = "Syncing…";
+  try {
+    const res = await fetch("/api/refresh", { method: "POST" });
+    const d = await res.json();
+    if (d.error) {
+      if (d.error.includes("already running")) toast("A sync is already in progress — updates will appear shortly");
+      else toast("Sync failed: " + d.error, "err");
+    } else if (d.changed) {
+      await refreshData();  // shows the "+N violations" toast
+    } else {
+      toast(`Checked ${d.tickets_fetched.toLocaleString()} tickets on NYC Open Data — everything up to date`);
+    }
+  } catch {
+    toast("Could not reach the server — is it still running?", "err");
+  } finally {
+    btn.disabled = false;
+    btn.textContent = "Sync now";
+  }
+});
+
+/* ---------- live updates ---------- */
+function setLive(state) {
+  const badge = $("#live-badge"), text = $("#live-text");
+  badge.className = "live-badge" + (state === "live" ? " live" : state === "reconnect" ? " reconnect" : "");
+  if (state === "live") {
+    const t = new Date().toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" });
+    text.textContent = "Live · " + t;
+    badge.title = "Connected to the local server — violations and properties update automatically.";
+  } else if (state === "reconnect") {
+    text.textContent = "Reconnecting…";
+    badge.title = "Lost the local server — retrying. Data shown may be stale.";
+  } else {
+    text.textContent = "Snapshot";
+    badge.title = "Offline snapshot. Run start_webapp.bat for live updates and property editing.";
+  }
+}
+
+async function refreshData(announce = true) {
+  const res = await fetch("/api/data", { cache: "no-store" });
+  if (!res.ok) return;
+  const d = await res.json();
+  const oldVios = vios.length, oldProps = props.length, oldBal = totalBalance, oldHpd = hpd.length;
+  dataVersion = d.version;
+  applyData(d.properties, d.violations, d.hpd);
+  renderAll();
+  setLive("live");
+  if (!announce) return;
+  const dv = vios.length - oldVios, dp = props.length - oldProps, db = totalBalance - oldBal;
+  const dh = hpd.length - oldHpd;
+  const parts = [];
+  if (dv) parts.push(`${dv > 0 ? "+" : ""}${dv} violation${Math.abs(dv) === 1 ? "" : "s"}`);
+  if (dh) parts.push(`${dh > 0 ? "+" : ""}${dh} HPD item${Math.abs(dh) === 1 ? "" : "s"}`);
+  if (dp) parts.push(`${dp > 0 ? "+" : ""}${dp} propert${Math.abs(dp) === 1 ? "y" : "ies"}`);
+  if (db) parts.push(`${db > 0 ? "+" : ""}${fmtMoney0(Math.abs(db) < 1 ? db : Math.round(db))} balance`);
+  toast(parts.length ? "Updated: " + parts.join(" · ") : "Data refreshed from disk",
+    dv > 0 || dh > 0 ? "warn" : "ok");
+}
+
+let polling = false;
+async function pollVersion() {
+  if (polling) return;
+  polling = true;
+  try {
+    const res = await fetch("/api/version", { cache: "no-store" });
+    if (!res.ok) throw new Error();
+    const { version } = await res.json();
+    if (version !== dataVersion) await refreshData();
+    else setLive("live");
+  } catch {
+    setLive("reconnect");
+  } finally {
+    polling = false;
+  }
+}
+
+/* ---------- boot ---------- */
+async function boot() {
+  try {
+    const res = await fetch("/api/data", { cache: "no-store" });
+    if (!res.ok) throw new Error();
+    const d = await res.json();
+    serverMode = true;
+    dataVersion = d.version;
+    applyData(d.properties, d.violations, d.hpd);
+    setLive("live");
+    $("#btn-sync").style.display = "";
+    setInterval(pollVersion, 4000);
+    // background tabs throttle timers — sync the moment the tab is visible again
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden) pollVersion();
+    });
+  } catch {
+    serverMode = false;
+    applyData(
+      typeof PROPERTIES !== "undefined" ? PROPERTIES : [],
+      typeof VIOLATIONS !== "undefined" ? VIOLATIONS : [],
+      typeof HPD !== "undefined" ? HPD : []);
+    setLive("snapshot");
+  }
+  renderAll();
+}
+boot();
+</script>
+</body>
+</html>

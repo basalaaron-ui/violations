@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.log
+.env
+.claude/settings.local.json
+*.egg-info/
+.DS_Store
+scan_progress.json
+hpd_scanned.txt
+hpd_street_variants.json

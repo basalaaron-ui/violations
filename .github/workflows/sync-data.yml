@@ -1,0 +1,38 @@
+name: Sync NYC Violations Data
+
+on:
+  schedule:
+    - cron: '*/20 * * * *'  # Every 20 minutes
+  workflow_dispatch:  # Manual trigger from GitHub Actions page
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Fetch ECB violations from NYC Open Data
+        run: python api_fetcher.py --days 365
+
+      - name: Fetch HPD violations from NYC Open Data
+        run: python hpd_api_fetcher.py --days 365
+
+      - name: Regenerate data snapshot
+        run: python webapp/generate_data.py
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "PropFolio Data Sync"
+          git config user.email "noreply@github.com"
+          git add violations_found.csv hpd_found.csv webapp/data.js
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Auto-sync: Update violations and HPD data from NYC Open Data"
+            git push
+          fi

@@ -6,6 +6,12 @@
       "runtimeExecutable": "python",
       "runtimeArgs": ["webapp/server.py"],
       "port": 8642
+    },
+    {
+      "name": "targets-preview",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8777", "--directory", "property-finder/output"],
+      "port": 8777
     }
   ]
 }

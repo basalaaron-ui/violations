@@ -1451,7 +1451,7 @@ const VIOLATIONS = [
  },
  {
   "property": "106-33 Guy R Brewer Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=106-33+Guy+R+Brewer&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=106-33&street_name=Guy+R+Brewer+Blvd",
   "ticket": "049630967M",
   "respondent": "VILLAGE PLAZA HOMES",
   "date": "02/20/2026",
@@ -1462,7 +1462,7 @@ const VIOLATIONS = [
  },
  {
   "property": "106-41 Guy R Brewer Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=106-41+Guy+R+Brewer&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=106-41&street_name=Guy+R+Brewer+Blvd",
   "ticket": "049574061M",
   "respondent": "MANISION HOMES LLC",
   "date": "01/08/2026",
@@ -1473,7 +1473,7 @@ const VIOLATIONS = [
  },
  {
   "property": "107-09 Guy R Brewer Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=107-09+Guy+R+Brewer&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=107-09&street_name=Guy+R+Brewer+Blvd",
   "ticket": "049324778H",
   "respondent": "VILLAGE PLAZA HOMES",
   "date": "10/14/2025",
@@ -1484,7 +1484,7 @@ const VIOLATIONS = [
  },
  {
   "property": "107-45 Sutphin Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=107-45+Sutphin&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=107-45&street_name=Sutphin+Blvd",
   "ticket": "049680204J",
   "respondent": "VILLAGE PLAZA HOMES",
   "date": "03/16/2026",
@@ -1528,7 +1528,7 @@ const VIOLATIONS = [
  },
  {
   "property": "109-06 Guy R Brewer Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-06+Guy+R+Brewer&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-06&street_name=Guy+R+Brewer+Blvd",
   "ticket": "049574047X",
   "respondent": "BETA HOLDING CORP",
   "date": "01/05/2026",
@@ -1539,7 +1539,7 @@ const VIOLATIONS = [
  },
  {
   "property": "109-06 Guy R Brewer Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-06+Guy+R+Brewer&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-06&street_name=Guy+R+Brewer+Blvd",
   "ticket": "049544372M",
   "respondent": "BETA HOLDING CORP",
   "date": "03/12/2026",
@@ -1550,7 +1550,7 @@ const VIOLATIONS = [
  },
  {
   "property": "109-06 Guy R Brewer Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-06+Guy+R+Brewer&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-06&street_name=Guy+R+Brewer+Blvd",
   "ticket": "049396598N",
   "respondent": "BETA HOLDING CORP",
   "date": "12/18/2025",
@@ -1561,7 +1561,7 @@ const VIOLATIONS = [
  },
  {
   "property": "109-08 Guy R Brewer Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-08+Guy+R+Brewer&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-08&street_name=Guy+R+Brewer+Blvd",
   "ticket": "049680350H",
   "respondent": "VIVA DEVELOPMENT COR",
   "date": "03/23/2026",
@@ -1572,7 +1572,7 @@ const VIOLATIONS = [
  },
  {
   "property": "109-08 Guy R Brewer Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-08+Guy+R+Brewer&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-08&street_name=Guy+R+Brewer+Blvd",
   "ticket": "049652535X",
   "respondent": "VIVA DEVELOPMENT COR",
   "date": "02/21/2026",
@@ -1583,7 +1583,7 @@ const VIOLATIONS = [
  },
  {
   "property": "109-08 Guy R Brewer Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-08+Guy+R+Brewer&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-08&street_name=Guy+R+Brewer+Blvd",
   "ticket": "049487722P",
   "respondent": "VIVA DEVELOPMENT COR",
   "date": "10/20/2025",
@@ -1594,7 +1594,7 @@ const VIOLATIONS = [
  },
  {
   "property": "109-08 Guy R Brewer Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-08+Guy+R+Brewer&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-08&street_name=Guy+R+Brewer+Blvd",
   "ticket": "049652507Z",
   "respondent": "VIVA DEVELOPMENT COR",
   "date": "02/17/2026",
@@ -1605,7 +1605,7 @@ const VIOLATIONS = [
  },
  {
   "property": "109-12 Guy R Brewer Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12+Guy+R+Brewer&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12&street_name=Guy+R+Brewer+Blvd",
   "ticket": "049518407Y",
   "respondent": "VIVA DEVELOPMENT COR",
   "date": "11/13/2025",
@@ -1616,7 +1616,7 @@ const VIOLATIONS = [
  },
  {
   "property": "109-12 Guy R Brewer Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12+Guy+R+Brewer&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12&street_name=Guy+R+Brewer+Blvd",
   "ticket": "049574097Y",
   "respondent": "VIVA DEVELOPMENT COR",
   "date": "01/20/2026",
@@ -1627,7 +1627,7 @@ const VIOLATIONS = [
  },
  {
   "property": "109-12 Guy R Brewer Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12+Guy+R+Brewer&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12&street_name=Guy+R+Brewer+Blvd",
   "ticket": "049747836L",
   "respondent": "VIVA DEVELOPMENT COR",
   "date": "03/25/2026",
@@ -1638,7 +1638,7 @@ const VIOLATIONS = [
  },
  {
   "property": "109-12 Guy R Brewer Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12+Guy+R+Brewer&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12&street_name=Guy+R+Brewer+Blvd",
   "ticket": "049747837N",
   "respondent": "VIVA DEVELOPMENT COR",
   "date": "03/25/2026",
@@ -1649,7 +1649,7 @@ const VIOLATIONS = [
  },
  {
   "property": "109-12 Guy R Brewer Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12+Guy+R+Brewer&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12&street_name=Guy+R+Brewer+Blvd",
   "ticket": "049574022J",
   "respondent": "VIVA DEVELOPMENT COR",
   "date": "12/26/2025",
@@ -1660,7 +1660,7 @@ const VIOLATIONS = [
  },
  {
   "property": "109-12 Guy R Brewer Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12+Guy+R+Brewer&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12&street_name=Guy+R+Brewer+Blvd",
   "ticket": "049574033P",
   "respondent": "VIVA DEVELOPMENT COR",
   "date": "01/02/2026",
@@ -1671,7 +1671,7 @@ const VIOLATIONS = [
  },
  {
   "property": "109-12 Guy R Brewer Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12+Guy+R+Brewer&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12&street_name=Guy+R+Brewer+Blvd",
   "ticket": "049544371K",
   "respondent": "VIVA DEVELOPMENT COR",
   "date": "03/12/2026",
@@ -1682,7 +1682,7 @@ const VIOLATIONS = [
  },
  {
   "property": "116-04 Merrick Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=116-04+Merrick&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=116-04&street_name=Merrick+Blvd",
   "ticket": "049419529Z",
   "respondent": "SOUTH HOMES INC",
   "date": "10/21/2025",
@@ -1704,7 +1704,7 @@ const VIOLATIONS = [
  },
  {
   "property": "116-06 Merrick Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=116-06+Merrick&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=116-06&street_name=Merrick+Blvd",
   "ticket": "049419528R",
   "respondent": "SOUTH HOMES INC",
   "date": "10/21/2025",
@@ -1715,7 +1715,7 @@ const VIOLATIONS = [
  },
  {
   "property": "119-28 Merrick Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=119-28+Merrick&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=119-28&street_name=Merrick+Blvd",
   "ticket": "049661402R",
   "respondent": "ROCKAWAY STORAGE INC",
   "date": "03/04/2026",
@@ -1726,7 +1726,7 @@ const VIOLATIONS = [
  },
  {
   "property": "119-28 Merrick Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=119-28+Merrick&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=119-28&street_name=Merrick+Blvd",
   "ticket": "049569600X",
   "respondent": "ROCKAWAY STORAGE INC",
   "date": "12/09/2025",
@@ -1737,7 +1737,7 @@ const VIOLATIONS = [
  },
  {
   "property": "119-32 Merrick Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=119-32+Merrick&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=119-32&street_name=Merrick+Blvd",
   "ticket": "049569601H",
   "respondent": "ROCKAWAY STORAGE INC",
   "date": "12/09/2025",
@@ -1792,7 +1792,7 @@ const VIOLATIONS = [
  },
  {
   "property": "1335 Clay Avenue",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1335+Clay&street_name=Avenue",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1335&street_name=Clay+Avenue",
   "ticket": "049616615H",
   "respondent": "VILLAGE PLAZA HOMES",
   "date": "03/09/2026",
@@ -1814,7 +1814,7 @@ const VIOLATIONS = [
  },
  {
   "property": "106-33 Guy R Brewer Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=106-33+Guy+R+Brewer&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=106-33&street_name=Guy+R+Brewer+Blvd",
   "ticket": "049734587R",
   "respondent": "VILLAGE PLAZA HOMES",
   "date": "04/23/2026",
@@ -1825,7 +1825,7 @@ const VIOLATIONS = [
  },
  {
   "property": "106-41 Guy R Brewer Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=106-41+Guy+R+Brewer&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=106-41&street_name=Guy+R+Brewer+Blvd",
   "ticket": "049734586P",
   "respondent": "MANISION HOMES LLC",
   "date": "04/23/2026",
@@ -1836,7 +1836,7 @@ const VIOLATIONS = [
  },
  {
   "property": "107-11 Guy R Brewer Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=107-11+Guy+R+Brewer&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=107-11&street_name=Guy+R+Brewer+Blvd",
   "ticket": "049703069P",
   "respondent": "VILLAGE PLAZA HOMES",
   "date": "03/30/2026",
@@ -1858,7 +1858,7 @@ const VIOLATIONS = [
  },
  {
   "property": "109-08 Guy R Brewer Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-08+Guy+R+Brewer&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-08&street_name=Guy+R+Brewer+Blvd",
   "ticket": "049697548Y",
   "respondent": "VIVA DEVELOPMENT COR",
   "date": "03/30/2026",
@@ -1869,7 +1869,7 @@ const VIOLATIONS = [
  },
  {
   "property": "109-12 Guy R Brewer Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12+Guy+R+Brewer&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12&street_name=Guy+R+Brewer+Blvd",
   "ticket": "049776443N",
   "respondent": "VIVA DEVELOPMENT COR",
   "date": "04/23/2026",
@@ -1880,7 +1880,7 @@ const VIOLATIONS = [
  },
  {
   "property": "109-12 Guy R Brewer Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12+Guy+R+Brewer&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12&street_name=Guy+R+Brewer+Blvd",
   "ticket": "049697547M",
   "respondent": "VIVA DEVELOPMENT COR",
   "date": "03/30/2026",
@@ -1891,7 +1891,7 @@ const VIOLATIONS = [
  },
  {
   "property": "109-12 Guy R Brewer Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12+Guy+R+Brewer&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12&street_name=Guy+R+Brewer+Blvd",
   "ticket": "049622986H",
   "respondent": "VIVA DEVELOPMENT COR",
   "date": "04/12/2026",
@@ -1902,7 +1902,7 @@ const VIOLATIONS = [
  },
  {
   "property": "109-12 Guy R Brewer Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12+Guy+R+Brewer&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12&street_name=Guy+R+Brewer+Blvd",
   "ticket": "049716670Z",
   "respondent": "VIVA DEVELOPMENT COR",
   "date": "04/15/2026",
@@ -1913,7 +1913,7 @@ const VIOLATIONS = [
  },
  {
   "property": "109-12 Guy R Brewer Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12+Guy+R+Brewer&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12&street_name=Guy+R+Brewer+Blvd",
   "ticket": "049622953L",
   "respondent": "VIVA DEVELOPMENT COR",
   "date": "04/05/2026",
@@ -1924,7 +1924,7 @@ const VIOLATIONS = [
  },
  {
   "property": "116-04 Merrick Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=116-04+Merrick&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=116-04&street_name=Merrick+Blvd",
   "ticket": "049763481L",
   "respondent": "SOUTH HOMES INC",
   "date": "04/14/2026",
@@ -1935,7 +1935,7 @@ const VIOLATIONS = [
  },
  {
   "property": "116-06 Merrick Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=116-06+Merrick&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=116-06&street_name=Merrick+Blvd",
   "ticket": "049625393X",
   "respondent": "SOUTH HOMES INC",
   "date": "04/11/2026",
@@ -1946,7 +1946,7 @@ const VIOLATIONS = [
  },
  {
   "property": "116-06 Merrick Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=116-06+Merrick&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=116-06&street_name=Merrick+Blvd",
   "ticket": "049761047J",
   "respondent": "SOUTH HOMES INC",
   "date": "04/14/2026",
@@ -1979,7 +1979,7 @@ const VIOLATIONS = [
  },
  {
   "property": "148-15 Linden Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=148-15+Linden&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=148-15&street_name=Linden+Blvd",
   "ticket": "0216448220",
   "respondent": "ALEX KONDEN",
   "date": "11/23/2025",
@@ -2034,7 +2034,7 @@ const VIOLATIONS = [
  },
  {
   "property": "173 Beach 60 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173+Beach&street_name=60+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street",
   "ticket": "049739658H",
   "respondent": "PLAZA HOMES LLC",
   "date": "04/02/2026",
@@ -2045,7 +2045,7 @@ const VIOLATIONS = [
  },
  {
   "property": "173 Beach 60 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173+Beach&street_name=60+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street",
   "ticket": "049739714N",
   "respondent": "PLAZA HOMES LLC",
   "date": "04/27/2026",
@@ -2056,7 +2056,7 @@ const VIOLATIONS = [
  },
  {
   "property": "173 Beach 60 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173+Beach&street_name=60+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street",
   "ticket": "049761114K",
   "respondent": "PLAZA HOMES LLC",
   "date": "04/27/2026",
@@ -2067,7 +2067,7 @@ const VIOLATIONS = [
  },
  {
   "property": "173 Beach 60 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173+Beach&street_name=60+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street",
   "ticket": "049638840L",
   "respondent": "PLAZA HOMES LLC",
   "date": "01/13/2026",
@@ -2078,7 +2078,7 @@ const VIOLATIONS = [
  },
  {
   "property": "173 Beach 60 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173+Beach&street_name=60+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street",
   "ticket": "049383580M",
   "respondent": "PLAZA HOMES LLC",
   "date": "01/22/2026",
@@ -2089,7 +2089,7 @@ const VIOLATIONS = [
  },
  {
   "property": "173 Beach 60 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173+Beach&street_name=60+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street",
   "ticket": "049383565Y",
   "respondent": "PLAZA HOMES LLC",
   "date": "01/12/2026",
@@ -2100,7 +2100,7 @@ const VIOLATIONS = [
  },
  {
   "property": "173 Beach 60 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173+Beach&street_name=60+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street",
   "ticket": "049609831R",
   "respondent": "PLAZA HOMES LLC",
   "date": "01/10/2026",
@@ -2111,7 +2111,7 @@ const VIOLATIONS = [
  },
  {
   "property": "173 Beach 60 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173+Beach&street_name=60+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street",
   "ticket": "049604340J",
   "respondent": "PLAZA HOMES LLC",
   "date": "01/10/2026",
@@ -2122,7 +2122,7 @@ const VIOLATIONS = [
  },
  {
   "property": "173 Beach 60 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173+Beach&street_name=60+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street",
   "ticket": "049383570Z",
   "respondent": "PLAZA HOMES LLC",
   "date": "01/16/2026",
@@ -2133,7 +2133,7 @@ const VIOLATIONS = [
  },
  {
   "property": "173 Beach 60 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173+Beach&street_name=60+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street",
   "ticket": "049441828J",
   "respondent": "PLAZA HOMES LLC",
   "date": "11/29/2025",
@@ -2144,7 +2144,7 @@ const VIOLATIONS = [
  },
  {
   "property": "173 Beach 60 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173+Beach&street_name=60+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street",
   "ticket": "049739614X",
   "respondent": "PLAZA HOMES LLC",
   "date": "03/20/2026",
@@ -2155,7 +2155,7 @@ const VIOLATIONS = [
  },
  {
   "property": "173 Beach 60 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173+Beach&street_name=60+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street",
   "ticket": "049739636R",
   "respondent": "PLAZA HOMES LLC",
   "date": "03/26/2026",
@@ -2166,7 +2166,7 @@ const VIOLATIONS = [
  },
  {
   "property": "173 Beach 60 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173+Beach&street_name=60+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street",
   "ticket": "049383561R",
   "respondent": "PLAZA HOMES LLC",
   "date": "01/08/2026",
@@ -2177,7 +2177,7 @@ const VIOLATIONS = [
  },
  {
   "property": "173 Beach 60 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173+Beach&street_name=60+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street",
   "ticket": "049609801X",
   "respondent": "PLAZA HOMES LLC",
   "date": "01/03/2026",
@@ -2188,7 +2188,7 @@ const VIOLATIONS = [
  },
  {
   "property": "173 Beach 60 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173+Beach&street_name=60+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street",
   "ticket": "049690628M",
   "respondent": "PLAZA HOMES LLC",
   "date": "03/28/2026",
@@ -2199,7 +2199,7 @@ const VIOLATIONS = [
  },
  {
   "property": "173 Beach 60 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173+Beach&street_name=60+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street",
   "ticket": "049739699Y",
   "respondent": "PLAZA HOMES LLC",
   "date": "04/17/2026",
@@ -2210,7 +2210,7 @@ const VIOLATIONS = [
  },
  {
   "property": "173 Beach 60 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173+Beach&street_name=60+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street",
   "ticket": "049464757N",
   "respondent": "PLAZA HOMES LLC",
   "date": "12/17/2025",
@@ -2221,7 +2221,7 @@ const VIOLATIONS = [
  },
  {
   "property": "173 Beach 60 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173+Beach&street_name=60+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street",
   "ticket": "049518550R",
   "respondent": "PLAZA HOMES LLC",
   "date": "12/13/2025",
@@ -2232,7 +2232,7 @@ const VIOLATIONS = [
  },
  {
   "property": "173 Beach 60 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173+Beach&street_name=60+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street",
   "ticket": "049658472P",
   "respondent": "PLAZA HOMES LLC",
   "date": "02/21/2026",
@@ -2243,7 +2243,7 @@ const VIOLATIONS = [
  },
  {
   "property": "173 Beach 60 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173+Beach&street_name=60+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street",
   "ticket": "049739688Z",
   "respondent": "PLAZA HOMES LLC",
   "date": "04/10/2026",
@@ -2254,7 +2254,7 @@ const VIOLATIONS = [
  },
  {
   "property": "173 Beach 60 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173+Beach&street_name=60+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street",
   "ticket": "049739695R",
   "respondent": "PLAZA HOMES LLC",
   "date": "04/16/2026",
@@ -2265,7 +2265,7 @@ const VIOLATIONS = [
  },
  {
   "property": "173 Beach 60 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173+Beach&street_name=60+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street",
   "ticket": "049690682N",
   "respondent": "PLAZA HOMES LLC",
   "date": "04/13/2026",
@@ -2276,7 +2276,7 @@ const VIOLATIONS = [
  },
  {
   "property": "173 Beach 60 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173+Beach&street_name=60+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street",
   "ticket": "049609881P",
   "respondent": "PLAZA HOMES LLC",
   "date": "01/24/2026",
@@ -2287,7 +2287,7 @@ const VIOLATIONS = [
  },
  {
   "property": "173 Beach 60 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173+Beach&street_name=60+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street",
   "ticket": "049690718X",
   "respondent": "PLAZA HOMES LLC",
   "date": "04/29/2026",
@@ -2298,7 +2298,7 @@ const VIOLATIONS = [
  },
  {
   "property": "175 Beach 60 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=175+Beach&street_name=60+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=175&street_name=Beach+60+Street",
   "ticket": "049464758P",
   "respondent": "PLAZA HOMES LLC",
   "date": "12/17/2025",
@@ -2309,7 +2309,7 @@ const VIOLATIONS = [
  },
  {
   "property": "175 Beach 60 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=175+Beach&street_name=60+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=175&street_name=Beach+60+Street",
   "ticket": "049528582K",
   "respondent": "PLAZA HOMES LLC",
   "date": "12/13/2025",
@@ -2320,7 +2320,7 @@ const VIOLATIONS = [
  },
  {
   "property": "175 Beach 60 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=175+Beach&street_name=60+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=175&street_name=Beach+60+Street",
   "ticket": "049739689K",
   "respondent": "PLAZA HOMES LLC",
   "date": "04/10/2026",
@@ -2331,7 +2331,7 @@ const VIOLATIONS = [
  },
  {
   "property": "175 Beach 60 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=175+Beach&street_name=60+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=175&street_name=Beach+60+Street",
   "ticket": "049761037X",
   "respondent": "PLAZA HOMES LLC",
   "date": "04/10/2026",
@@ -2342,7 +2342,7 @@ const VIOLATIONS = [
  },
  {
   "property": "175 Beach 60 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=175+Beach&street_name=60+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=175&street_name=Beach+60+Street",
   "ticket": "049690683P",
   "respondent": "PLAZA HOMES LLC",
   "date": "04/13/2026",
@@ -2353,7 +2353,7 @@ const VIOLATIONS = [
  },
  {
   "property": "1961 Fulton Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1961+Fulton&street_name=Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1961&street_name=Fulton+Street",
   "ticket": "049623892L",
   "respondent": "PLAZA HOMES LLC",
   "date": "01/20/2026",
@@ -2364,7 +2364,7 @@ const VIOLATIONS = [
  },
  {
   "property": "1961 Fulton Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1961+Fulton&street_name=Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1961&street_name=Fulton+Street",
   "ticket": "049623893N",
   "respondent": "NYC PARKS DEPT",
   "date": "01/20/2026",
@@ -2375,7 +2375,7 @@ const VIOLATIONS = [
  },
  {
   "property": "1961 Fulton Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1961+Fulton&street_name=Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1961&street_name=Fulton+Street",
   "ticket": "049534714Y",
   "respondent": "PLAZA HOMES LLC",
   "date": "01/14/2026",
@@ -2386,7 +2386,7 @@ const VIOLATIONS = [
  },
  {
   "property": "1961 Fulton Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1961+Fulton&street_name=Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1961&street_name=Fulton+Street",
   "ticket": "049662328M",
   "respondent": "PLAZA HOMES LLC",
   "date": "03/28/2026",
@@ -2397,7 +2397,7 @@ const VIOLATIONS = [
  },
  {
   "property": "1961 Fulton Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1961+Fulton&street_name=Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1961&street_name=Fulton+Street",
   "ticket": "049662240H",
   "respondent": "PLAZA HOMES LLC",
   "date": "03/06/2026",
@@ -2408,7 +2408,7 @@ const VIOLATIONS = [
  },
  {
   "property": "1961 Fulton Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1961+Fulton&street_name=Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1961&street_name=Fulton+Street",
   "ticket": "049662387M",
   "respondent": "PLAZA HOMES LLC",
   "date": "04/18/2026",
@@ -2419,7 +2419,7 @@ const VIOLATIONS = [
  },
  {
   "property": "1961 Fulton Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1961+Fulton&street_name=Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1961&street_name=Fulton+Street",
   "ticket": "049662355H",
   "respondent": "PLAZA HOMES LLC",
   "date": "04/09/2026",
@@ -2430,7 +2430,7 @@ const VIOLATIONS = [
  },
  {
   "property": "1961 Fulton Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1961+Fulton&street_name=Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1961&street_name=Fulton+Street",
   "ticket": "049662356J",
   "respondent": "PLAZA HOMES LLC",
   "date": "04/09/2026",
@@ -2441,7 +2441,7 @@ const VIOLATIONS = [
  },
  {
   "property": "1961 Fulton Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1961+Fulton&street_name=Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1961&street_name=Fulton+Street",
   "ticket": "049721363P",
   "respondent": "PLAZA HOMES LLC",
   "date": "04/29/2026",
@@ -2452,7 +2452,7 @@ const VIOLATIONS = [
  },
  {
   "property": "1961 Fulton Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1961+Fulton&street_name=Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1961&street_name=Fulton+Street",
   "ticket": "0803798885",
   "respondent": "PLAZA HOMES LLC",
   "date": "04/06/2026",
@@ -2463,7 +2463,7 @@ const VIOLATIONS = [
  },
  {
   "property": "1961 Fulton Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1961+Fulton&street_name=Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1961&street_name=Fulton+Street",
   "ticket": "0803798894",
   "respondent": "PLAZA HOMES LLC",
   "date": "04/06/2026",
@@ -2474,7 +2474,7 @@ const VIOLATIONS = [
  },
  {
   "property": "1961 Fulton Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1961+Fulton&street_name=Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1961&street_name=Fulton+Street",
   "ticket": "0803798903",
   "respondent": "PLAZA HOMES LLC",
   "date": "04/06/2026",
@@ -2485,7 +2485,7 @@ const VIOLATIONS = [
  },
  {
   "property": "1972 Bathgate Avenue",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1972+Bathgate&street_name=Avenue",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1972&street_name=Bathgate+Avenue",
   "ticket": "047030301Y",
   "respondent": "VILLAGE PLAZA HOMES",
   "date": "04/12/2026",
@@ -2496,7 +2496,7 @@ const VIOLATIONS = [
  },
  {
   "property": "1974 Bathgate Avenue",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1974+Bathgate&street_name=Avenue",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1974&street_name=Bathgate+Avenue",
   "ticket": "049616725Z",
   "respondent": "VILLAGE PLAZA HOMES",
   "date": "03/28/2026",
@@ -2507,7 +2507,7 @@ const VIOLATIONS = [
  },
  {
   "property": "1974 Bathgate Avenue",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1974+Bathgate&street_name=Avenue",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1974&street_name=Bathgate+Avenue",
   "ticket": "049559153Y",
   "respondent": "VILLAGE PLAZA HOMES",
   "date": "02/18/2026",
@@ -2529,7 +2529,7 @@ const VIOLATIONS = [
  },
  {
   "property": "2755 Kingsbridge Terrace",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=2755+Kingsbridge&street_name=Terrace",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=2755&street_name=Kingsbridge+Terrace",
   "ticket": "0803705129",
   "respondent": "2753 EAST KINGSBRIDG C/O MANAGEMENT",
   "date": "12/15/2025",
@@ -2540,7 +2540,7 @@ const VIOLATIONS = [
  },
  {
   "property": "2755 Kingsbridge Terrace",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=2755+Kingsbridge&street_name=Terrace",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=2755&street_name=Kingsbridge+Terrace",
   "ticket": "0803745480",
   "respondent": "FRED BASAL",
   "date": "02/02/2026",
@@ -2551,7 +2551,7 @@ const VIOLATIONS = [
  },
  {
   "property": "2757 Kingsbridge Terrace",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=2757+Kingsbridge&street_name=Terrace",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=2757&street_name=Kingsbridge+Terrace",
   "ticket": "049679839P",
   "respondent": "INC 2753 EAST KINGSBRIDGE TERRACE",
   "date": "03/28/2026",
@@ -2562,7 +2562,7 @@ const VIOLATIONS = [
  },
  {
   "property": "2757 Kingsbridge Terrace",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=2757+Kingsbridge&street_name=Terrace",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=2757&street_name=Kingsbridge+Terrace",
   "ticket": "049617630K",
   "respondent": "INC 2753 EAST KINGSBRIDGE TERRACE",
   "date": "01/13/2026",
@@ -2573,7 +2573,7 @@ const VIOLATIONS = [
  },
  {
   "property": "305 Jefferson Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=305+Jefferson&street_name=Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=305&street_name=Jefferson+Street",
   "ticket": "0803761164",
   "respondent": "ALFRED BASAL",
   "date": "02/24/2026",
@@ -2584,7 +2584,7 @@ const VIOLATIONS = [
  },
  {
   "property": "305 Beach 84 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=305+Beach&street_name=84+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=305&street_name=Beach+84+Street",
   "ticket": "039175742R",
   "respondent": "SOUTH HOMES INC",
   "date": "02/03/2026",
@@ -2595,7 +2595,7 @@ const VIOLATIONS = [
  },
  {
   "property": "44 East 132 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=44+East&street_name=132+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=44&street_name=East+132+Street",
   "ticket": "049607765Z",
   "respondent": "LGS PARTNERS LLC",
   "date": "04/01/2026",
@@ -2606,7 +2606,7 @@ const VIOLATIONS = [
  },
  {
   "property": "44 East 132 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=44+East&street_name=132+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=44&street_name=East+132+Street",
   "ticket": "049641562H",
   "respondent": "LGS PARTNERS LLC",
   "date": "03/24/2026",
@@ -2617,7 +2617,7 @@ const VIOLATIONS = [
  },
  {
   "property": "44 East 132 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=44+East&street_name=132+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=44&street_name=East+132+Street",
   "ticket": "049471510R",
   "respondent": "LGS PARTNERS LLC",
   "date": "12/29/2025",
@@ -2628,7 +2628,7 @@ const VIOLATIONS = [
  },
  {
   "property": "44 East 132 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=44+East&street_name=132+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=44&street_name=East+132+Street",
   "ticket": "047164358Z",
   "respondent": "LGS PARTNERS LLC",
   "date": "12/31/2025",
@@ -2639,7 +2639,7 @@ const VIOLATIONS = [
  },
  {
   "property": "44 East 132 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=44+East&street_name=132+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=44&street_name=East+132+Street",
   "ticket": "049641474H",
   "respondent": "LGS PARTNERS LLC",
   "date": "03/05/2026",
@@ -2650,7 +2650,7 @@ const VIOLATIONS = [
  },
  {
   "property": "44 East 132 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=44+East&street_name=132+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=44&street_name=East+132+Street",
   "ticket": "049607727H",
   "respondent": "LGS PARTNERS LLC",
   "date": "03/13/2026",
@@ -2661,7 +2661,7 @@ const VIOLATIONS = [
  },
  {
   "property": "44 East 132 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=44+East&street_name=132+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=44&street_name=East+132+Street",
   "ticket": "049718236P",
   "respondent": "LGS PARTNERS LLC",
   "date": "04/15/2026",
@@ -2672,7 +2672,7 @@ const VIOLATIONS = [
  },
  {
   "property": "44 East 132 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=44+East&street_name=132+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=44&street_name=East+132+Street",
   "ticket": "049471447N",
   "respondent": "LGS PARTNERS LLC",
   "date": "12/03/2025",
@@ -2683,7 +2683,7 @@ const VIOLATIONS = [
  },
  {
   "property": "44 East 132 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=44+East&street_name=132+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=44&street_name=East+132+Street",
   "ticket": "049380563R",
   "respondent": "LGS PARTNERS LLC",
   "date": "11/21/2025",
@@ -2694,7 +2694,7 @@ const VIOLATIONS = [
  },
  {
   "property": "44 East 132 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=44+East&street_name=132+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=44&street_name=East+132+Street",
   "ticket": "049634336Y",
   "respondent": "LGS PARTNERS LLC",
   "date": "01/23/2026",
@@ -2705,7 +2705,7 @@ const VIOLATIONS = [
  },
  {
   "property": "44 East 132 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=44+East&street_name=132+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=44&street_name=East+132+Street",
   "ticket": "049718217J",
   "respondent": "LGS PARTNERS LLC",
   "date": "04/10/2026",
@@ -2716,7 +2716,7 @@ const VIOLATIONS = [
  },
  {
   "property": "432 Beach 44 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=432+Beach&street_name=44+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=432&street_name=Beach+44+Street",
   "ticket": "049383528P",
   "respondent": "BREWSTER LAND CORP",
   "date": "12/19/2025",
@@ -2727,7 +2727,7 @@ const VIOLATIONS = [
  },
  {
   "property": "65-11 Bayfield Avenue",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=65-11+Bayfield&street_name=Avenue",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=65-11&street_name=Bayfield+Avenue",
   "ticket": "049464682H",
   "respondent": "VILLAGE PLAZA HOMES",
   "date": "11/29/2025",
@@ -2738,7 +2738,7 @@ const VIOLATIONS = [
  },
  {
   "property": "783 Prospect Avenue",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=783+Prospect&street_name=Avenue",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=783&street_name=Prospect+Avenue",
   "ticket": "035724964X",
   "respondent": "WESTCHESTER PLAZA LL",
   "date": "02/06/2026",
@@ -2782,7 +2782,7 @@ const VIOLATIONS = [
  },
  {
   "property": "1475 Hicks Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1475+Hicks&street_name=Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1475&street_name=Hicks+Street",
   "ticket": "049584041Y",
   "respondent": "SOUTH HOMES INC",
   "date": "01/17/2026",
@@ -2793,7 +2793,7 @@ const VIOLATIONS = [
  },
  {
   "property": "342 Beach 70 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=342+Beach&street_name=70+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=342&street_name=Beach+70+Street",
   "ticket": "049531993M",
   "respondent": "SOUTH HOMES INC",
   "date": "12/09/2025",
@@ -2826,7 +2826,7 @@ const VIOLATIONS = [
  },
  {
   "property": "731 Quincy Avenue",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=731+Quincy&street_name=Avenue",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=731&street_name=Quincy+Avenue",
   "ticket": "049562045Y",
   "respondent": "731 QUINCY LLC",
   "date": "02/05/2026",
@@ -2837,7 +2837,7 @@ const VIOLATIONS = [
  },
  {
   "property": "4518 Richardson Avenue",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=4518+Richardson&street_name=Avenue",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=4518&street_name=Richardson+Avenue",
   "ticket": "049663500J",
   "respondent": "AVIV DEVELOPMENT COR",
   "date": "03/11/2026",
@@ -2848,7 +2848,7 @@ const VIOLATIONS = [
  },
  {
   "property": "210 W 19 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=210+W&street_name=19+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=210&street_name=W+19+Street",
   "ticket": "049499275K",
   "respondent": "CHARLES H GREENTHAL",
   "date": "11/29/2025",
@@ -2914,7 +2914,7 @@ const VIOLATIONS = [
  },
  {
   "property": "14-29 Pearl Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=14-29+Pearl&street_name=Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=14-29&street_name=Pearl+Street",
   "ticket": "049378572X",
   "respondent": "PLAZA GARDENS REAL E",
   "date": "11/22/2025",
@@ -2936,7 +2936,7 @@ const VIOLATIONS = [
  },
  {
   "property": "107-21 Guy R Brewer Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=107-21+Guy+R+Brewer&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=107-21&street_name=Guy+R+Brewer+Blvd",
   "ticket": "035728150P",
   "respondent": "AVIV DEVELOPMENT CORP",
   "date": "05/19/2026",
@@ -2947,7 +2947,7 @@ const VIOLATIONS = [
  },
  {
   "property": "107-21 Guy R Brewer Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=107-21+Guy+R+Brewer&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=107-21&street_name=Guy+R+Brewer+Blvd",
   "ticket": "035728153K",
   "respondent": "AVIV DEVELOPMENT CORP",
   "date": "05/19/2026",
@@ -2958,7 +2958,7 @@ const VIOLATIONS = [
  },
  {
   "property": "107-21 Guy R Brewer Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=107-21+Guy+R+Brewer&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=107-21&street_name=Guy+R+Brewer+Blvd",
   "ticket": "035728152Z",
   "respondent": "AVIV DEVELOPMENT CORP",
   "date": "05/19/2026",
@@ -2969,7 +2969,7 @@ const VIOLATIONS = [
  },
  {
   "property": "107-21 Guy R Brewer Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=107-21+Guy+R+Brewer&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=107-21&street_name=Guy+R+Brewer+Blvd",
   "ticket": "035728151R",
   "respondent": "AVIV DEVELOPMENT CORP",
   "date": "05/19/2026",
@@ -2980,7 +2980,7 @@ const VIOLATIONS = [
  },
  {
   "property": "107-19 Guy R Brewer Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=107-19+Guy+R+Brewer&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=107-19&street_name=Guy+R+Brewer+Blvd",
   "ticket": "035728154M",
   "respondent": "AVIV DEVELOPMENT CORP",
   "date": "05/19/2026",
@@ -2991,7 +2991,7 @@ const VIOLATIONS = [
  },
  {
   "property": "107-21 Guy R Brewer Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=107-21+Guy+R+Brewer&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=107-21&street_name=Guy+R+Brewer+Blvd",
   "ticket": "014248231M",
   "respondent": "PRESTIGE DETAILING AND HAND WA",
   "date": "05/09/2026",
@@ -3002,7 +3002,7 @@ const VIOLATIONS = [
  },
  {
   "property": "107-21 Guy R Brewer Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=107-21+Guy+R+Brewer&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=107-21&street_name=Guy+R+Brewer+Blvd",
   "ticket": "014248230K",
   "respondent": "PRESTIGE DETAILING AND HAND WA",
   "date": "05/09/2026",
@@ -3013,7 +3013,7 @@ const VIOLATIONS = [
  },
  {
   "property": "107-21 Guy R Brewer Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=107-21+Guy+R+Brewer&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=107-21&street_name=Guy+R+Brewer+Blvd",
   "ticket": "014248236L",
   "respondent": "AVIV DEVELOPMENT CORP",
   "date": "05/09/2026",
@@ -3024,7 +3024,7 @@ const VIOLATIONS = [
  },
  {
   "property": "109-12 Guy R Brewer Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12+Guy+R+Brewer&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12&street_name=Guy+R+Brewer+Blvd",
   "ticket": "049871404X",
   "respondent": "VIVA DEVELOPMENT CORP",
   "date": "06/09/2026",
@@ -3035,7 +3035,7 @@ const VIOLATIONS = [
  },
  {
   "property": "109-45 Guy R Brewer Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-45+Guy+R+Brewer&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-45&street_name=Guy+R+Brewer+Blvd",
   "ticket": "049856615K",
   "respondent": "MAZAL HOLDING CROP",
   "date": "06/04/2026",
@@ -3057,7 +3057,7 @@ const VIOLATIONS = [
  },
  {
   "property": "109-08 Guy R Brewer Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-08+Guy+R+Brewer&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-08&street_name=Guy+R+Brewer+Blvd",
   "ticket": "049807557K",
   "respondent": "VIVA DEVELOPMENT CORP",
   "date": "05/27/2026",
@@ -3068,7 +3068,7 @@ const VIOLATIONS = [
  },
  {
   "property": "109-12 Guy R Brewer Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12+Guy+R+Brewer&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12&street_name=Guy+R+Brewer+Blvd",
   "ticket": "049813498K",
   "respondent": "VIVA DEVELOPMENT CORP",
   "date": "05/22/2026",
@@ -3079,7 +3079,7 @@ const VIOLATIONS = [
  },
  {
   "property": "107-35 Sutphin Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=107-35+Sutphin&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=107-35&street_name=Sutphin+Blvd",
   "ticket": "014251130K",
   "respondent": "JA ARA E RESTAURANT INCORPORAT",
   "date": "05/22/2026",
@@ -3090,7 +3090,7 @@ const VIOLATIONS = [
  },
  {
   "property": "109-12 Guy R Brewer Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12+Guy+R+Brewer&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12&street_name=Guy+R+Brewer+Blvd",
   "ticket": "049776509R",
   "respondent": "VIVA DEVELOPMENT CORP",
   "date": "05/15/2026",
@@ -3101,7 +3101,7 @@ const VIOLATIONS = [
  },
  {
   "property": "107-45 Sutphin Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=107-45+Sutphin&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=107-45&street_name=Sutphin+Blvd",
   "ticket": "0600570439",
   "respondent": "VILLAGE PLAZA HOMES INC",
   "date": "04/22/2026",
@@ -3112,7 +3112,7 @@ const VIOLATIONS = [
  },
  {
   "property": "107-17 Merrick Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=107-17+Merrick&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=107-17&street_name=Merrick+Blvd",
   "ticket": "0620030245",
   "respondent": "H T AUTO REPAIR SERVICES INC",
   "date": "03/30/2026",
@@ -3123,7 +3123,7 @@ const VIOLATIONS = [
  },
  {
   "property": "107-45 Sutphin Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=107-45+Sutphin&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=107-45&street_name=Sutphin+Blvd",
   "ticket": "049596855L",
   "respondent": "VILLAGE PLAZA HOMES INC",
   "date": "01/20/2026",
@@ -3134,7 +3134,7 @@ const VIOLATIONS = [
  },
  {
   "property": "116-04 Merrick Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=116-04+Merrick&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=116-04&street_name=Merrick+Blvd",
   "ticket": "049629383K",
   "respondent": "SOUTH HOMES INC",
   "date": "06/24/2026",
@@ -3145,7 +3145,7 @@ const VIOLATIONS = [
  },
  {
   "property": "116-04 Merrick Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=116-04+Merrick&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=116-04&street_name=Merrick+Blvd",
   "ticket": "049881510Z",
   "respondent": "SOUTH HOMES INC",
   "date": "06/18/2026",
@@ -3156,7 +3156,7 @@ const VIOLATIONS = [
  },
  {
   "property": "116-04 Merrick Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=116-04+Merrick&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=116-04&street_name=Merrick+Blvd",
   "ticket": "049792763M",
   "respondent": "SOUTH HOMES INC",
   "date": "06/11/2026",
@@ -3167,7 +3167,7 @@ const VIOLATIONS = [
  },
  {
   "property": "116-06 Merrick Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=116-06+Merrick&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=116-06&street_name=Merrick+Blvd",
   "ticket": "049792764Y",
   "respondent": "SOUTH HOMES INC",
   "date": "06/11/2026",
@@ -3178,7 +3178,7 @@ const VIOLATIONS = [
  },
  {
   "property": "116-04 Merrick Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=116-04+Merrick&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=116-04&street_name=Merrick+Blvd",
   "ticket": "049792686H",
   "respondent": "SOUTH HOMES INC",
   "date": "05/22/2026",
@@ -3189,7 +3189,7 @@ const VIOLATIONS = [
  },
  {
   "property": "116-06 Merrick Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=116-06+Merrick&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=116-06&street_name=Merrick+Blvd",
   "ticket": "049792685X",
   "respondent": "SOUTH HOMES INC",
   "date": "05/22/2026",
@@ -3211,7 +3211,7 @@ const VIOLATIONS = [
  },
  {
   "property": "1335 Clay Avenue",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1335+Clay&street_name=Avenue",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1335&street_name=Clay+Avenue",
   "ticket": "049881315N",
   "respondent": "VILLAGE PLAZA HOMES INC",
   "date": "06/27/2026",
@@ -3299,7 +3299,7 @@ const VIOLATIONS = [
  },
  {
   "property": "173 Beach 60 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173+Beach&street_name=60+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street",
   "ticket": "049812545J",
   "respondent": "PLAZA HOMES LLC",
   "date": "07/06/2026",
@@ -3310,7 +3310,7 @@ const VIOLATIONS = [
  },
  {
   "property": "173 Beach 60 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173+Beach&street_name=60+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street",
   "ticket": "049812466L",
   "respondent": "PLAZA HOMES LLC",
   "date": "06/17/2026",
@@ -3321,7 +3321,7 @@ const VIOLATIONS = [
  },
  {
   "property": "173 Beach 60 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173+Beach&street_name=60+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street",
   "ticket": "049812454Y",
   "respondent": "PLAZA HOMES LLC",
   "date": "06/13/2026",
@@ -3343,7 +3343,7 @@ const VIOLATIONS = [
  },
  {
   "property": "173 Beach 60 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173+Beach&street_name=60+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street",
   "ticket": "049804616H",
   "respondent": "PLAZA HOMES LLC",
   "date": "06/10/2026",
@@ -3354,7 +3354,7 @@ const VIOLATIONS = [
  },
  {
   "property": "173 Beach 60 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173+Beach&street_name=60+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street",
   "ticket": "049812432N",
   "respondent": "PLAZA HOMES LLC",
   "date": "06/08/2026",
@@ -3365,7 +3365,7 @@ const VIOLATIONS = [
  },
  {
   "property": "173 Beach 60 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173+Beach&street_name=60+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street",
   "ticket": "049442293R",
   "respondent": "PLAZA HOMES LLC",
   "date": "06/04/2026",
@@ -3387,7 +3387,7 @@ const VIOLATIONS = [
  },
  {
   "property": "173 Beach 60 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173+Beach&street_name=60+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street",
   "ticket": "049813543K",
   "respondent": "PLAZA HOMES LLC",
   "date": "06/01/2026",
@@ -3398,7 +3398,7 @@ const VIOLATIONS = [
  },
  {
   "property": "173 Beach 60 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173+Beach&street_name=60+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street",
   "ticket": "049690771P",
   "respondent": "PLAZA HOMES LLC",
   "date": "05/20/2026",
@@ -3420,7 +3420,7 @@ const VIOLATIONS = [
  },
  {
   "property": "173 Beach 60 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173+Beach&street_name=60+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street",
   "ticket": "049739762H",
   "respondent": "PLAZA HOMES LLC",
   "date": "05/15/2026",
@@ -3464,7 +3464,7 @@ const VIOLATIONS = [
  },
  {
   "property": "1756 Monroe Avenue",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1756+Monroe&street_name=Avenue",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1756&street_name=Monroe+Avenue",
   "ticket": "049841128L",
   "respondent": "VILLAGE PLAZA HOMES INC",
   "date": "06/13/2026",
@@ -3475,7 +3475,7 @@ const VIOLATIONS = [
  },
  {
   "property": "1737 Montgomery Avenue",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1737+Montgomery&street_name=Avenue",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1737&street_name=Montgomery+Avenue",
   "ticket": "049844341Y",
   "respondent": "VILLAGE PLAZA HOMES INC",
   "date": "06/13/2026",
@@ -3486,7 +3486,7 @@ const VIOLATIONS = [
  },
  {
   "property": "1961 Fulton Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1961+Fulton&street_name=Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1961&street_name=Fulton+Street",
   "ticket": "014254548L",
   "respondent": "FAMILY EXPRESS DELI INC",
   "date": "06/09/2026",
@@ -3497,7 +3497,7 @@ const VIOLATIONS = [
  },
  {
   "property": "175 Beach 60 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=175+Beach&street_name=60+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=175&street_name=Beach+60+Street",
   "ticket": "049442294Z",
   "respondent": "PLAZA HOMES LLC",
   "date": "06/04/2026",
@@ -3519,7 +3519,7 @@ const VIOLATIONS = [
  },
  {
   "property": "261 Fernside Pl",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=261+Fernside&street_name=Pl",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=261&street_name=Fernside+Pl",
   "ticket": "049804630Y",
   "respondent": "SOUTH HOMES INC",
   "date": "06/17/2026",
@@ -3552,7 +3552,7 @@ const VIOLATIONS = [
  },
  {
   "property": "1974 Bathgate Avenue",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1974+Bathgate&street_name=Avenue",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1974&street_name=Bathgate+Avenue",
   "ticket": "049820355Z",
   "respondent": "VILLAGE PLAZA HOMES INC",
   "date": "05/13/2026",
@@ -3585,7 +3585,7 @@ const VIOLATIONS = [
  },
  {
   "property": "44 East 132 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=44+East&street_name=132+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=44&street_name=East+132+Street",
   "ticket": "049846203P",
   "respondent": "LGS PARTNERS LLC",
   "date": "06/23/2026",
@@ -3596,7 +3596,7 @@ const VIOLATIONS = [
  },
  {
   "property": "305 Jefferson Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=305+Jefferson&street_name=Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=305&street_name=Jefferson+Street",
   "ticket": "049743794Y",
   "respondent": "305 JEFFERSON LLC",
   "date": "06/23/2026",
@@ -3607,7 +3607,7 @@ const VIOLATIONS = [
  },
  {
   "property": "44 East 132 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=44+East&street_name=132+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=44&street_name=East+132+Street",
   "ticket": "049718494H",
   "respondent": "LGS PARTNERS LLC",
   "date": "06/20/2026",
@@ -3618,7 +3618,7 @@ const VIOLATIONS = [
  },
  {
   "property": "305 Jefferson Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=305+Jefferson&street_name=Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=305&street_name=Jefferson+Street",
   "ticket": "049870863K",
   "respondent": "305 JEFFERSON LLC",
   "date": "06/16/2026",
@@ -3629,7 +3629,7 @@ const VIOLATIONS = [
  },
  {
   "property": "44 East 132 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=44+East&street_name=132+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=44&street_name=East+132+Street",
   "ticket": "049718446N",
   "respondent": "LGS PARTNERS LLC",
   "date": "06/05/2026",
@@ -3640,7 +3640,7 @@ const VIOLATIONS = [
  },
  {
   "property": "44 East 132 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=44+East&street_name=132+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=44&street_name=East+132+Street",
   "ticket": "049718419H",
   "respondent": "LGS PARTNERS LLC",
   "date": "05/28/2026",
@@ -3651,7 +3651,7 @@ const VIOLATIONS = [
  },
  {
   "property": "646 Grand Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=646+Grand&street_name=Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=646&street_name=Grand+Street",
   "ticket": "049583977R",
   "respondent": "GRAND STREET PLAZA LLC",
   "date": "05/27/2026",
@@ -3684,7 +3684,7 @@ const VIOLATIONS = [
  },
  {
   "property": "44 East 132 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=44+East&street_name=132+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=44&street_name=East+132+Street",
   "ticket": "049471582X",
   "respondent": "LGS PARTNERS LLC",
   "date": "01/22/2026",
@@ -3695,7 +3695,7 @@ const VIOLATIONS = [
  },
  {
   "property": "44 East 132 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=44+East&street_name=132+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=44&street_name=East+132+Street",
   "ticket": "049594212Z",
   "respondent": "LGS PARTNERS LLC",
   "date": "01/21/2026",
@@ -3706,7 +3706,7 @@ const VIOLATIONS = [
  },
  {
   "property": "777 Prospect Avenue",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=777+Prospect&street_name=Avenue",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=777&street_name=Prospect+Avenue",
   "ticket": "049676426N",
   "respondent": "WESTCHESTER PLAZA LLC",
   "date": "04/01/2026",
@@ -3717,7 +3717,7 @@ const VIOLATIONS = [
  },
  {
   "property": "109-18 Merrick Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-18+Merrick&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-18&street_name=Merrick+Blvd",
   "ticket": "049855518Y",
   "respondent": "VASSEL KAYE BALLARD",
   "date": "06/30/2026",
@@ -3728,7 +3728,7 @@ const VIOLATIONS = [
  },
  {
   "property": "342 Beach 70 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=342+Beach&street_name=70+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=342&street_name=Beach+70+Street",
   "ticket": "049813541R",
   "respondent": "SOUTH HOMES INC",
   "date": "06/01/2026",
@@ -3750,7 +3750,7 @@ const VIOLATIONS = [
  },
  {
   "property": "87-08 Justice Avenue",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=87-08+Justice&street_name=Avenue",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=87-08&street_name=Justice+Avenue",
   "ticket": "049652194R",
   "respondent": "EVER YOUNG PHARMACY INC",
   "date": "03/19/2026",
@@ -3761,7 +3761,7 @@ const VIOLATIONS = [
  },
  {
   "property": "25-04 Brookhaven Avenue",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=25-04+Brookhaven&street_name=Avenue",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=25-04&street_name=Brookhaven+Avenue",
   "ticket": "049442530L",
   "respondent": "PLAZA GARDENS REAL ESTATE CORP",
   "date": "01/26/2026",
@@ -3772,7 +3772,7 @@ const VIOLATIONS = [
  },
  {
   "property": "731 Quincy Avenue",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=731+Quincy&street_name=Avenue",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=731&street_name=Quincy+Avenue",
   "ticket": "049828339P",
   "respondent": "731 QUINCY LLC",
   "date": "06/09/2026",
@@ -3805,7 +3805,7 @@ const VIOLATIONS = [
  },
  {
   "property": "175-51 Dalny Road",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=175-51+Dalny&street_name=Road",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=175-51&street_name=Dalny+Road",
   "ticket": "014252462L",
   "respondent": "DALNY PLAZA HOMES LLC",
   "date": "05/29/2026",
@@ -3827,7 +3827,7 @@ const VIOLATIONS = [
  },
  {
   "property": "303 Beach 86 St",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=303+Beach&street_name=86+St",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=303&street_name=Beach+86+St",
   "ticket": "049690762N",
   "respondent": "HILLSIDE PLAZA HOMES LLC",
   "date": "05/18/2026",
@@ -3838,7 +3838,7 @@ const VIOLATIONS = [
  },
  {
   "property": "303 Beach 86 St",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=303+Beach&street_name=86+St",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=303&street_name=Beach+86+St",
   "ticket": "049690701J",
   "respondent": "HILLSIDE PLAZA HOMES LLC",
   "date": "04/23/2026",
@@ -3849,7 +3849,7 @@ const VIOLATIONS = [
  },
  {
   "property": "303 Beach 86 St",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=303+Beach&street_name=86+St",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=303&street_name=Beach+86+St",
   "ticket": "049739703H",
   "respondent": "HILLSIDE PLAZA HOMES LLC",
   "date": "04/21/2026",
@@ -3860,7 +3860,7 @@ const VIOLATIONS = [
  },
  {
   "property": "303 Beach 86 St",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=303+Beach&street_name=86+St",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=303&street_name=Beach+86+St",
   "ticket": "049739673X",
   "respondent": "HILLSIDE PLAZA HOMES LLC",
   "date": "04/07/2026",
@@ -3871,7 +3871,7 @@ const VIOLATIONS = [
  },
  {
   "property": "303 Beach 86 St",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=303+Beach&street_name=86+St",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=303&street_name=Beach+86+St",
   "ticket": "049601204L",
   "respondent": "HILLSIDE PLAZA HOMES LLC",
   "date": "02/21/2026",
@@ -3904,7 +3904,7 @@ const VIOLATIONS = [
  },
  {
   "property": "107-06 Sutphin Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=107-06+Sutphin&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=107-06&street_name=Sutphin+Blvd",
   "ticket": "014218094H",
   "respondent": "LA PIT STOP",
   "date": "12/01/2025",
@@ -3937,7 +3937,7 @@ const VIOLATIONS = [
  },
  {
   "property": "109-45 Guy R Brewer Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-45+Guy+R+Brewer&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-45&street_name=Guy+R+Brewer+Blvd",
   "ticket": "049574071X",
   "respondent": "MAZAL HOLDING CROP",
   "date": "01/12/2026",
@@ -3948,7 +3948,7 @@ const VIOLATIONS = [
  },
  {
   "property": "109-45 Guy R Brewer Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-45+Guy+R+Brewer&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-45&street_name=Guy+R+Brewer+Blvd",
   "ticket": "049396464H",
   "respondent": "MAZAL HOLDING CROP",
   "date": "10/30/2025",
@@ -3959,7 +3959,7 @@ const VIOLATIONS = [
  },
  {
   "property": "109-45 Guy R Brewer Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-45+Guy+R+Brewer&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-45&street_name=Guy+R+Brewer+Blvd",
   "ticket": "049487723R",
   "respondent": "MAZAL HOLDING CROP",
   "date": "10/20/2025",
@@ -3970,7 +3970,7 @@ const VIOLATIONS = [
  },
  {
   "property": "109-06 Guy R Brewer Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-06+Guy+R+Brewer&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-06&street_name=Guy+R+Brewer+Blvd",
   "ticket": "049487405L",
   "respondent": "BETA HOLDING CORP",
   "date": "10/02/2025",
@@ -3981,7 +3981,7 @@ const VIOLATIONS = [
  },
  {
   "property": "109-08 Guy R Brewer Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-08+Guy+R+Brewer&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-08&street_name=Guy+R+Brewer+Blvd",
   "ticket": "049268387R",
   "respondent": "VIVA DEVELOPMENT CORP",
   "date": "09/08/2025",
@@ -3992,7 +3992,7 @@ const VIOLATIONS = [
  },
  {
   "property": "109-08 Guy R Brewer Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-08+Guy+R+Brewer&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-08&street_name=Guy+R+Brewer+Blvd",
   "ticket": "049394629H",
   "respondent": "VIVA DEVELOPMENT CORP",
   "date": "09/08/2025",
@@ -4003,7 +4003,7 @@ const VIOLATIONS = [
  },
  {
   "property": "109-12 Guy R Brewer Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12+Guy+R+Brewer&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12&street_name=Guy+R+Brewer+Blvd",
   "ticket": "049394630P",
   "respondent": "VIVA DEVELOPMENT CORP",
   "date": "09/08/2025",
@@ -4014,7 +4014,7 @@ const VIOLATIONS = [
  },
  {
   "property": "109-06 Guy R Brewer Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-06+Guy+R+Brewer&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-06&street_name=Guy+R+Brewer+Blvd",
   "ticket": "049161371M",
   "respondent": "BETA HOLDING CORP",
   "date": "08/27/2025",
@@ -4025,7 +4025,7 @@ const VIOLATIONS = [
  },
  {
   "property": "107-35 Sutphin Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=107-35+Sutphin&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=107-35&street_name=Sutphin+Blvd",
   "ticket": "049161323H",
   "respondent": "SOUTH HOMES INC",
   "date": "08/11/2025",
@@ -4036,7 +4036,7 @@ const VIOLATIONS = [
  },
  {
   "property": "109-08 Guy R Brewer Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-08+Guy+R+Brewer&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-08&street_name=Guy+R+Brewer+Blvd",
   "ticket": "049281585Y",
   "respondent": "VIVA DEVELOPMENT CORP",
   "date": "08/04/2025",
@@ -4047,7 +4047,7 @@ const VIOLATIONS = [
  },
  {
   "property": "116-06 Merrick Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=116-06+Merrick&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=116-06&street_name=Merrick+Blvd",
   "ticket": "049518438R",
   "respondent": "SOUTH HOMES INC",
   "date": "11/24/2025",
@@ -4069,7 +4069,7 @@ const VIOLATIONS = [
  },
  {
   "property": "115-29 Bedell Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=115-29+Bedell&street_name=Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=115-29&street_name=Bedell+Street",
   "ticket": "049308269J",
   "respondent": "ROCKAWAY STORAGE INC",
   "date": "08/15/2025",
@@ -4080,7 +4080,7 @@ const VIOLATIONS = [
  },
  {
   "property": "116-06 Merrick Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=116-06+Merrick&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=116-06&street_name=Merrick+Blvd",
   "ticket": "049268218X",
   "respondent": "SOUTH HOMES INC",
   "date": "08/12/2025",
@@ -4091,7 +4091,7 @@ const VIOLATIONS = [
  },
  {
   "property": "116-04 Merrick Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=116-04+Merrick&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=116-04&street_name=Merrick+Blvd",
   "ticket": "049217523M",
   "respondent": "SOUTH HOMES INC",
   "date": "07/15/2025",
@@ -4102,7 +4102,7 @@ const VIOLATIONS = [
  },
  {
   "property": "119-28 Merrick Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=119-28+Merrick&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=119-28&street_name=Merrick+Blvd",
   "ticket": "049385118L",
   "respondent": "ROCKAWAY STORAGE INC",
   "date": "09/19/2025",
@@ -4113,7 +4113,7 @@ const VIOLATIONS = [
  },
  {
   "property": "119-28 Merrick Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=119-28+Merrick&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=119-28&street_name=Merrick+Blvd",
   "ticket": "049385103Z",
   "respondent": "ROCKAWAY STORAGE INC",
   "date": "09/12/2025",
@@ -4124,7 +4124,7 @@ const VIOLATIONS = [
  },
  {
   "property": "119-28 Merrick Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=119-28+Merrick&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=119-28&street_name=Merrick+Blvd",
   "ticket": "049362857N",
   "respondent": "ROCKAWAY STORAGE INC",
   "date": "08/25/2025",
@@ -4135,7 +4135,7 @@ const VIOLATIONS = [
  },
  {
   "property": "119-37 Farmers Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=119-37+Farmers&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=119-37&street_name=Farmers+Blvd",
   "ticket": "049286076Z",
   "respondent": "119 FARMERS PLAZA LLC",
   "date": "08/12/2025",
@@ -4146,7 +4146,7 @@ const VIOLATIONS = [
  },
  {
   "property": "1335 Clay Avenue",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1335+Clay&street_name=Avenue",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1335&street_name=Clay+Avenue",
   "ticket": "047876116L",
   "respondent": "VILLAGE PLAZA HOMES INC",
   "date": "07/15/2025",
@@ -4157,7 +4157,7 @@ const VIOLATIONS = [
  },
  {
   "property": "147-27 Arlington Terrace",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=147-27+Arlington&street_name=Terrace",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=147-27&street_name=Arlington+Terrace",
   "ticket": "049357303P",
   "respondent": "BASSAL LISA",
   "date": "08/18/2025",
@@ -4179,7 +4179,7 @@ const VIOLATIONS = [
  },
  {
   "property": "146-06 Rockaway Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=146-06+Rockaway&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=146-06&street_name=Rockaway+Blvd",
   "ticket": "0803572422",
   "respondent": "DEVELOPMENT CORP",
   "date": "07/31/2025",
@@ -4201,7 +4201,7 @@ const VIOLATIONS = [
  },
  {
   "property": "143-16 Lakewood Avenue",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=143-16+Lakewood&street_name=Avenue",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=143-16&street_name=Lakewood+Avenue",
   "ticket": "049268059H",
   "respondent": "SOUTH HOMES INC",
   "date": "07/19/2025",
@@ -4212,7 +4212,7 @@ const VIOLATIONS = [
  },
  {
   "property": "173 Beach 60 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173+Beach&street_name=60+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street",
   "ticket": "049531816L",
   "respondent": "PLAZA HOMES LLC",
   "date": "11/08/2025",
@@ -4223,7 +4223,7 @@ const VIOLATIONS = [
  },
  {
   "property": "173 Beach 60 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173+Beach&street_name=60+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street",
   "ticket": "049464634N",
   "respondent": "PLAZA HOMES LLC",
   "date": "11/08/2025",
@@ -4234,7 +4234,7 @@ const VIOLATIONS = [
  },
  {
   "property": "173 Beach 60 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173+Beach&street_name=60+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street",
   "ticket": "049531805X",
   "respondent": "PLAZA HOMES LLC",
   "date": "11/06/2025",
@@ -4245,7 +4245,7 @@ const VIOLATIONS = [
  },
  {
   "property": "173 Beach 60 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173+Beach&street_name=60+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street",
   "ticket": "049383414R",
   "respondent": "PLAZA HOMES LLC",
   "date": "10/08/2025",
@@ -4256,7 +4256,7 @@ const VIOLATIONS = [
  },
  {
   "property": "173 Beach 60 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173+Beach&street_name=60+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street",
   "ticket": "049275115Z",
   "respondent": "PLAZA HOMES LLC",
   "date": "09/24/2025",
@@ -4278,7 +4278,7 @@ const VIOLATIONS = [
  },
  {
   "property": "173 Beach 60 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173+Beach&street_name=60+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street",
   "ticket": "049394654J",
   "respondent": "PLAZA HOMES LLC",
   "date": "09/13/2025",
@@ -4289,7 +4289,7 @@ const VIOLATIONS = [
  },
  {
   "property": "173 Beach 60 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173+Beach&street_name=60+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street",
   "ticket": "049347158Z",
   "respondent": "PLAZA HOMES LLC",
   "date": "08/29/2025",
@@ -4344,7 +4344,7 @@ const VIOLATIONS = [
  },
  {
   "property": "1961 Fulton Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1961+Fulton&street_name=Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1961&street_name=Fulton+Street",
   "ticket": "039165701L",
   "respondent": "PLAZA HOMES LLC",
   "date": "11/03/2025",
@@ -4355,7 +4355,7 @@ const VIOLATIONS = [
  },
  {
   "property": "1961 Fulton Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1961+Fulton&street_name=Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1961&street_name=Fulton+Street",
   "ticket": "039165703P",
   "respondent": "PLAZA HOMES LLC",
   "date": "11/03/2025",
@@ -4366,7 +4366,7 @@ const VIOLATIONS = [
  },
  {
   "property": "1961 Fulton Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1961+Fulton&street_name=Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1961&street_name=Fulton+Street",
   "ticket": "039165702N",
   "respondent": "PLAZA HOMES LLC",
   "date": "11/03/2025",
@@ -4377,7 +4377,7 @@ const VIOLATIONS = [
  },
  {
   "property": "175 Beach 60 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=175+Beach&street_name=60+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=175&street_name=Beach+60+Street",
   "ticket": "049383459K",
   "respondent": "PLAZA HOMES LLC",
   "date": "11/01/2025",
@@ -4388,7 +4388,7 @@ const VIOLATIONS = [
  },
  {
   "property": "1737 Montgomery Avenue",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1737+Montgomery&street_name=Avenue",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1737&street_name=Montgomery+Avenue",
   "ticket": "049464056K",
   "respondent": "VILLAGE PLAZA HOMES INC",
   "date": "11/01/2025",
@@ -4399,7 +4399,7 @@ const VIOLATIONS = [
  },
  {
   "property": "1756 Monroe Avenue",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1756+Monroe&street_name=Avenue",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1756&street_name=Monroe+Avenue",
   "ticket": "0803651146",
   "respondent": "C O MANAGEMENT",
   "date": "10/16/2025",
@@ -4410,7 +4410,7 @@ const VIOLATIONS = [
  },
  {
   "property": "1756 Monroe Avenue",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1756+Monroe&street_name=Avenue",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1756&street_name=Monroe+Avenue",
   "ticket": "0803651137",
   "respondent": "C O MANAGEMENT",
   "date": "10/16/2025",
@@ -4421,7 +4421,7 @@ const VIOLATIONS = [
  },
  {
   "property": "1756 Monroe Avenue",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1756+Monroe&street_name=Avenue",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1756&street_name=Monroe+Avenue",
   "ticket": "049356197X",
   "respondent": "VILLAGE PLAZA HOMES INC",
   "date": "10/14/2025",
@@ -4432,7 +4432,7 @@ const VIOLATIONS = [
  },
  {
   "property": "1756 Monroe Avenue",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1756+Monroe&street_name=Avenue",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1756&street_name=Monroe+Avenue",
   "ticket": "049400146L",
   "respondent": "VILLAGE PLAZA HOMES INC",
   "date": "10/10/2025",
@@ -4443,7 +4443,7 @@ const VIOLATIONS = [
  },
  {
   "property": "175 Beach 60 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=175+Beach&street_name=60+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=175&street_name=Beach+60+Street",
   "ticket": "049275116K",
   "respondent": "PLAZA HOMES LLC",
   "date": "09/24/2025",
@@ -4487,7 +4487,7 @@ const VIOLATIONS = [
  },
  {
   "property": "1737 Montgomery Avenue",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1737+Montgomery&street_name=Avenue",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1737&street_name=Montgomery+Avenue",
   "ticket": "049253687R",
   "respondent": "VILLAGE PLAZA HOMES INC",
   "date": "07/26/2025",
@@ -4498,7 +4498,7 @@ const VIOLATIONS = [
  },
  {
   "property": "1961 Fulton Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1961+Fulton&street_name=Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1961&street_name=Fulton+Street",
   "ticket": "0803560744",
   "respondent": "PLAZA HOMES LLC",
   "date": "07/21/2025",
@@ -4509,7 +4509,7 @@ const VIOLATIONS = [
  },
  {
   "property": "1961 Fulton Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1961+Fulton&street_name=Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1961&street_name=Fulton+Street",
   "ticket": "0803560753",
   "respondent": "PLAZA HOMES LLC",
   "date": "07/21/2025",
@@ -4520,7 +4520,7 @@ const VIOLATIONS = [
  },
  {
   "property": "1756 Monroe Avenue",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1756+Monroe&street_name=Avenue",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1756&street_name=Monroe+Avenue",
   "ticket": "049262055N",
   "respondent": "VILLAGE PLAZA HOMES INC",
   "date": "07/18/2025",
@@ -4531,7 +4531,7 @@ const VIOLATIONS = [
  },
  {
   "property": "2757 Kingsbridge Terrace",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=2757+Kingsbridge&street_name=Terrace",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=2757&street_name=Kingsbridge+Terrace",
   "ticket": "049550625M",
   "respondent": "2753 EAST KINGSBRIDGE TERRACE",
   "date": "11/05/2025",
@@ -4542,7 +4542,7 @@ const VIOLATIONS = [
  },
  {
   "property": "2753 Kingsbridge Terrace",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=2753+Kingsbridge&street_name=Terrace",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=2753&street_name=Kingsbridge+Terrace",
   "ticket": "049550626Y",
   "respondent": "2753 EAST KINGSBRIDGE TERRACE",
   "date": "11/05/2025",
@@ -4564,7 +4564,7 @@ const VIOLATIONS = [
  },
  {
   "property": "2755 Kingsbridge Terrace",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=2755+Kingsbridge&street_name=Terrace",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=2755&street_name=Kingsbridge+Terrace",
   "ticket": "049379001R",
   "respondent": "2753 EAST KINGSBRIDGE TERRACE",
   "date": "08/28/2025",
@@ -4597,7 +4597,7 @@ const VIOLATIONS = [
  },
  {
   "property": "1974 Bathgate Avenue",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1974+Bathgate&street_name=Avenue",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1974&street_name=Bathgate+Avenue",
   "ticket": "049305972H",
   "respondent": "VILLAGE PLAZA HOMES INC",
   "date": "08/11/2025",
@@ -4608,7 +4608,7 @@ const VIOLATIONS = [
  },
  {
   "property": "2774 Fulton Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=2774+Fulton&street_name=Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=2774&street_name=Fulton+Street",
   "ticket": "049307270M",
   "respondent": "ANGELES JANET",
   "date": "08/01/2025",
@@ -4619,7 +4619,7 @@ const VIOLATIONS = [
  },
  {
   "property": "1974 Bathgate Avenue",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1974+Bathgate&street_name=Avenue",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1974&street_name=Bathgate+Avenue",
   "ticket": "049309470X",
   "respondent": "VILLAGE PLAZA HOMES INC",
   "date": "07/28/2025",
@@ -4630,7 +4630,7 @@ const VIOLATIONS = [
  },
  {
   "property": "1974 Bathgate Avenue",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1974+Bathgate&street_name=Avenue",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1974&street_name=Bathgate+Avenue",
   "ticket": "049305820Z",
   "respondent": "VILLAGE PLAZA HOMES INC",
   "date": "07/21/2025",
@@ -4641,7 +4641,7 @@ const VIOLATIONS = [
  },
  {
   "property": "432 Beach 44 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=432+Beach&street_name=44+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=432&street_name=Beach+44+Street",
   "ticket": "049441841Y",
   "respondent": "BREWSTER LAND CORP",
   "date": "12/06/2025",
@@ -4652,7 +4652,7 @@ const VIOLATIONS = [
  },
  {
   "property": "44 East 132 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=44+East&street_name=132+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=44&street_name=East+132+Street",
   "ticket": "049388874K",
   "respondent": "LGS PARTNERS LLC",
   "date": "10/23/2025",
@@ -4663,7 +4663,7 @@ const VIOLATIONS = [
  },
  {
   "property": "646 Grand Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=646+Grand&street_name=Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=646&street_name=Grand+Street",
   "ticket": "049344439L",
   "respondent": "GRAND STREET PLAZA LLC",
   "date": "10/08/2025",
@@ -4674,7 +4674,7 @@ const VIOLATIONS = [
  },
  {
   "property": "305 Jefferson Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=305+Jefferson&street_name=Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=305&street_name=Jefferson+Street",
   "ticket": "049326365Z",
   "respondent": "305 JEFFERSON LLC",
   "date": "09/15/2025",
@@ -4685,7 +4685,7 @@ const VIOLATIONS = [
  },
  {
   "property": "646 Grand Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=646+Grand&street_name=Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=646&street_name=Grand+Street",
   "ticket": "049121794H",
   "respondent": "GRAND STREET PLAZA LLC",
   "date": "09/10/2025",
@@ -4696,7 +4696,7 @@ const VIOLATIONS = [
  },
  {
   "property": "646 Grand Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=646+Grand&street_name=Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=646&street_name=Grand+Street",
   "ticket": "049121768Y",
   "respondent": "GRAND STREET PLAZA LLC",
   "date": "08/15/2025",
@@ -4707,7 +4707,7 @@ const VIOLATIONS = [
  },
  {
   "property": "44 East 132 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=44+East&street_name=132+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=44&street_name=East+132+Street",
   "ticket": "049243102N",
   "respondent": "LGS PARTNERS LLC",
   "date": "08/09/2025",
@@ -4718,7 +4718,7 @@ const VIOLATIONS = [
  },
  {
   "property": "25-04 Brookhaven Avenue",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=25-04+Brookhaven&street_name=Avenue",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=25-04&street_name=Brookhaven+Avenue",
   "ticket": "049609818M",
   "respondent": "PLAZA GARDENS REAL ESTATE CORP",
   "date": "01/06/2026",
@@ -4729,7 +4729,7 @@ const VIOLATIONS = [
  },
  {
   "property": "87-08 Justice Avenue",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=87-08+Justice&street_name=Avenue",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=87-08&street_name=Justice+Avenue",
   "ticket": "0216862645",
   "respondent": "RAMDAS",
   "date": "12/23/2025",
@@ -4740,7 +4740,7 @@ const VIOLATIONS = [
  },
  {
   "property": "301 Seagirt Avenue",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=301+Seagirt&street_name=Avenue",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=301&street_name=Seagirt+Avenue",
   "ticket": "0803703075",
   "respondent": "C O MANAGEMENT",
   "date": "12/12/2025",
@@ -4751,7 +4751,7 @@ const VIOLATIONS = [
  },
  {
   "property": "301 Seagirt Avenue",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=301+Seagirt&street_name=Avenue",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=301&street_name=Seagirt+Avenue",
   "ticket": "0803703066",
   "respondent": "C O MANAGEMENT",
   "date": "12/12/2025",
@@ -4795,7 +4795,7 @@ const VIOLATIONS = [
  },
  {
   "property": "25-04 Brookhaven Avenue",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=25-04+Brookhaven&street_name=Avenue",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=25-04&street_name=Brookhaven+Avenue",
   "ticket": "049349791N",
   "respondent": "PLAZA GARDENS REAL ESTATE CORP",
   "date": "10/24/2025",
@@ -4806,7 +4806,7 @@ const VIOLATIONS = [
  },
  {
   "property": "342 Beach 70 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=342+Beach&street_name=70+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=342&street_name=Beach+70+Street",
   "ticket": "049275158Z",
   "respondent": "SOUTH HOMES INC",
   "date": "10/18/2025",
@@ -4817,7 +4817,7 @@ const VIOLATIONS = [
  },
  {
   "property": "342 Beach 70 Street",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=342+Beach&street_name=70+Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=342&street_name=Beach+70+Street",
   "ticket": "049394653H",
   "respondent": "SOUTH HOMES INC",
   "date": "09/13/2025",
@@ -4839,7 +4839,7 @@ const VIOLATIONS = [
  },
  {
   "property": "3426 Boller Avenue",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=3426+Boller&street_name=Avenue",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=3426&street_name=Boller+Avenue",
   "ticket": "049513438Y",
   "respondent": "PLAZA GARDENS REAL ESTATE CORP",
   "date": "12/28/2025",
@@ -4850,7 +4850,7 @@ const VIOLATIONS = [
  },
  {
   "property": "3426 Boller Avenue",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=3426+Boller&street_name=Avenue",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=3426&street_name=Boller+Avenue",
   "ticket": "049533485P",
   "respondent": "PLAZA GARDENS REAL ESTATE CORP",
   "date": "12/27/2025",
@@ -4861,7 +4861,7 @@ const VIOLATIONS = [
  },
  {
   "property": "731 Quincy Avenue",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=731+Quincy&street_name=Avenue",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=731&street_name=Quincy+Avenue",
   "ticket": "049449716L",
   "respondent": "BABAR SHIBA",
   "date": "09/24/2025",
@@ -4872,7 +4872,7 @@ const VIOLATIONS = [
  },
  {
   "property": "731 Quincy Avenue",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=731+Quincy&street_name=Avenue",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=731&street_name=Quincy+Avenue",
   "ticket": "049360751X",
   "respondent": "BABAR SHIBA",
   "date": "08/28/2025",
@@ -4916,7 +4916,7 @@ const VIOLATIONS = [
  },
  {
   "property": "175-51 Dalny Road",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=175-51+Dalny&street_name=Road",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=175-51&street_name=Dalny+Road",
   "ticket": "014218460Z",
   "respondent": "DALNY PLAZA HOMES LLC",
   "date": "12/03/2025",
@@ -4927,7 +4927,7 @@ const VIOLATIONS = [
  },
  {
   "property": "87-73 Sutphin Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=87-73+Sutphin&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=87-73&street_name=Sutphin+Blvd",
   "ticket": "049504451Y",
   "respondent": "HINAPA REALTY CORP",
   "date": "10/24/2025",
@@ -4938,7 +4938,7 @@ const VIOLATIONS = [
  },
  {
   "property": "87-73 Sutphin Blvd",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=87-73+Sutphin&street_name=Blvd",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=87-73&street_name=Sutphin+Blvd",
   "ticket": "049268044P",
   "respondent": "HINAPA REALTY CORP",
   "date": "07/17/2025",
@@ -4949,7 +4949,7 @@ const VIOLATIONS = [
  },
  {
   "property": "303 Beach 86 St",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=303+Beach&street_name=86+St",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=303&street_name=Beach+86+St",
   "ticket": "049464771J",
   "respondent": "HILLSIDE PLAZA HOMES LLC",
   "date": "12/22/2025",
@@ -4960,7 +4960,7 @@ const VIOLATIONS = [
  },
  {
   "property": "303 Beach 86 St",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=303+Beach&street_name=86+St",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=303&street_name=Beach+86+St",
   "ticket": "049441830Z",
   "respondent": "HILLSIDE PLAZA HOMES LLC",
   "date": "12/01/2025",
@@ -4971,7 +4971,7 @@ const VIOLATIONS = [
  },
  {
   "property": "303 Beach 86 St",
-  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=303+Beach&street_name=86+St",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=303&street_name=Beach+86+St",
   "ticket": "049349762Y",
   "respondent": "HILLSIDE PLAZA HOMES LLC",
   "date": "10/14/2025",

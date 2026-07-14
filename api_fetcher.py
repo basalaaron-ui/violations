@@ -193,9 +193,9 @@ def to_csv_row(row, prop):
         date = f"{m.group(2)}/{m.group(3)}/{m.group(1)}"
     respondent = (row.get("respondent_last_name") or "").strip()
     agency_raw = (row.get("issuing_agency") or "").strip()
-    borough = prop["borough"] or (row.get("violation_location_borough") or "").strip().title()
+    # Build portal URL with just house and street (borough is optional)
     portal = PORTAL_BASE + "?" + urllib.parse.urlencode({
-        "house_number": prop["house"], "street_name": prop["street"], "borough": borough})
+        "house_number": prop["house"], "street_name": prop["street"]})
     return {
         "Property": f'{prop["house"]} {prop["street"]}',
         "Portal URL": portal,
@@ -234,12 +234,14 @@ def run_fetch(days=180, dry_run=False, log=print):
             refound += 1
             old_status = dataio.clean(old.get("Status") or "")
             old_amount = fmt_amount(dataio.parse_amount(old.get("Amount Due")))
+            # Fix Portal URL even if status/amount haven't changed
+            if not dry_run:
+                old["Portal URL"] = new["Portal URL"]
+                old["Status"] = new["Status"]
+                old["Amount Due"] = new["Amount Due"]
             if (new["Status"] and new["Status"] != old_status.upper()) or new["Amount Due"] != old_amount:
                 updated.append((ticket, f'{old_status} / {old_amount}',
                                 f'{new["Status"]} / {new["Amount Due"]}'))
-                if not dry_run:
-                    old["Status"] = new["Status"]
-                    old["Amount Due"] = new["Amount Due"]
         else:
             try:
                 is_recent = datetime.strptime(new["Date"], "%m/%d/%Y") >= cutoff

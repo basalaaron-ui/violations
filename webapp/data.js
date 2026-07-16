@@ -1458,7 +1458,7 @@ const VIOLATIONS = [
   "description": "DIRTY AREA",
   "agency": "DSNY Enf Agt",
   "status": "DEFAULTED",
-  "amount": 80.0
+  "amount": 300.0
  },
  {
   "property": "106-41 Guy R Brewer Blvd",
@@ -1502,7 +1502,7 @@ const VIOLATIONS = [
   "description": "FAILURE TO CLEAN 18 INCHES INTO STREET",
   "agency": "DSNY Other",
   "status": "DEFAULTED",
-  "amount": 80.0
+  "amount": 300.0
  },
  {
   "property": "108-16 167 Street",
@@ -1919,8 +1919,8 @@ const VIOLATIONS = [
   "date": "04/05/2026",
   "description": "STORAGE OF RECEPTACLES (NON-COLLECTION DAY)",
   "agency": "DSNY Other",
-  "status": "NEW ISSUANCE",
-  "amount": 50.0
+  "status": "DEFAULTED",
+  "amount": 80.0
  },
  {
   "property": "116-04 Merrick Blvd",
@@ -1974,8 +1974,8 @@ const VIOLATIONS = [
   "date": "04/04/2026",
   "description": "DIRTY SIDEWALK",
   "agency": "DSNY Other",
-  "status": "NEW ISSUANCE",
-  "amount": 50.0
+  "status": "DEFAULTED",
+  "amount": 80.0
  },
  {
   "property": "148-15 Linden Blvd",
@@ -2239,7 +2239,7 @@ const VIOLATIONS = [
   "description": "DIRTY AREA",
   "agency": "DSNY Enf Agt",
   "status": "DEFAULTED",
-  "amount": 80.0
+  "amount": 300.0
  },
  {
   "property": "173 Beach 60 Street",
@@ -2755,8 +2755,8 @@ const VIOLATIONS = [
   "date": "04/06/2026",
   "description": "FAILURE TO CLEAN 18 INCHES INTO STREET",
   "agency": "DSNY Other",
-  "status": "NEW ISSUANCE",
-  "amount": 50.0
+  "status": "DEFAULTED",
+  "amount": 80.0
  },
  {
   "property": "88-14 161 Street",
@@ -3085,8 +3085,8 @@ const VIOLATIONS = [
   "date": "05/22/2026",
   "description": "RECORDKEEPING",
   "agency": "FIRE DEPARTMENT OF NYC",
-  "status": "NEW ISSUANCE",
-  "amount": 0.0
+  "status": "DEFAULTED",
+  "amount": 3000.0
  },
  {
   "property": "109-12 Guy R Brewer Blvd",
@@ -3140,8 +3140,8 @@ const VIOLATIONS = [
   "date": "06/24/2026",
   "description": "IMPROPER RECEPTACLE FAILURE TO CONTAINERIZE - RESIDENTIAL 1ST",
   "agency": "DSNY Other",
-  "status": "NEW ISSUANCE",
-  "amount": 50.0
+  "status": "PAID IN FULL",
+  "amount": 0.0
  },
  {
   "property": "116-04 Merrick Blvd",
@@ -3151,8 +3151,8 @@ const VIOLATIONS = [
   "date": "06/18/2026",
   "description": "IMPROPER RECEPTACLE FAILURE TO CONTAINERIZE - RESIDENTIAL 1ST",
   "agency": "DOS - ENFORCEMENT AGENTS",
-  "status": "NEW ISSUANCE",
-  "amount": 50.0
+  "status": "PAID IN FULL",
+  "amount": 0.0
  },
  {
   "property": "116-04 Merrick Blvd",
@@ -3866,8 +3866,8 @@ const VIOLATIONS = [
   "date": "04/07/2026",
   "description": "DIRTY SIDEWALK",
   "agency": "DSNY Other",
-  "status": "NEW ISSUANCE",
-  "amount": 50.0
+  "status": "DEFAULTED",
+  "amount": 80.0
  },
  {
   "property": "303 Beach 86 St",
@@ -3878,7 +3878,7 @@ const VIOLATIONS = [
   "description": "DIRTY AREA",
   "agency": "DSNY Other",
   "status": "DEFAULTED",
-  "amount": 80.0
+  "amount": 300.0
  },
  {
   "property": "814 WESTCHESTER",
@@ -4990,6 +4990,61 @@ const VIOLATIONS = [
   "agency": "DSNY Other",
   "status": "PAID IN FULL",
   "amount": 0.0
+ },
+ {
+  "property": "168-12 Foch Boulevard",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=168-12&street_name=Foch+Boulevard",
+  "ticket": "049878487M",
+  "respondent": "PLAZA GARDENS REAL ESTATE CORP",
+  "date": "07/07/2026",
+  "description": "RECYC PLACED FOR COLLECTION W NON-RECYC 1 TO 8 DWELLING UNITS",
+  "agency": "DSNY Other",
+  "status": "NEW ISSUANCE",
+  "amount": 25.0
+ },
+ {
+  "property": "168-12 Foch Boulevard",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=168-12&street_name=Foch+Boulevard",
+  "ticket": "049878486K",
+  "respondent": "PLAZA GARDENS REAL ESTATE CORP",
+  "date": "07/07/2026",
+  "description": "IMPROPER RECEPTACLE FAILURE TO CONTAINERIZE - RESIDENTIAL 1ST",
+  "agency": "DSNY Other",
+  "status": "NEW ISSUANCE",
+  "amount": 50.0
+ },
+ {
+  "property": "175 East 55 Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=175&street_name=East+55+Street",
+  "ticket": "049943209K",
+  "respondent": "PLAZA HOMES LLC",
+  "date": "07/07/2026",
+  "description": "FAILURE TO CLEAN 18 INCHES INTO STREET",
+  "agency": "DSNY Other",
+  "status": "NEW ISSUANCE",
+  "amount": 50.0
+ },
+ {
+  "property": "177 East 55 Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=177&street_name=East+55+Street",
+  "ticket": "049943208Z",
+  "respondent": "PLAZA HOMES LLC",
+  "date": "07/07/2026",
+  "description": "FAILURE TO CLEAN 18 INCHES INTO STREET",
+  "agency": "DSNY Other",
+  "status": "NEW ISSUANCE",
+  "amount": 50.0
+ },
+ {
+  "property": "305 Jefferson Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=305&street_name=Jefferson+Street",
+  "ticket": "049858290K",
+  "respondent": "305 JEFFERSON LLC",
+  "date": "07/07/2026",
+  "description": "IMPROPER RECEPTACLE FAILURE TO CONTAINERIZE - RESIDENTIAL 1ST",
+  "agency": "DSNY Recyc",
+  "status": "NEW ISSUANCE",
+  "amount": 50.0
  }
 ];
 const HPD = [

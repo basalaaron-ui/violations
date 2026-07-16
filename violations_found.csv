@@ -6,7 +6,7 @@ Property,Portal URL,Ticket #,Respondent,Date,Description,Agency,Status,Amount Du
 104-38 164 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=104-38&street_name=164+Street,049350938R,PLAZA HOMES LLC,10/21/2025,DIRTY AREA,"DSNY Other
 ?",DOCKETED,$300.00
 106-33 Guy R Brewer Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=106-33&street_name=Guy+R+Brewer+Blvd,049630967M,VILLAGE PLAZA HOMES,02/20/2026,DIRTY AREA,"DSNY Enf Agt
-?",DEFAULTED,$80.00
+?",DEFAULTED,$300.00
 106-41 Guy R Brewer Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=106-41&street_name=Guy+R+Brewer+Blvd,049574061M,MANISION HOMES LLC,01/08/2026,IMPROPER DISPOSAL--BEDDING 1ST OCCURRENCE,"DSNY Other
 ?",DEFAULTED,$300.00
 107-09 Guy R Brewer Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=107-09&street_name=Guy+R+Brewer+Blvd,049324778H,VILLAGE PLAZA HOMES,10/14/2025,DIRTY SIDEWALK,"DSNY Enf Agt
@@ -14,7 +14,7 @@ Property,Portal URL,Ticket #,Respondent,Date,Description,Agency,Status,Amount Du
 107-45 Sutphin Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=107-45&street_name=Sutphin+Blvd,049680204J,VILLAGE PLAZA HOMES,03/16/2026,IMPROPER RECEPTACLE (FAILURE TO CONTAINERIZE)- RESIDENTIAL 1ST,"DSNY Other
 ?",DEFAULTED,$80.00
 108-16 167 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=108-16&street_name=167+Street,049574166Z,ROCKAWAY STORAGE INC,02/20/2026,FAILURE TO CLEAN 18 INCHES INTO STREET,"DSNY Other
-?",DEFAULTED,$80.00
+?",DEFAULTED,$300.00
 108-16 167 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=108-16&street_name=167+Street,049396441P,ROCKAWAY STORAGE INC,10/21/2025,DIRTY SIDEWALK,"DSNY Other
 ?",DOCKETED,$300.00
 108-16 167 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=108-16&street_name=167+Street,049514884Z,ROCKAWAY STORAGE INC,11/22/2025,LOOSE RUBBISH 1ST OCCURRENCE,"DSNY Other
@@ -90,7 +90,7 @@ Property,Portal URL,Ticket #,Respondent,Date,Description,Agency,Status,Amount Du
 109-12 Guy R Brewer Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12&street_name=Guy+R+Brewer+Blvd,049716670Z,VIVA DEVELOPMENT COR,04/15/2026,STORAGE OF RECEPTACLES (PLACED OUT PRIOR TO 6PM),"DSNY Enf Agt
 ?",NEW ISSUANCE,$50.00
 109-12 Guy R Brewer Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12&street_name=Guy+R+Brewer+Blvd,049622953L,VIVA DEVELOPMENT COR,04/05/2026,STORAGE OF RECEPTACLES (NON-COLLECTION DAY),"DSNY Other
-?",NEW ISSUANCE,$50.00
+?",DEFAULTED,$80.00
 116-04 Merrick Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=116-04&street_name=Merrick+Blvd,049763481L,SOUTH HOMES INC,04/14/2026,RECYC PLACED FOR COLLECTION W NON-RECYC(1 TO 8 DWELLING UNITS),"DSNY Enf Agt
 ?",PAID IN FULL,$0.00
 116-06 Merrick Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=116-06&street_name=Merrick+Blvd,049625393X,SOUTH HOMES INC,04/11/2026,STORAGE OF RECEPTACLES (NON-COLLECTION DAY),"DSNY Enf Agt
@@ -100,7 +100,7 @@ Property,Portal URL,Ticket #,Respondent,Date,Description,Agency,Status,Amount Du
 145-38 110 Avenue,https://a836-citypay.nyc.gov/citypay/ecb?house_number=145-38&street_name=110+Avenue,049515167K,BASAL FARHAD,01/12/2026,IMPROPER RECEPTACLE (FAILURE TO CONTAINERIZE)- RESIDENTIAL 1ST,"DSNY Other
 ?",DEFAULTED,$300.00
 145-38 110 Avenue,https://a836-citypay.nyc.gov/citypay/ecb?house_number=145-38&street_name=110+Avenue,049660665Y,BASAL FARHAD,04/04/2026,DIRTY SIDEWALK,"DSNY Other
-?",NEW ISSUANCE,$50.00
+?",DEFAULTED,$80.00
 148-15 Linden Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=148-15&street_name=Linden+Blvd,0216448220,ALEX KONDEN,11/23/2025,UNREASONABLE NOISE,"NYPD
 ?",DOCKETED,$40.00
 150-42 120 Avenue,https://a836-citypay.nyc.gov/citypay/ecb?house_number=150-42&street_name=120+Avenue,049574155N,VILLAGE PLAZA HOMES,02/17/2026,SIDEWALK OBSTRUCTION,"DSNY Other
@@ -148,7 +148,7 @@ Property,Portal URL,Ticket #,Respondent,Date,Description,Agency,Status,Amount Du
 173 Beach 60 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street,049518550R,PLAZA HOMES LLC,12/13/2025,DIRTY AREA,"DSNY Enf Agt
 ?",DOCKETED,$300.00
 173 Beach 60 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street,049658472P,PLAZA HOMES LLC,02/21/2026,DIRTY AREA,"DSNY Enf Agt
-?",DEFAULTED,$80.00
+?",DEFAULTED,$300.00
 173 Beach 60 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street,049739688Z,PLAZA HOMES LLC,04/10/2026,DIRTY SIDEWALK,"DSNY Other
 ?",NEW ISSUANCE,$50.00
 173 Beach 60 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street,049739695R,PLAZA HOMES LLC,04/16/2026,FAILURE TO CLEAN 18 INCHES INTO STREET,"DSNY Other
@@ -242,7 +242,7 @@ Property,Portal URL,Ticket #,Respondent,Date,Description,Agency,Status,Amount Du
 783 Prospect Avenue,https://a836-citypay.nyc.gov/citypay/ecb?house_number=783&street_name=Prospect+Avenue,035724964X,WESTCHESTER PLAZA LL,02/06/2026,FAILURE TO OBEY A VACATE ORDER FROM THE COMMISSIONER,"Dept of Bldgs
 ?",HEARING COMPLETED,$0.00
 88-14 161 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=88-14&street_name=161+Street,049397941X,26TH ST HOLDING L L,04/06/2026,FAILURE TO CLEAN 18 INCHES INTO STREET,"DSNY Other
-?",NEW ISSUANCE,$50.00
+?",DEFAULTED,$80.00
 88-14 161 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=88-14&street_name=161+Street,049598747N,26TH ST HOLDING L L,03/09/2026,FAILURE TO CLEAN 18 INCHES INTO STREET,"DSNY Other
 ?",DEFAULTED,$80.00
 88-14 161 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=88-14&street_name=161+Street,039168881L,26TH ST HOLDING L L,12/02/2025,FAIL TO COMPLY W COMMISSIONER ORDER TO FILE CERT OF CORRECTION W DOB,"Dept of Bldgs
@@ -287,13 +287,13 @@ Property,Portal URL,Ticket #,Respondent,Date,Description,Agency,Status,Amount Du
 108-16 167 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=108-16&street_name=167+Street,049776555H,ROCKAWAY STORAGE INC,06/02/2026,IMPROPER DISPOSAL--BEDDING 1ST OCCURRENCE,DSNY Other,NEW ISSUANCE,$50.00
 109-08 Guy R Brewer Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-08&street_name=Guy+R+Brewer+Blvd,049807557K,VIVA DEVELOPMENT CORP,05/27/2026,FAILURE TO PROPERLY PUT RECYCS OUT FOR COLLECTION 1TO8DWELLING UNITS,DOS - ENFORCEMENT AGENTS,NEW ISSUANCE,$25.00
 109-12 Guy R Brewer Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12&street_name=Guy+R+Brewer+Blvd,049813498K,VIVA DEVELOPMENT CORP,05/22/2026,IMPROPER RECEPTACLE FAILURE TO CONTAINERIZE - RESIDENTIAL 1ST,DOS - ENFORCEMENT AGENTS,NEW ISSUANCE,$50.00
-107-35 Sutphin Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=107-35&street_name=Sutphin+Blvd,014251130K,JA ARA E RESTAURANT INCORPORAT,05/22/2026,RECORDKEEPING,FIRE DEPARTMENT OF NYC,NEW ISSUANCE,$0.00
+107-35 Sutphin Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=107-35&street_name=Sutphin+Blvd,014251130K,JA ARA E RESTAURANT INCORPORAT,05/22/2026,RECORDKEEPING,FIRE DEPARTMENT OF NYC,DEFAULTED,"$3,000.00"
 109-12 Guy R Brewer Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12&street_name=Guy+R+Brewer+Blvd,049776509R,VIVA DEVELOPMENT CORP,05/15/2026,IMPROPER RECEPTACLE FAILURE TO CONTAINERIZE - RESIDENTIAL 1ST,DSNY Other,NEW ISSUANCE,$50.00
 107-45 Sutphin Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=107-45&street_name=Sutphin+Blvd,0600570439,VILLAGE PLAZA HOMES INC,04/22/2026,FAIL TO INSTALL BACKFLOW PREVENTER OR PERFORM SUBMIT INITIAL TEST RPT,DEP - BWSO,DEFAULTED,$730.00
 107-17 Merrick Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=107-17&street_name=Merrick+Blvd,0620030245,H T AUTO REPAIR SERVICES INC,03/30/2026,FAILED TO FILE A COMPLETED FACILITY INVENTORY FORM 1ST,DEP - RIGHT TO KNOW,PAID IN FULL,$0.00
 107-45 Sutphin Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=107-45&street_name=Sutphin+Blvd,049596855L,VILLAGE PLAZA HOMES INC,01/20/2026,UNCOVERED RECEPTACLES 1ST OCCURRENCE,DSNY Other,PAID IN FULL,$0.00
-116-04 Merrick Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=116-04&street_name=Merrick+Blvd,049629383K,SOUTH HOMES INC,06/24/2026,IMPROPER RECEPTACLE FAILURE TO CONTAINERIZE - RESIDENTIAL 1ST,DSNY Other,NEW ISSUANCE,$50.00
-116-04 Merrick Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=116-04&street_name=Merrick+Blvd,049881510Z,SOUTH HOMES INC,06/18/2026,IMPROPER RECEPTACLE FAILURE TO CONTAINERIZE - RESIDENTIAL 1ST,DOS - ENFORCEMENT AGENTS,NEW ISSUANCE,$50.00
+116-04 Merrick Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=116-04&street_name=Merrick+Blvd,049629383K,SOUTH HOMES INC,06/24/2026,IMPROPER RECEPTACLE FAILURE TO CONTAINERIZE - RESIDENTIAL 1ST,DSNY Other,PAID IN FULL,$0.00
+116-04 Merrick Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=116-04&street_name=Merrick+Blvd,049881510Z,SOUTH HOMES INC,06/18/2026,IMPROPER RECEPTACLE FAILURE TO CONTAINERIZE - RESIDENTIAL 1ST,DOS - ENFORCEMENT AGENTS,PAID IN FULL,$0.00
 116-04 Merrick Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=116-04&street_name=Merrick+Blvd,049792763M,SOUTH HOMES INC,06/11/2026,FAILURE TO CLEAN 18 INCHES INTO STREET,DSNY Other,PAID IN FULL,$0.00
 116-06 Merrick Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=116-06&street_name=Merrick+Blvd,049792764Y,SOUTH HOMES INC,06/11/2026,FAILURE TO CLEAN 18 INCHES INTO STREET,DSNY Other,PAID IN FULL,$0.00
 116-04 Merrick Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=116-04&street_name=Merrick+Blvd,049792686H,SOUTH HOMES INC,05/22/2026,IMPROPER RECEPTACLE FAILURE TO CONTAINERIZE - RESIDENTIAL 1ST,DSNY Other,PAID IN FULL,$0.00
@@ -358,8 +358,8 @@ Property,Portal URL,Ticket #,Respondent,Date,Description,Agency,Status,Amount Du
 303 Beach 86 St,https://a836-citypay.nyc.gov/citypay/ecb?house_number=303&street_name=Beach+86+St,049690762N,HILLSIDE PLAZA HOMES LLC,05/18/2026,DIRTY AREA,DSNY Other,NEW ISSUANCE,$50.00
 303 Beach 86 St,https://a836-citypay.nyc.gov/citypay/ecb?house_number=303&street_name=Beach+86+St,049690701J,HILLSIDE PLAZA HOMES LLC,04/23/2026,DIRTY SIDEWALK,DSNY Other,NEW ISSUANCE,$50.00
 303 Beach 86 St,https://a836-citypay.nyc.gov/citypay/ecb?house_number=303&street_name=Beach+86+St,049739703H,HILLSIDE PLAZA HOMES LLC,04/21/2026,DIRTY SIDEWALK,DSNY Other,NEW ISSUANCE,$50.00
-303 Beach 86 St,https://a836-citypay.nyc.gov/citypay/ecb?house_number=303&street_name=Beach+86+St,049739673X,HILLSIDE PLAZA HOMES LLC,04/07/2026,DIRTY SIDEWALK,DSNY Other,NEW ISSUANCE,$50.00
-303 Beach 86 St,https://a836-citypay.nyc.gov/citypay/ecb?house_number=303&street_name=Beach+86+St,049601204L,HILLSIDE PLAZA HOMES LLC,02/21/2026,DIRTY AREA,DSNY Other,DEFAULTED,$80.00
+303 Beach 86 St,https://a836-citypay.nyc.gov/citypay/ecb?house_number=303&street_name=Beach+86+St,049739673X,HILLSIDE PLAZA HOMES LLC,04/07/2026,DIRTY SIDEWALK,DSNY Other,DEFAULTED,$80.00
+303 Beach 86 St,https://a836-citypay.nyc.gov/citypay/ecb?house_number=303&street_name=Beach+86+St,049601204L,HILLSIDE PLAZA HOMES LLC,02/21/2026,DIRTY AREA,DSNY Other,DEFAULTED,$300.00
 814 WESTCHESTER,https://a836-citypay.nyc.gov/citypay/ecb?house_number=814&street_name=WESTCHESTER,049594071Y,PROSPECT SUPERMARKET,12/20/2025,STREET OBSTRUCTION,DOS - ENFORCEMENT AGENTS,PAID IN FULL,$0.00
 814 WESTCHESTER,https://a836-citypay.nyc.gov/citypay/ecb?house_number=814&street_name=WESTCHESTER,049550390R,PAY LESS FURNITURE,12/10/2025,STORAGE OF RECEPTACLES COM PLACED OUT PRIOR TO ONE HOUR OF CLOSING,DOS - ENFORCEMENT AGENTS,PAID IN FULL,$0.00
 107-06 Sutphin Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=107-06&street_name=Sutphin+Blvd,014218094H,LA PIT STOP,12/01/2025,RECORDKEEPING,FIRE DEPARTMENT OF NYC,RESCHEDULED,"$1,000.00"
@@ -461,3 +461,8 @@ Property,Portal URL,Ticket #,Respondent,Date,Description,Agency,Status,Amount Du
 303 Beach 86 St,https://a836-citypay.nyc.gov/citypay/ecb?house_number=303&street_name=Beach+86+St,049441830Z,HILLSIDE PLAZA HOMES LLC,12/01/2025,IMPROPER RECEPTACLE FAILURE TO CONTAINERIZE - RESIDENTIAL 1ST,DSNY Other,DOCKETED,$300.00
 303 Beach 86 St,https://a836-citypay.nyc.gov/citypay/ecb?house_number=303&street_name=Beach+86+St,049349762Y,HILLSIDE PLAZA HOMES LLC,10/14/2025,IMPROPER DISPOSAL--BEDDING 1ST OCCURRENCE,DSNY Other,DOCKETED,$300.00
 119-19 146 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=119-19&street_name=146+Street,049398640R,HILLSIDE PLAZA HOMES LLC,08/27/2025,IMPROPER RECEPTACLE FAILURE TO CONTAINERIZE - RESIDENTIAL 1ST,DSNY Other,PAID IN FULL,$0.00
+168-12 Foch Boulevard,https://a836-citypay.nyc.gov/citypay/ecb?house_number=168-12&street_name=Foch+Boulevard,049878487M,PLAZA GARDENS REAL ESTATE CORP,07/07/2026,RECYC PLACED FOR COLLECTION W NON-RECYC 1 TO 8 DWELLING UNITS,DSNY Other,NEW ISSUANCE,$25.00
+168-12 Foch Boulevard,https://a836-citypay.nyc.gov/citypay/ecb?house_number=168-12&street_name=Foch+Boulevard,049878486K,PLAZA GARDENS REAL ESTATE CORP,07/07/2026,IMPROPER RECEPTACLE FAILURE TO CONTAINERIZE - RESIDENTIAL 1ST,DSNY Other,NEW ISSUANCE,$50.00
+175 East 55 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=175&street_name=East+55+Street,049943209K,PLAZA HOMES LLC,07/07/2026,FAILURE TO CLEAN 18 INCHES INTO STREET,DSNY Other,NEW ISSUANCE,$50.00
+177 East 55 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=177&street_name=East+55+Street,049943208Z,PLAZA HOMES LLC,07/07/2026,FAILURE TO CLEAN 18 INCHES INTO STREET,DSNY Other,NEW ISSUANCE,$50.00
+305 Jefferson Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=305&street_name=Jefferson+Street,049858290K,305 JEFFERSON LLC,07/07/2026,IMPROPER RECEPTACLE FAILURE TO CONTAINERIZE - RESIDENTIAL 1ST,DSNY Recyc,NEW ISSUANCE,$50.00

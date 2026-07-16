@@ -5,6 +5,9 @@ on:
     - cron: '*/20 * * * *'  # Every 20 minutes
   workflow_dispatch:  # Manual trigger from GitHub Actions page
 
+permissions:
+  contents: write  # allow the job to push the auto-synced data back
+
 jobs:
   sync:
     runs-on: ubuntu-latest
@@ -34,5 +37,8 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "Auto-sync: Update violations and HPD data from NYC Open Data"
-            git push
+            # Rebase onto any commits that landed while the job ran, then push
+            # (retry once) so a race doesn't fail the whole run.
+            git pull --rebase origin main || true
+            git push || (git pull --rebase origin main && git push)
           fi

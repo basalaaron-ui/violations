@@ -15,6 +15,7 @@ import config as C
 import nyc_api as api
 import analysis as A
 import distress as D
+import owners as O
 from build_html import build_html
 
 OUT_DIR = Path(__file__).resolve().parent / "output"
@@ -166,7 +167,7 @@ def fetch_lenders(records, use_cache, log):
         r["lender"] = lender_by_doc.get(r["low_rate_mtge_docid"], "")
 
 
-def build_records(bbl_to_pluto, per_bbl, distress_map, log):
+def build_records(bbl_to_pluto, per_bbl, distress_map, owner_map, log):
     records = []
     for bbl, p in bbl_to_pluto.items():
         docs = per_bbl.get(bbl, {"sales": [], "mortgages": [], "sats": []})
@@ -175,6 +176,7 @@ def build_records(bbl_to_pluto, per_bbl, distress_map, log):
         units = int(float(p["unitsres"]))
         pressure = A.compute_pressure(value, mort, units)
         dist = distress_map.get(bbl, {"open": 0, "class_c": 0, "lien": None})
+        own = owner_map.get(bbl, {})
         sc, flags = A.score(value, mort, pressure, dist)
 
         boro = C.BORO_ABBR_TO_CODE[p["borough"]]
@@ -215,6 +217,11 @@ def build_records(bbl_to_pluto, per_bbl, distress_map, log):
             "on_lien_list": bool(dist["lien"]),
             "lien_cycle": (dist["lien"]["cycle"] if dist["lien"] else ""),
             "lien_month": (dist["lien"]["month"][:7] if dist["lien"] else ""),
+            "owner_contact": own.get("owner_name", ""),
+            "owner_title": own.get("owner_title", ""),
+            "owner_address": own.get("owner_address", ""),
+            "owner_entity": own.get("owner_entity", ""),
+            "managing_agent": own.get("agent_name", ""),
             "under_70k_door": bool(value["per_door"] and value["per_door"] <= C.MAX_PER_DOOR),
             "lender": "",
             "bbl": bbl,
@@ -237,8 +244,9 @@ CSV_FIELDS = [
     "low_rate_mtge_date", "low_rate_mtge_amt", "est_maturity_10yr",
     "months_to_maturity", "maturing_soon", "years_owned", "last_purchase_date",
     "open_violations", "hazardous_violations", "on_lien_list", "lien_cycle",
-    "lien_month", "lender", "bbl", "acris_mortgage_url", "acris_parcel_url",
-    "pluto_url", "lat", "lon",
+    "lien_month", "owner_contact", "owner_title", "owner_address",
+    "owner_entity", "managing_agent", "lender", "bbl", "acris_mortgage_url",
+    "acris_parcel_url", "pluto_url", "lat", "lon",
 ]
 
 
@@ -281,12 +289,15 @@ def main():
     log("4) distress signals (HPD violations + tax liens)")
     distress_map = D.fetch_all(list(bbl_to_pluto), args.boroughs, use_cache, log)
 
-    log("5) score & rank")
-    records = build_records(bbl_to_pluto, per_bbl, distress_map, log)
+    log("5) owner contacts (HPD registration)")
+    owner_map = O.fetch_all(list(bbl_to_pluto), args.boroughs, use_cache, log)
+
+    log("6) score & rank")
+    records = build_records(bbl_to_pluto, per_bbl, distress_map, owner_map, log)
     if args.top:
         records = records[:args.top]
 
-    log("6) ACRIS Parties (lender names)")
+    log("7) ACRIS Parties (lender names)")
     fetch_lenders(records, use_cache, log)
 
     csv_path = OUT_DIR / "candidates.csv"

@@ -64,11 +64,15 @@ needed). Or open `output/candidates.csv` in Excel/Sheets.
    class C "immediately hazardous") and appearance on the **DOF tax-lien-sale
    notice list** (`9rz4-mjek`, 2023+), both joined by BBL. These flag a
    stretched/tired landlord independent of the mortgage.
-5. **Value, leverage, score** — estimate today's value (calibrated, below),
+5. **Owner contacts** — unmask the LLC via HPD registration
+   (`tesw-yqqr` → `feu5-w2e2`): the required Head Officer / owner and managing
+   agent, with a business mailing address. Turns "324 EAST 31 LLC" into a named
+   person you can write to.
+6. **Value, leverage, score** — estimate today's value (calibrated, below),
    size the senior low-rate loan, compute **implied current LTV** and the value
    change since financing, estimate maturity, fold in distress, and score
    sell-pressure.
-6. **ACRIS Parties** (`636b-3b5g`) — look up the lender name for each
+7. **ACRIS Parties** (`636b-3b5g`) — look up the lender name for each
    building's low-rate mortgage.
 
 ### Valuation is calibrated to real sales
@@ -97,6 +101,7 @@ exists, is always preferred over the assessment estimate.
 | Lender | ACRIS parties | **Hard fact** | The named lender at recording; loan may have been sold/assigned since. |
 | Open HPD violations / class C | HPD | **Hard fact** | Count of *open* violations; class C = "immediately hazardous." Reflects reported conditions, which can lag reality either way. |
 | On tax-lien-sale list | DOF | **Hard fact** | On a 2023+ notice list for unpaid property tax or water (`water_only` distinguishes). The debt may since be cured. |
+| Owner contact / agent | HPD registration | **Hard fact** | Legally-required registration naming the Head Officer/owner + managing agent and a business mailing address. Can be stale between annual filings; the person named may be a nominee, not the beneficial owner. |
 | **Rent-stabilized?** | *Proxy* | **Assumption** | Built <1974 + 6+ units + not condo/co-op. **Not a legal determination.** Verify via the building's DHCR registration / actual rent roll. Post-1974 421-a/J-51 stabilization and buildings that fully deregulated are *not* captured. |
 | **Current value / $/door** | *Estimate* | **Estimate** | Recent real sale if available, else `assesstot × per-borough multiplier` (calibrated to real sales, ~3.9×). A class-wide factor; any single building can be off. |
 | Est. **origination value** | *Estimate* | **Estimate** | Purchase price if the loan was an acquisition, else `loan ÷ 0.70` (assumed LTV). |
@@ -169,6 +174,7 @@ any 421-a/J-51 status.
 | `nyc_api.py` | Stdlib SODA client: caching, pagination, batching, backoff. |
 | `analysis.py` | Valuation, maturity estimate, scoring — the transparent math. |
 | `distress.py` | HPD-violation and tax-lien joins (the distress signals). |
+| `owners.py` | HPD-registration join → real owner/agent name + address. |
 | `tools/calibrate.py` | Re-derives the per-borough value multipliers from real sales. |
 | `pipeline.py` | Orchestrates PLUTO → ACRIS → distress → score → CSV/HTML. CLI entry point. |
 | `build_html.py` | Renders the self-contained target board. |

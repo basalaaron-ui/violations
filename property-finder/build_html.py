@@ -154,7 +154,7 @@ const COLS = [
      r.years_owned===""? `<span class="muted">long/held</span>` : `${r.years_owned}y`},
   {k:"_distress", l:"Distress", sort:r=>distressRank(r), render:distressCell},
   {k:"lender", l:"Lender", sort:r=>r.lender||"", render:r=>`<span class="muted">${esc(r.lender||"")}</span>`},
-  {k:"owner", l:"Owner", sort:r=>r.owner||"", render:r=>`<span class="muted">${esc(r.owner||"")}</span>`},
+  {k:"owner_contact", l:"Owner contact (HPD)", sort:r=>(r.owner_contact||r.owner||""), render:ownerCell},
   {k:"per_door", l:"$/door", cls:"num", sort:r=>r.per_door??9e15, render:r=>`<span class="muted">${fmt$(r.per_door)}</span>`},
   {k:"flags", l:"Flags", sort:r=>r.flags||"", render:r=>`<div class="flags">${esc(r.flags||"")}</div>`},
   {k:"_links", l:"Verify", sort:r=>0, render:r=>{
@@ -178,6 +178,14 @@ function distressCell(r){
   if(op>0) s.push(`<span class="muted">${op} open</span>`);
   if(isLien(r)) s.push(`<span class="pill" title="${esc(r.lien_cycle)} ${esc(r.lien_month)}" style="background:var(--bad);color:#fff">lien</span>`);
   return s.length? s.join(" ") : `<span class="muted">—</span>`;
+}
+function ownerCell(r){
+  let s=[];
+  if(r.owner_contact) s.push(`<b>${esc(r.owner_contact)}</b>`+(r.owner_title?` <span class="muted">(${esc(r.owner_title)})</span>`:""));
+  if(r.owner_address) s.push(`<span class="muted">${esc(r.owner_address)}</span>`);
+  if(r.managing_agent && r.managing_agent!==r.owner_contact) s.push(`<span class="muted">agent: ${esc(r.managing_agent)}</span>`);
+  if(r.owner) s.push(`<span class="muted" style="font-size:10.5px">LLC: ${esc(r.owner)}</span>`);
+  return s.length? s.join("<br>") : `<span class="muted">—</span>`;
 }
 
 function statusCell(r){
@@ -226,7 +234,7 @@ function currentFilter(){
     if(r.score<minscore) return false;
     if(st){ const cur=getSaved(r.bbl).status||"New"; if((cur||"New")!==st) return false; }
     if(q){
-      const hay=(r.address+" "+r.owner+" "+r.lender+" "+r.bbl+" "+r.borough).toLowerCase();
+      const hay=(r.address+" "+r.owner+" "+(r.owner_contact||"")+" "+(r.owner_address||"")+" "+(r.managing_agent||"")+" "+r.lender+" "+r.bbl+" "+r.borough).toLowerCase();
       if(!hay.includes(q)) return false;
     }
     return true;
@@ -284,8 +292,9 @@ function exportCSV(){
     "value_change_pct","market_value","origination_value","value_basis",
     "low_rate_mtge_date","low_rate_mtge_amt","loan_blanket","est_maturity_10yr",
     "months_to_maturity","maturing_soon","years_owned","open_violations",
-    "hazardous_violations","on_lien_list","lien_cycle","per_door","lender",
-    "owner","bbl","flags","acris_mortgage_url"];
+    "hazardous_violations","on_lien_list","lien_cycle","owner_contact",
+    "owner_title","owner_address","managing_agent","owner","per_door","lender",
+    "bbl","flags","acris_mortgage_url"];
   const head=cols.concat(["my_status","my_notes"]);
   const lines=[head.join(",")];
   rows.forEach(r=>{

@@ -159,6 +159,10 @@ Every row links to the primary sources so you can confirm the estimates:
 - **"all docs"** → the full ACRIS document list for the parcel (check for
   later refinances, assignments, or satisfactions this tool may have missed).
 - **"PLUTO"** → the parcel on ZoLa (zoning, units, ownership).
+- **"☎ find"** (in the owner column) → a **pre-filled TruePeopleSearch lookup**
+  for the named owner (name + city/state). Phone numbers are **not** in any NYC
+  public dataset (HPD registration has none; DOB redacted theirs), so this is a
+  one-click *manual* lookup you run on the site — not bulk-scraped data.
 
 Also worth a manual check before an offer: DHCR rent-stabilization
 registration, actual rent roll, open HPD/DOB violations, tax/water arrears, and

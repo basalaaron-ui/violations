@@ -58,6 +58,8 @@ def _summarize(contacts):
         "owner_name": _name(principal) if principal else "",
         "owner_title": (principal.get("title") or ptype) if principal else "",
         "owner_address": _addr(principal) if principal else "",
+        "owner_city": (principal.get("businesscity") or "").strip() if principal else "",
+        "owner_state": (principal.get("businessstate") or "").strip() if principal else "",
         "owner_entity": _name(corp) if corp else "",
         "agent_name": _name(agent) if agent else "",
     }
@@ -110,7 +112,8 @@ def fetch_all(bbls, boroughs, use_cache=True, log=print):
     contacts = fetch_contacts(set(reg_for_bbl.values()), use_cache, log)
 
     blank = {"owner_name": "", "owner_title": "", "owner_address": "",
-             "owner_entity": "", "agent_name": ""}
+             "owner_city": "", "owner_state": "", "owner_entity": "",
+             "agent_name": ""}
     out = {}
     for bbl in bbls:
         rid = reg_for_bbl.get(bbl)

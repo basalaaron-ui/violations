@@ -181,7 +181,11 @@ function distressCell(r){
 }
 function ownerCell(r){
   let s=[];
-  if(r.owner_contact) s.push(`<b>${esc(r.owner_contact)}</b>`+(r.owner_title?` <span class="muted">(${esc(r.owner_title)})</span>`:""));
+  if(r.owner_contact){
+    let line=`<b>${esc(r.owner_contact)}</b>`+(r.owner_title?` <span class="muted">(${esc(r.owner_title)})</span>`:"");
+    if(r.phone_search_url) line+=` <a href="${r.phone_search_url}" target="_blank" rel="noopener" title="look up phone on TruePeopleSearch">☎ find</a>`;
+    s.push(line);
+  }
   if(r.owner_address) s.push(`<span class="muted">${esc(r.owner_address)}</span>`);
   if(r.managing_agent && r.managing_agent!==r.owner_contact) s.push(`<span class="muted">agent: ${esc(r.managing_agent)}</span>`);
   if(r.owner) s.push(`<span class="muted" style="font-size:10.5px">LLC: ${esc(r.owner)}</span>`);

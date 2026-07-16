@@ -8,6 +8,7 @@ Writes output/candidates.csv and output/targets.html.
 """
 import argparse
 import csv
+import urllib.parse
 from collections import defaultdict
 from pathlib import Path
 
@@ -55,6 +56,17 @@ def acris_parcel_url(boro, block, lot):
 
 def pluto_url(bbl):
     return f"https://zola.planning.nyc.gov/l/lot/{bbl[0]}/{int(bbl[1:6])}/{int(bbl[6:10])}"
+
+
+def truepeoplesearch_url(name, city, state):
+    """Pre-filled TruePeopleSearch lookup (a link the user clicks and runs
+    manually on the site — no scraping)."""
+    if not name:
+        return ""
+    params = {"name": name}
+    if city and state:
+        params["citystatezip"] = f"{city}, {state}"
+    return "https://www.truepeoplesearch.com/results?" + urllib.parse.urlencode(params)
 
 
 def fetch_pluto(boroughs, limit, use_cache, log, max_door=None):
@@ -222,6 +234,9 @@ def build_records(bbl_to_pluto, per_bbl, distress_map, owner_map, log):
             "owner_address": own.get("owner_address", ""),
             "owner_entity": own.get("owner_entity", ""),
             "managing_agent": own.get("agent_name", ""),
+            "phone_search_url": truepeoplesearch_url(
+                own.get("owner_name", ""), own.get("owner_city", ""),
+                own.get("owner_state", "")),
             "under_70k_door": bool(value["per_door"] and value["per_door"] <= C.MAX_PER_DOOR),
             "lender": "",
             "bbl": bbl,
@@ -245,8 +260,8 @@ CSV_FIELDS = [
     "months_to_maturity", "maturing_soon", "years_owned", "last_purchase_date",
     "open_violations", "hazardous_violations", "on_lien_list", "lien_cycle",
     "lien_month", "owner_contact", "owner_title", "owner_address",
-    "owner_entity", "managing_agent", "lender", "bbl", "acris_mortgage_url",
-    "acris_parcel_url", "pluto_url", "lat", "lon",
+    "owner_entity", "managing_agent", "phone_search_url", "lender", "bbl",
+    "acris_mortgage_url", "acris_parcel_url", "pluto_url", "lat", "lon",
 ]
 
 

@@ -60,10 +60,15 @@ needed). Or open `output/candidates.csv` in Excel/Sheets.
    borough+block+lot), get every recorded document id.
 3. **ACRIS Master** (`bnx9-e6tj`) — pull those documents' type / date / amount,
    keeping deeds, mortgages, and satisfactions from 2011 on.
-4. **Value, leverage, score** — estimate today's value (calibrated, below),
+4. **Distress signals** — open **HPD violations** (`wvxf-dwi5`, especially
+   class C "immediately hazardous") and appearance on the **DOF tax-lien-sale
+   notice list** (`9rz4-mjek`, 2023+), both joined by BBL. These flag a
+   stretched/tired landlord independent of the mortgage.
+5. **Value, leverage, score** — estimate today's value (calibrated, below),
    size the senior low-rate loan, compute **implied current LTV** and the value
-   change since financing, estimate maturity, and score sell-pressure.
-5. **ACRIS Parties** (`636b-3b5g`) — look up the lender name for each
+   change since financing, estimate maturity, fold in distress, and score
+   sell-pressure.
+6. **ACRIS Parties** (`636b-3b5g`) — look up the lender name for each
    building's low-rate mortgage.
 
 ### Valuation is calibrated to real sales
@@ -90,6 +95,8 @@ exists, is always preferred over the assessment estimate.
 | Mortgage **recorded amount** | ACRIS | **Hard fact, but** | On a CEMA/consolidation the recorded amount is only the *new money* and understates the true loan. |
 | Sale price | ACRIS deed | **Hard fact, but** | A single deed can cover a **portfolio** — the price then isn't this building. Flagged as "bulk-sale price ignored." |
 | Lender | ACRIS parties | **Hard fact** | The named lender at recording; loan may have been sold/assigned since. |
+| Open HPD violations / class C | HPD | **Hard fact** | Count of *open* violations; class C = "immediately hazardous." Reflects reported conditions, which can lag reality either way. |
+| On tax-lien-sale list | DOF | **Hard fact** | On a 2023+ notice list for unpaid property tax or water (`water_only` distinguishes). The debt may since be cured. |
 | **Rent-stabilized?** | *Proxy* | **Assumption** | Built <1974 + 6+ units + not condo/co-op. **Not a legal determination.** Verify via the building's DHCR registration / actual rent roll. Post-1974 421-a/J-51 stabilization and buildings that fully deregulated are *not* captured. |
 | **Current value / $/door** | *Estimate* | **Estimate** | Recent real sale if available, else `assesstot × per-borough multiplier` (calibrated to real sales, ~3.9×). A class-wide factor; any single building can be off. |
 | Est. **origination value** | *Estimate* | **Estimate** | Purchase price if the loan was an acquisition, else `loan ÷ 0.70` (assumed LTV). |
@@ -117,13 +124,16 @@ Fannie/Freddie Small Balance Loan is the most common, hence weighted first).
 
 Transparent and tunable in [`analysis.py`](analysis.py) / [`config.py`](config.py):
 
-- **up to 50 pts — leverage / value loss** — implied current LTV (the thing
+- **up to 45 pts — leverage / value loss** — implied current LTV (the thing
   that actually forces a sale): ramps in from ~55% LTV, maxes past ~105%.
   Where LTV can't be trusted (blanket loan) but a clean purchase price shows a
-  big value decline, a smaller value-loss credit (up to 30) applies instead.
-- **up to 35 pts — estimated maturity near/at today** (peak ≈ 0–12 months out;
+  big value decline, a smaller value-loss credit (up to 27) applies instead.
+- **up to 30 pts — estimated maturity near/at today** (peak ≈ 0–12 months out;
   recently-matured loans score high — they're the most distressed).
-- **up to 15 pts — loan still outstanding + long owner tenure.**
+- **up to 10 pts — loan still outstanding + long owner tenure.**
+- **up to 15 pts — operational/financial distress** — open HPD class-C hazards
+  (up to 10), total open violations (up to 2), and on the tax-lien list (5, or
+  3 if water-only).
 - **× 0.35 dampener** if the building was **recently purchased** (an owner who
   just bought is very unlikely to sell).
 
@@ -158,7 +168,9 @@ any 421-a/J-51 status.
 | `config.py` | All tunable constants (filters, rate era, loan terms, weights). |
 | `nyc_api.py` | Stdlib SODA client: caching, pagination, batching, backoff. |
 | `analysis.py` | Valuation, maturity estimate, scoring — the transparent math. |
-| `pipeline.py` | Orchestrates PLUTO → ACRIS → score → CSV/HTML. CLI entry point. |
+| `distress.py` | HPD-violation and tax-lien joins (the distress signals). |
+| `tools/calibrate.py` | Re-derives the per-borough value multipliers from real sales. |
+| `pipeline.py` | Orchestrates PLUTO → ACRIS → distress → score → CSV/HTML. CLI entry point. |
 | `build_html.py` | Renders the self-contained target board. |
 | `output/candidates.csv` | Full scored spreadsheet. |
 | `output/targets.html` | Offline sortable/filterable target board (your notes live here). |
@@ -181,6 +193,6 @@ any 421-a/J-51 status.
   assessed-implied value → ignored); edge cases can be mis-handled.
 - Parcels with **sparse ACRIS coverage** get a "no low-rate-era mortgage found"
   flag; that may reflect missing data, not a free-and-clear building.
-- Natural next signal to add: **operational/financial distress** (open HPD
-  hazardous violations, tax-lien-sale eligibility, water/tax arrears) — strong
-  independent "motivated seller" evidence, joinable by BBL.
+- **Distress signals are point-in-time**: an open violation may be in progress
+  of repair, and a lien-list debt may since be paid. Treat them as leads, not
+  proof. HPD counts reflect *reported* conditions.

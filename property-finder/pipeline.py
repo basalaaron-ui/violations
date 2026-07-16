@@ -14,6 +14,7 @@ from pathlib import Path
 import config as C
 import nyc_api as api
 import analysis as A
+import distress as D
 from build_html import build_html
 
 OUT_DIR = Path(__file__).resolve().parent / "output"
@@ -165,7 +166,7 @@ def fetch_lenders(records, use_cache, log):
         r["lender"] = lender_by_doc.get(r["low_rate_mtge_docid"], "")
 
 
-def build_records(bbl_to_pluto, per_bbl, log):
+def build_records(bbl_to_pluto, per_bbl, distress_map, log):
     records = []
     for bbl, p in bbl_to_pluto.items():
         docs = per_bbl.get(bbl, {"sales": [], "mortgages": [], "sats": []})
@@ -173,7 +174,8 @@ def build_records(bbl_to_pluto, per_bbl, log):
         mort = A.analyze_mortgages(docs["mortgages"], docs["sales"], docs["sats"])
         units = int(float(p["unitsres"]))
         pressure = A.compute_pressure(value, mort, units)
-        sc, flags = A.score(value, mort, pressure)
+        dist = distress_map.get(bbl, {"open": 0, "class_c": 0, "lien": None})
+        sc, flags = A.score(value, mort, pressure, dist)
 
         boro = C.BORO_ABBR_TO_CODE[p["borough"]]
         block, lot = norm(p["block"]), norm(p["lot"])
@@ -208,6 +210,11 @@ def build_records(bbl_to_pluto, per_bbl, log):
             "maturing_soon": mort["maturing_soon"],
             "years_owned": round(yo, 1) if yo is not None else "",
             "last_purchase_date": mort["last_purchase_date"].isoformat() if mort["last_purchase_date"] else "",
+            "open_violations": dist["open"],
+            "hazardous_violations": dist["class_c"],
+            "on_lien_list": bool(dist["lien"]),
+            "lien_cycle": (dist["lien"]["cycle"] if dist["lien"] else ""),
+            "lien_month": (dist["lien"]["month"][:7] if dist["lien"] else ""),
             "under_70k_door": bool(value["per_door"] and value["per_door"] <= C.MAX_PER_DOOR),
             "lender": "",
             "bbl": bbl,
@@ -229,8 +236,9 @@ CSV_FIELDS = [
     "value_basis", "assesstot", "assessed_value_est", "last_sale_price", "last_sale_date",
     "low_rate_mtge_date", "low_rate_mtge_amt", "est_maturity_10yr",
     "months_to_maturity", "maturing_soon", "years_owned", "last_purchase_date",
-    "lender", "bbl", "acris_mortgage_url", "acris_parcel_url", "pluto_url",
-    "lat", "lon",
+    "open_violations", "hazardous_violations", "on_lien_list", "lien_cycle",
+    "lien_month", "lender", "bbl", "acris_mortgage_url", "acris_parcel_url",
+    "pluto_url", "lat", "lon",
 ]
 
 
@@ -270,12 +278,15 @@ def main():
     master = fetch_master(docid_to_bbls, use_cache, log)
     per_bbl = group_docs_by_bbl(master, docid_to_bbls)
 
-    log("4) score & rank")
-    records = build_records(bbl_to_pluto, per_bbl, log)
+    log("4) distress signals (HPD violations + tax liens)")
+    distress_map = D.fetch_all(list(bbl_to_pluto), args.boroughs, use_cache, log)
+
+    log("5) score & rank")
+    records = build_records(bbl_to_pluto, per_bbl, distress_map, log)
     if args.top:
         records = records[:args.top]
 
-    log("5) ACRIS Parties (lender names)")
+    log("6) ACRIS Parties (lender names)")
     fetch_lenders(records, use_cache, log)
 
     csv_path = OUT_DIR / "candidates.csv"

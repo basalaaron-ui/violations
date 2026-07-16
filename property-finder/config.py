@@ -13,6 +13,8 @@ PLUTO = "64uk-42ks"          # MapPLUTO — parcels, units, year built, assessed
 ACRIS_MASTER = "bnx9-e6tj"   # Real Property Master — doc date / amount / type
 ACRIS_LEGALS = "8h5j-fqxa"   # Real Property Legals — links document_id -> BBL
 ACRIS_PARTIES = "636b-3b5g"  # Real Property Parties — lender / borrower names
+HPD_VIOLATIONS = "wvxf-dwi5"  # HPD Housing Maintenance Code Violations
+TAX_LIEN = "9rz4-mjek"        # DOF tax-lien-sale notice list (arrears)
 
 SODA_BASE = "https://data.cityofnewyork.us/resource/{}.json"
 
@@ -113,6 +115,16 @@ MATURITY_WINDOW_MONTHS_BACK = 18
 MATURITY_WINDOW_MONTHS_AHEAD = 36
 
 TODAY = date.today()
+
+# ---------------------------------------------------------------------------
+# Operational / financial distress  (independent "motivated seller" signals)
+# ---------------------------------------------------------------------------
+# Open HPD class-C violations are "immediately hazardous" — a tired-landlord
+# tell.  Appearing on the DOF tax-lien-sale notice list means unpaid property
+# taxes or water charges.  Both are joined by BBL and add to sell-pressure.
+LIEN_SINCE_YEAR = 2023          # only count reasonably-current lien notices
+HAZARD_VIOL_FULL = 15           # this many open class-C violations -> full pts
+OPEN_VIOL_FULL = 40             # this many total open violations -> full minor pts
 
 # ACRIS document types
 DOC_MORTGAGE = "MTGE"

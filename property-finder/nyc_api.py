@@ -148,24 +148,32 @@ def batched_or(dataset, clauses, select=None, batch_size=40, extra_where=None,
     return out
 
 
-def fetch_by_document_ids(dataset, document_ids, select=None, extra_where=None,
-                          use_cache=True, log=print):
-    """Fetch rows from an ACRIS table for a set of document_ids using
-    `document_id IN (...)` batches."""
-    ids = sorted(set(document_ids))
+def fetch_in(dataset, field, values, select=None, group=None, extra_where=None,
+             batch_size=DOCID_BATCH_SIZE, use_cache=True, log=print):
+    """Fetch rows where `field IN (values)`, in batches, optionally aggregated.
+    Values are quoted as strings."""
+    vals = sorted(set(str(v) for v in values))
     out = []
-    total_batches = (len(ids) + DOCID_BATCH_SIZE - 1) // DOCID_BATCH_SIZE
-    for i in range(0, len(ids), DOCID_BATCH_SIZE):
-        chunk = ids[i:i + DOCID_BATCH_SIZE]
-        in_list = ",".join(_soql_str(d) for d in chunk)
-        where = f"document_id in ({in_list})"
+    total_batches = (len(vals) + batch_size - 1) // batch_size
+    for i in range(0, len(vals), batch_size):
+        chunk = vals[i:i + batch_size]
+        in_list = ",".join(_soql_str(v) for v in chunk)
+        where = f"{field} in ({in_list})"
         if extra_where:
             where = f"{where} AND ({extra_where})"
-        rows = soda_get(dataset, where=where, select=select, use_cache=use_cache)
+        rows = soda_get(dataset, where=where, select=select, group=group,
+                        use_cache=use_cache)
         out.extend(rows)
-        log(f"    docid batch {i // DOCID_BATCH_SIZE + 1}/{total_batches} "
+        log(f"    {field} batch {i // batch_size + 1}/{total_batches} "
             f"({dataset}) -> {len(rows)} rows, {len(out)} total")
     return out
+
+
+def fetch_by_document_ids(dataset, document_ids, select=None, extra_where=None,
+                          use_cache=True, log=print):
+    """Fetch ACRIS rows for a set of document_ids (`document_id IN (...)`)."""
+    return fetch_in(dataset, "document_id", document_ids, select=select,
+                    extra_where=extra_where, use_cache=use_cache, log=log)
 
 
 def has_app_token():

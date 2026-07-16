@@ -241,15 +241,17 @@ def compute_pressure(value, mort, units):
 # ---------------------------------------------------------------------------
 # scoring — refinance / value-loss pressure ("likely to sell")
 # ---------------------------------------------------------------------------
-def score(value, mort, pressure):
+def score(value, mort, pressure, distress=None):
     """0-100 sell-pressure score + human-readable flags.
 
     Weighting (tunable here):
-      * up to 50 pts — leverage / value loss (implied current LTV)
-      * up to 35 pts — estimated maturity near/at today (the trigger)
-      * up to 15 pts — loan still outstanding + long owner tenure
+      * up to 45 pts — leverage / value loss (implied current LTV)
+      * up to 30 pts — estimated maturity near/at today (the trigger)
+      * up to 10 pts — loan still outstanding + long owner tenure
+      * up to 15 pts — operational/financial distress (HPD hazards, tax liens)
     A recent purchase strongly dampens the whole score (unlikely seller).
     """
+    distress = distress or {}
     flags = []
     pts = 0.0
 
@@ -260,7 +262,7 @@ def score(value, mort, pressure):
     ltv = pressure["implied_ltv_now"]
     vc = pressure["value_change_pct"]
     if ltv is not None:
-        pts += 50 * _clamp((ltv - 0.55) / (1.05 - 0.55))
+        pts += 45 * _clamp((ltv - 0.55) / (1.05 - 0.55))
         if ltv >= C.LTV_UNDERWATER:
             flags.append("underwater: est. LTV ≥ 100%")
         elif ltv >= C.LTV_REFI_HARD:
@@ -270,7 +272,7 @@ def score(value, mort, pressure):
         if pressure["loan_maybe_understated"]:
             flags.append("loan may be understated (CEMA) — real leverage higher")
     elif vc is not None:                         # value fell, leverage unknown
-        pts += 30 * _clamp(-vc / 0.50)
+        pts += 27 * _clamp(-vc / 0.50)
         if vc <= -0.10:
             flags.append(f"value down ~{abs(round(vc*100))}% since purchase, but leverage unknown")
     else:
@@ -284,7 +286,7 @@ def score(value, mort, pressure):
         if -C.MATURITY_WINDOW_MONTHS_BACK <= m <= C.MATURITY_WINDOW_MONTHS_AHEAD:
             dist = abs(m - 6)
             span = max(C.MATURITY_WINDOW_MONTHS_AHEAD, C.MATURITY_WINDOW_MONTHS_BACK + 6)
-            pts += 35 * max(0.0, 1 - dist / span)
+            pts += 30 * max(0.0, 1 - dist / span)
         if mort["maturing_soon"]:
             flags.append("maturing soon (est.)")
         if m is not None and m < 0:
@@ -294,15 +296,31 @@ def score(value, mort, pressure):
 
     # --- outstanding + tenure -----------------------------------------------
     if mort["has_low_rate_mortgage"] and not mort["refinanced_since"]:
-        pts += 8
+        pts += 5
     if mort["years_owned"] is None:
-        pts += 7  # no recorded arm's-length purchase -> long/held; likely willing
+        pts += 5  # no recorded arm's-length purchase -> long/held; likely willing
     else:
-        pts += 7 * _clamp(mort["years_owned"] / C.LONG_TENURE_YEARS)
+        pts += 5 * _clamp(mort["years_owned"] / C.LONG_TENURE_YEARS)
     if mort["refinanced_since"]:
         flags.append("financed/sold since (may be refinanced)")
     if mort["satisfied_since"]:
         flags.append("satisfaction recorded since")
+
+    # --- operational / financial distress (independent seller motivation) ---
+    cc = distress.get("class_c", 0)
+    opn = distress.get("open", 0)
+    lien = distress.get("lien")
+    dp = 10 * _clamp(cc / C.HAZARD_VIOL_FULL) + 2 * _clamp(opn / C.OPEN_VIOL_FULL)
+    if lien:
+        dp += 3 if lien.get("water_only") else 5
+    pts += min(dp, 15)
+    if cc > 0:
+        flags.append(f"{cc} open hazardous (class C) HPD violation{'s' if cc!=1 else ''}")
+    elif opn > 0:
+        flags.append(f"{opn} open HPD violations")
+    if lien:
+        what = "water arrears" if lien.get("water_only") else "tax/water arrears"
+        flags.append(f"on lien-sale list ({lien.get('cycle','')}, {lien.get('month','')[:7]}) — {what}")
 
     # --- unlikely-seller dampener -------------------------------------------
     if mort["recently_acquired"]:

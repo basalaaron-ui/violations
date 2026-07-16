@@ -85,6 +85,7 @@ _TEMPLATE = r"""<!doctype html>
   <select id="status"><option value="">All statuses</option></select>
   <label><input type="checkbox" id="lev"> refi-hard (est. LTV &ge;90%)</label>
   <label><input type="checkbox" id="mat"> maturing soon</label>
+  <label><input type="checkbox" id="dist"> distressed (hazards/lien)</label>
   <label>min pressure <input type="text" id="minscore" value="0" style="width:42px"></label>
   <button class="btn ghost" id="export">Export view CSV</button>
   <span class="muted" id="count"></span>
@@ -151,6 +152,7 @@ const COLS = [
      r.est_maturity_10yr? `${r.est_maturity_10yr}<br><span class="muted">${fmtMonths(r.months_to_maturity)}</span>` : ""},
   {k:"years_owned", l:"Tenure", cls:"num", sort:r=>r.years_owned===""?-1:Number(r.years_owned), render:r=>
      r.years_owned===""? `<span class="muted">long/held</span>` : `${r.years_owned}y`},
+  {k:"_distress", l:"Distress", sort:r=>distressRank(r), render:distressCell},
   {k:"lender", l:"Lender", sort:r=>r.lender||"", render:r=>`<span class="muted">${esc(r.lender||"")}</span>`},
   {k:"owner", l:"Owner", sort:r=>r.owner||"", render:r=>`<span class="muted">${esc(r.owner||"")}</span>`},
   {k:"per_door", l:"$/door", cls:"num", sort:r=>r.per_door??9e15, render:r=>`<span class="muted">${fmt$(r.per_door)}</span>`},
@@ -166,6 +168,17 @@ const COLS = [
 
 function esc(s){ return String(s==null?"":s).replace(/[&<>"]/g, c=>(
   {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+
+function isLien(r){ return r.on_lien_list===true||r.on_lien_list==="true"||r.on_lien_list==="True"; }
+function distressRank(r){ return (isLien(r)?1000:0)+(+r.hazardous_violations||0)*10+(+r.open_violations||0)*0.1; }
+function distressCell(r){
+  const cc=+r.hazardous_violations||0, op=+r.open_violations||0;
+  let s=[];
+  if(cc>0) s.push(`<b style="color:var(--bad)">${cc} haz</b>`);
+  if(op>0) s.push(`<span class="muted">${op} open</span>`);
+  if(isLien(r)) s.push(`<span class="pill" title="${esc(r.lien_cycle)} ${esc(r.lien_month)}" style="background:var(--bad);color:#fff">lien</span>`);
+  return s.length? s.join(" ") : `<span class="muted">—</span>`;
+}
 
 function statusCell(r){
   const cur = getSaved(r.bbl).status;
@@ -203,12 +216,13 @@ function header(){
 function currentFilter(){
   const q=el("q").value.trim().toLowerCase();
   const boro=el("boro").value, st=el("status").value;
-  const levOnly=el("lev").checked, matOnly=el("mat").checked;
+  const levOnly=el("lev").checked, matOnly=el("mat").checked, distOnly=el("dist").checked;
   const minscore=parseFloat(el("minscore").value)||0;
   return DATA.filter(r=>{
     if(boro && r.borough!==boro) return false;
     if(levOnly && !(r.implied_ltv_now!=null && r.implied_ltv_now!=="" && Number(r.implied_ltv_now)>=0.9)) return false;
     if(matOnly && !r.maturing_soon) return false;
+    if(distOnly && !((+r.hazardous_violations||0)>0 || isLien(r))) return false;
     if(r.score<minscore) return false;
     if(st){ const cur=getSaved(r.bbl).status||"New"; if((cur||"New")!==st) return false; }
     if(q){
@@ -254,11 +268,13 @@ function renderStats(rows){
   const under=DATA.filter(r=>r.implied_ltv_now!=null&&r.implied_ltv_now!==""&&Number(r.implied_ltv_now)>=1).length;
   const hard=DATA.filter(r=>r.implied_ltv_now!=null&&r.implied_ltv_now!==""&&Number(r.implied_ltv_now)>=0.9).length;
   const mat=DATA.filter(r=>r.maturing_soon).length;
-  const withM=DATA.filter(r=>r.low_rate_mtge_date).length;
+  const distressed=DATA.filter(r=>(+r.hazardous_violations||0)>0||isLien(r)).length;
+  const lien=DATA.filter(r=>isLien(r)).length;
   const watching=Object.values(saved).filter(s=>s.status && s.status!=="Passed").length;
   el("stats").innerHTML=[
     ["Candidates",n],["Est. underwater (LTV≥100%)",under],["Refi-hard (LTV≥90%)",hard],
-    ["Low-rate loan on file",withM],["Maturing soon (est.)",mat],["On your list",watching],
+    ["Maturing soon (est.)",mat],["Distressed (hazards/lien)",distressed],
+    ["On tax-lien list",lien],["On your list",watching],
   ].map(([l,v])=>`<div class="stat">${l}<b>${v.toLocaleString()}</b></div>`).join("");
 }
 
@@ -267,7 +283,8 @@ function exportCSV(){
   const cols=["score","address","borough","zip","units","implied_ltv_now",
     "value_change_pct","market_value","origination_value","value_basis",
     "low_rate_mtge_date","low_rate_mtge_amt","loan_blanket","est_maturity_10yr",
-    "months_to_maturity","maturing_soon","years_owned","per_door","lender",
+    "months_to_maturity","maturing_soon","years_owned","open_violations",
+    "hazardous_violations","on_lien_list","lien_cycle","per_door","lender",
     "owner","bbl","flags","acris_mortgage_url"];
   const head=cols.concat(["my_status","my_notes"]);
   const lines=[head.join(",")];
@@ -283,7 +300,7 @@ function exportCSV(){
 function csv(v){ v=v==null?"":String(v); return /[",\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v; }
 
 ["q","boro","status","minscore"].forEach(id=>el(id).oninput=render);
-["lev","mat"].forEach(id=>el(id).onchange=render);
+["lev","mat","dist"].forEach(id=>el(id).onchange=render);
 el("status").onchange=render;
 el("export").onclick=exportCSV;
 

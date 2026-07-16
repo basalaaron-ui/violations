@@ -2,7 +2,7 @@ name: Sync NYC Violations Data
 
 on:
   schedule:
-    - cron: '*/20 * * * *'  # Every 20 minutes
+    - cron: '0 */6 * * *'  # Every 6 hours (00:00, 06:00, 12:00, 18:00 UTC)
   workflow_dispatch:  # Manual trigger from GitHub Actions page
 
 permissions:

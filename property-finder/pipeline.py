@@ -55,9 +55,8 @@ def pluto_url(bbl):
     return f"https://zola.planning.nyc.gov/l/lot/{bbl[0]}/{int(bbl[1:6])}/{int(bbl[6:10])}"
 
 
-def fetch_pluto(boroughs, limit, use_cache, log):
+def fetch_pluto(boroughs, limit, use_cache, log, max_door=None):
     excl = ",".join(f"'{c}'" for c in C.EXCLUDE_BLDG_CLASSES)
-    gate = int(31500 * C.DOOR_GATE_CUSHION)
     rows = []
     for boro in boroughs:
         where = (
@@ -65,8 +64,13 @@ def fetch_pluto(boroughs, limit, use_cache, log):
             f"AND unitsres between {C.UNITS_MIN} and {C.UNITS_MAX} "
             f"AND yearbuilt>0 AND yearbuilt<{C.YEAR_BUILT_MAX} "
             f"AND (starts_with(bldgclass,'C') OR starts_with(bldgclass,'D')) "
-            f"AND bldgclass not in ({excl}) "
-            f"AND assesstot < {gate}*unitsres")
+            f"AND bldgclass not in ({excl})")
+        if max_door:
+            # Optional cheapness gate, using the borough's calibrated multiplier
+            # to translate a $/door cap into an assesstot threshold.
+            name = C.BORO_CODE_TO_NAME[C.BORO_ABBR_TO_CODE[boro]]
+            mult = C.BOROUGH_MARKET_MULTIPLIER.get(name, C.DEFAULT_MARKET_MULTIPLIER)
+            where += f" AND assesstot < {max_door / mult:.0f}*unitsres"
         got = api.soda_get_all(C.PLUTO, where=where, use_cache=use_cache, log=log)
         log(f"  PLUTO {boro}: {len(got)} candidates")
         rows.extend(got)
@@ -125,16 +129,20 @@ def group_docs_by_bbl(master, docid_to_bbls):
     """bbl -> {'sales':[], 'mortgages':[], 'sats':[]} with parsed rows."""
     per_bbl = defaultdict(lambda: {"sales": [], "mortgages": [], "sats": []})
     for m in master:
+        bbls = docid_to_bbls.get(m["document_id"], ())
         rec = {
             "date": A.parse_date(m.get("document_date")),
             "amount": A.to_float(m.get("document_amt")) or 0.0,
             "document_id": m["document_id"],
             "doc_type": m["doc_type"],
+            # How many of our candidate parcels this one document covers.  >1
+            # means a blanket/portfolio document whose amount isn't per-building.
+            "n_parcels": len(bbls),
         }
         bucket = ("mortgages" if m["doc_type"] == C.DOC_MORTGAGE
                   else "sats" if m["doc_type"] in (C.DOC_SATISFACTION, "PSAT")
                   else "sales")  # DEED / DEEDO
-        for bbl in docid_to_bbls.get(m["document_id"], ()):
+        for bbl in bbls:
             per_bbl[bbl][bucket].append(rec)
     return per_bbl
 
@@ -163,11 +171,13 @@ def build_records(bbl_to_pluto, per_bbl, log):
         docs = per_bbl.get(bbl, {"sales": [], "mortgages": [], "sats": []})
         value = A.estimate_value(p, docs["sales"])
         mort = A.analyze_mortgages(docs["mortgages"], docs["sales"], docs["sats"])
-        sc, flags = A.score(value, mort)
+        units = int(float(p["unitsres"]))
+        pressure = A.compute_pressure(value, mort, units)
+        sc, flags = A.score(value, mort, pressure)
 
         boro = C.BORO_ABBR_TO_CODE[p["borough"]]
         block, lot = norm(p["block"]), norm(p["lot"])
-        units = int(float(p["unitsres"]))
+        yo = mort["years_owned"]
         records.append({
             "score": sc,
             "flags": "; ".join(flags),
@@ -178,19 +188,27 @@ def build_records(bbl_to_pluto, per_bbl, log):
             "year_built": int(float(p.get("yearbuilt", 0))),
             "bldg_class": p.get("bldgclass", ""),
             "owner": p.get("ownername", ""),
-            "per_door": value["per_door"],
+            "implied_ltv_now": pressure["implied_ltv_now"],
+            "value_change_pct": pressure["value_change_pct"],
+            "loan_blanket": pressure["loan_blanket"],
             "market_value": value["market_value"],
-            "value_basis": value["value_basis"],
+            "assesstot": A.to_float(p.get("assesstot")) or "",
             "assessed_value_est": value["assessed_value_est"],
+            "origination_value": pressure["origination_value"],
+            "origination_basis": pressure["origination_basis"],
+            "per_door": value["per_door"],
+            "value_basis": value["value_basis"],
             "last_sale_price": value["last_sale_price"],
             "last_sale_date": value["last_sale_date"].isoformat() if value["last_sale_date"] else "",
-            "under_70k_door": bool(value["per_door"] and value["per_door"] <= C.MAX_PER_DOOR),
             "low_rate_mtge_date": mort["low_rate_mtge_date"].isoformat() if mort["low_rate_mtge_date"] else "",
             "low_rate_mtge_amt": mort["low_rate_mtge_amt"],
             "low_rate_mtge_docid": mort["low_rate_mtge_docid"] or "",
             "est_maturity_10yr": mort["primary_maturity"].isoformat() if mort["primary_maturity"] else "",
             "months_to_maturity": mort["months_to_maturity"],
             "maturing_soon": mort["maturing_soon"],
+            "years_owned": round(yo, 1) if yo is not None else "",
+            "last_purchase_date": mort["last_purchase_date"].isoformat() if mort["last_purchase_date"] else "",
+            "under_70k_door": bool(value["per_door"] and value["per_door"] <= C.MAX_PER_DOOR),
             "lender": "",
             "bbl": bbl,
             "acris_mortgage_url": acris_doc_url(mort["low_rate_mtge_docid"]) if mort["low_rate_mtge_docid"] else "",
@@ -206,11 +224,13 @@ def build_records(bbl_to_pluto, per_bbl, log):
 
 CSV_FIELDS = [
     "score", "flags", "address", "borough", "zip", "units", "year_built",
-    "bldg_class", "owner", "per_door", "market_value", "value_basis",
-    "assessed_value_est", "last_sale_price", "last_sale_date", "under_70k_door",
+    "bldg_class", "owner", "implied_ltv_now", "value_change_pct", "loan_blanket",
+    "market_value", "origination_value", "origination_basis", "per_door",
+    "value_basis", "assesstot", "assessed_value_est", "last_sale_price", "last_sale_date",
     "low_rate_mtge_date", "low_rate_mtge_amt", "est_maturity_10yr",
-    "months_to_maturity", "maturing_soon", "lender", "bbl",
-    "acris_mortgage_url", "acris_parcel_url", "pluto_url", "lat", "lon",
+    "months_to_maturity", "maturing_soon", "years_owned", "last_purchase_date",
+    "lender", "bbl", "acris_mortgage_url", "acris_parcel_url", "pluto_url",
+    "lat", "lon",
 ]
 
 
@@ -224,20 +244,23 @@ def write_csv(records, path):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--boroughs", nargs="+", default=["MN", "BX", "BK", "QN", "SI"],
-                    help="borough abbreviations (MN BX BK QN SI)")
+    ap.add_argument("--boroughs", nargs="+", default=["MN", "BX", "BK", "QN"],
+                    help="borough abbreviations (MN BX BK QN; SI excluded by default)")
     ap.add_argument("--limit", type=int, default=None,
                     help="cap number of PLUTO candidates (for quick tests)")
     ap.add_argument("--no-cache", action="store_true", help="force fresh API pulls")
     ap.add_argument("--top", type=int, default=None,
                     help="only keep the top N by score in the outputs")
+    ap.add_argument("--max-door", type=int, default=None,
+                    help="optional $/door cap applied in the PLUTO screen "
+                         "(off by default; screen is centered on value-loss)")
     args = ap.parse_args()
     use_cache = not args.no_cache
     log = print
 
     log(f"App token: {'yes' if api.has_app_token() else 'no (rate-limited)'}")
     log("1) PLUTO screen")
-    pluto = fetch_pluto(args.boroughs, args.limit, use_cache, log)
+    pluto = fetch_pluto(args.boroughs, args.limit, use_cache, log, max_door=args.max_door)
     log(f"   total candidates: {len(pluto)}")
 
     log("2) ACRIS Legals join")

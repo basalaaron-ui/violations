@@ -44,21 +44,50 @@ EXCLUDE_BLDG_CLASSES = ("C6", "C8", "D0", "D4")
 # ---------------------------------------------------------------------------
 # Valuation  (ESTIMATES / PROXIES)
 # ---------------------------------------------------------------------------
-# NYC assesses Class 2 rentals at ~45% of market value.  This is the fallback
-# when no recent recorded sale exists.
-ASSESS_RATIO = 0.45
+# NYC assesses Class 2 rentals at ~45% of market value *on paper*, but for
+# rent-stabilized buildings DOF's own market value is set off regulated income
+# and runs well below real trading prices.  Empirically (from 335 arm's-length
+# ACRIS sales in our own candidate set) actual sale price ≈ 3.9x TOTAL assessed
+# value, not the 2.2x that assesstot/0.45 implies.  So when there's no recent
+# sale we estimate market value as assesstot * (per-borough multiplier below).
+# Re-derive these with tools/calibrate.py after a fresh pull.
+ASSESS_RATIO = 0.45  # retained only for the PLUTO pre-filter gate
+BOROUGH_MARKET_MULTIPLIER = {   # median(sale_price / assesstot), by borough
+    "Manhattan": 4.74,          # calibrated on 1,302 arm's-length sales across
+    "Bronx": 4.71,              # the full (un-gated) candidate pool — see
+    "Brooklyn": 4.54,           # tools/calibrate.py
+    "Queens": 4.75,
+    "Staten Island": 4.71,      # too few SI sales; uses citywide median
+}
+DEFAULT_MARKET_MULTIPLIER = 4.71  # citywide median fallback
 # Prefer a recorded ACRIS sale price if one exists within this many years.
 SALE_LOOKBACK_YEARS = 8
 # Ignore obviously non-arm's-length "sales" below this price (e.g. $0 / $10
 # transfers between related LLCs, estate transfers).
 MIN_REAL_SALE_PRICE = 100_000
 
-# Target economics
+# $/door is kept as an informational column but is NOT used to gate or rank —
+# the screen is centered on value-loss / refinance pressure instead.  Set a
+# value via --max-door on the CLI if you ever want to re-impose a cap.
 MAX_PER_DOOR = 70_000
-# First-pass gate is run in the PLUTO query on assessed value alone (before we
-# know the sale price).  Cushion widens it so a building whose eventual
-# sale-based value lands just under the cap isn't dropped prematurely.
-DOOR_GATE_CUSHION = 1.15
+
+# Value-loss / underwater thesis.  Small-balance multifamily loans are
+# typically underwritten near this loan-to-value at origination, so
+# (recorded loan / today's value) is a proxy for how leveraged — and how
+# stuck — the owner is now.  Above ~0.90 a refinance gets very hard; above
+# 1.0 the owner is underwater and effectively forced to sell.
+ASSUMED_LTV_AT_ORIGINATION = 0.70
+LTV_REFI_HARD = 0.90        # refinancing becomes difficult
+LTV_UNDERWATER = 1.00       # debt exceeds value
+# A single mortgage can cover a whole portfolio ("blanket loan"); its full
+# amount then can't be pinned to one building.  We detect those when one
+# document covers multiple parcels, and as a backstop when the amount per unit
+# is implausibly high for a 20-50 unit building.
+MAX_PLAUSIBLE_LOAN_PER_UNIT = 400_000
+# No lender originates far above 100% LTV; an implied LTV above this means the
+# recorded loan almost certainly spans more than this one parcel (a
+# consolidated/portfolio loan), so we don't trust it as per-building leverage.
+MAX_PLAUSIBLE_LTV = 1.5
 
 # ---------------------------------------------------------------------------
 # Mortgage timing  (PROXIES — actual rate & maturity are not public)
@@ -71,6 +100,12 @@ LOW_RATE_END_YEAR = 2021
 # Loan is the most common, so it's weighted first.
 ASSUMED_TERMS_YEARS = (10, 7, 5)
 PRIMARY_TERM_YEARS = 10
+
+# Owner-tenure signals for "likely to sell".  A long-held building carries a
+# big embedded capital gain and often an owner ready to exit; someone who just
+# bought is very unlikely to sell, so we penalize recent purchases.
+LONG_TENURE_YEARS = 12       # held this long -> full tenure points
+RECENT_PURCHASE_YEARS = 4    # bought within this -> "unlikely seller" penalty
 # A loan is "maturing soon" (refi/sale pressure) if its estimated maturity
 # falls between MONTHS_BACK ago and MONTHS_AHEAD from today.  Already-matured
 # loans (negative months) are *more* distressed, so we look back a bit too.

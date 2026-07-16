@@ -20,7 +20,7 @@ _TEMPLATE = r"""<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NYC Maturing-Mortgage Targets</title>
+<title>NYC Rent-Stabilized — Likely Sellers</title>
 <style>
   :root{
     --bg:#0f1216; --panel:#171b21; --panel2:#1e242c; --line:#2a323c;
@@ -74,8 +74,8 @@ _TEMPLATE = r"""<!doctype html>
 </head>
 <body>
 <header>
-  <h1>NYC Maturing-Mortgage Targets</h1>
-  <div class="sub">20-50 unit, pre-1974, presumptively rent-stabilized rentals &mdash; screened for a low-rate-era mortgage estimated to be maturing soon. <b>Rate &amp; maturity are proxies</b> &mdash; open the ACRIS mortgage doc to verify before acting.</div>
+  <h1>NYC Rent-Stabilized — Likely Sellers</h1>
+  <div class="sub">20-50 unit, pre-1974, presumptively rent-stabilized rentals, ranked by <b>refinance / value-loss pressure</b>: a low-rate-era loan estimated to be maturing into a building that has lost value &mdash; so the owner is likely forced to sell. <b>LTV, value change &amp; maturity are estimates</b> &mdash; open the ACRIS mortgage doc to verify before acting.</div>
   <div class="stats" id="stats"></div>
 </header>
 
@@ -83,9 +83,9 @@ _TEMPLATE = r"""<!doctype html>
   <input type="text" id="q" placeholder="search address / owner / lender / bbl…" style="min-width:230px">
   <select id="boro"><option value="">All boroughs</option></select>
   <select id="status"><option value="">All statuses</option></select>
-  <label><input type="checkbox" id="door" checked> &le;$70k/door</label>
+  <label><input type="checkbox" id="lev"> refi-hard (est. LTV &ge;90%)</label>
   <label><input type="checkbox" id="mat"> maturing soon</label>
-  <label>min score <input type="text" id="minscore" value="0" style="width:42px"></label>
+  <label>min pressure <input type="text" id="minscore" value="0" style="width:42px"></label>
   <button class="btn ghost" id="export">Export view CSV</button>
   <span class="muted" id="count"></span>
 </div>
@@ -119,26 +119,41 @@ function fmtMonths(m){
   if(m<0) return Math.abs(m)+" mo ago";
   return "in "+m+" mo";
 }
+function fmtPct(v){ return v==null||v===""? "" : (Number(v)*100).toFixed(0)+"%"; }
+function ltvCell(r){
+  if(r.implied_ltv_now==null||r.implied_ltv_now===""){
+    return r.loan_blanket==="true"||r.loan_blanket===true||r.loan_blanket==="True"
+      ? `<span class="muted" title="loan covers multiple parcels">blanket</span>`
+      : `<span class="muted">—</span>`;
+  }
+  const ltv=Number(r.implied_ltv_now);
+  const col = ltv>=1 ? "var(--bad)" : ltv>=0.9 ? "var(--warn)" : "var(--muted)";
+  return `<b style="color:${col}">${Math.round(ltv*100)}%</b>`;
+}
 const COLS = [
   {k:"_status", l:"Status", sort:r=>STATUSES.indexOf(getSaved(r.bbl).status), render:statusCell},
-  {k:"score", l:"Score", cls:"num", sort:r=>r.score, render:r=>{
+  {k:"score", l:"Sell pressure", cls:"num", sort:r=>r.score, render:r=>{
      const h = 120*(r.score/100); // green→red hue
      return `<span class="score" style="background:hsl(${h},70%,55%)">${r.score}</span>`;}},
   {k:"address", l:"Address", sort:r=>r.address, render:r=>
-     `<span class="addr">${esc(r.address)}</span><br><span class="muted">${esc(r.borough)} ${esc(r.zip||"")}</span>`},
-  {k:"units", l:"Units", cls:"num", sort:r=>r.units, render:r=>r.units},
-  {k:"per_door", l:"$/door", cls:"num", sort:r=>r.per_door??9e15, render:r=>fmt$(r.per_door)},
-  {k:"market_value", l:"Est. value", cls:"num", sort:r=>r.market_value??0, render:r=>
+     `<span class="addr">${esc(r.address)}</span><br><span class="muted">${esc(r.borough)} ${esc(r.zip||"")} · ${r.units}u · ${esc(r.bldg_class)}</span>`},
+  {k:"implied_ltv_now", l:"Est. LTV now", cls:"num", sort:r=>r.implied_ltv_now==null||r.implied_ltv_now===""?-1:Number(r.implied_ltv_now), render:ltvCell},
+  {k:"value_change_pct", l:"Value vs financing", cls:"num", sort:r=>r.value_change_pct==null||r.value_change_pct===""?9e9:Number(r.value_change_pct), render:r=>{
+     if(r.value_change_pct==null||r.value_change_pct==="") return "";
+     const v=Number(r.value_change_pct);
+     return `<span style="color:${v<0?'var(--bad)':'var(--muted)'}">${v>0?'+':''}${fmtPct(v)}</span>`;}},
+  {k:"market_value", l:"Est. value now", cls:"num", sort:r=>r.market_value??0, render:r=>
      `${fmtM(r.market_value)}<br><span class="muted" style="font-size:10.5px">${esc(r.value_basis||"")}</span>`},
-  {k:"low_rate_mtge_date", l:"Low-rate mtge", sort:r=>r.low_rate_mtge_date||"", render:r=>
-     r.low_rate_mtge_date? `${r.low_rate_mtge_date}<br><span class="muted">${fmtM(r.low_rate_mtge_amt)}</span>`
+  {k:"low_rate_mtge_amt", l:"Loan (low-rate era)", cls:"num", sort:r=>Number(r.low_rate_mtge_amt||0), render:r=>
+     r.low_rate_mtge_date? `${fmtM(r.low_rate_mtge_amt)}<br><span class="muted">${r.low_rate_mtge_date}</span>`
        : `<span class="muted">none found</span>`},
   {k:"est_maturity_10yr", l:"Est. maturity (10yr)", sort:r=>r.est_maturity_10yr||"", render:r=>
      r.est_maturity_10yr? `${r.est_maturity_10yr}<br><span class="muted">${fmtMonths(r.months_to_maturity)}</span>` : ""},
+  {k:"years_owned", l:"Tenure", cls:"num", sort:r=>r.years_owned===""?-1:Number(r.years_owned), render:r=>
+     r.years_owned===""? `<span class="muted">long/held</span>` : `${r.years_owned}y`},
   {k:"lender", l:"Lender", sort:r=>r.lender||"", render:r=>`<span class="muted">${esc(r.lender||"")}</span>`},
   {k:"owner", l:"Owner", sort:r=>r.owner||"", render:r=>`<span class="muted">${esc(r.owner||"")}</span>`},
-  {k:"year_built", l:"Built", cls:"num", sort:r=>r.year_built, render:r=>r.year_built},
-  {k:"bldg_class", l:"Class", sort:r=>r.bldg_class, render:r=>r.bldg_class},
+  {k:"per_door", l:"$/door", cls:"num", sort:r=>r.per_door??9e15, render:r=>`<span class="muted">${fmt$(r.per_door)}</span>`},
   {k:"flags", l:"Flags", sort:r=>r.flags||"", render:r=>`<div class="flags">${esc(r.flags||"")}</div>`},
   {k:"_links", l:"Verify", sort:r=>0, render:r=>{
      let s=[];
@@ -188,11 +203,11 @@ function header(){
 function currentFilter(){
   const q=el("q").value.trim().toLowerCase();
   const boro=el("boro").value, st=el("status").value;
-  const doorOnly=el("door").checked, matOnly=el("mat").checked;
+  const levOnly=el("lev").checked, matOnly=el("mat").checked;
   const minscore=parseFloat(el("minscore").value)||0;
   return DATA.filter(r=>{
     if(boro && r.borough!==boro) return false;
-    if(doorOnly && !r.under_70k_door) return false;
+    if(levOnly && !(r.implied_ltv_now!=null && r.implied_ltv_now!=="" && Number(r.implied_ltv_now)>=0.9)) return false;
     if(matOnly && !r.maturing_soon) return false;
     if(r.score<minscore) return false;
     if(st){ const cur=getSaved(r.bbl).status||"New"; if((cur||"New")!==st) return false; }
@@ -236,22 +251,24 @@ function wireRow(){
 
 function renderStats(rows){
   const n=DATA.length;
-  const under=DATA.filter(r=>r.under_70k_door).length;
+  const under=DATA.filter(r=>r.implied_ltv_now!=null&&r.implied_ltv_now!==""&&Number(r.implied_ltv_now)>=1).length;
+  const hard=DATA.filter(r=>r.implied_ltv_now!=null&&r.implied_ltv_now!==""&&Number(r.implied_ltv_now)>=0.9).length;
   const mat=DATA.filter(r=>r.maturing_soon).length;
   const withM=DATA.filter(r=>r.low_rate_mtge_date).length;
   const watching=Object.values(saved).filter(s=>s.status && s.status!=="Passed").length;
   el("stats").innerHTML=[
-    ["Candidates",n],["&le;$70k/door",under],["Low-rate mtge on file",withM],
-    ["Maturing soon (est.)",mat],["On your list",watching],
+    ["Candidates",n],["Est. underwater (LTV≥100%)",under],["Refi-hard (LTV≥90%)",hard],
+    ["Low-rate loan on file",withM],["Maturing soon (est.)",mat],["On your list",watching],
   ].map(([l,v])=>`<div class="stat">${l}<b>${v.toLocaleString()}</b></div>`).join("");
 }
 
 function exportCSV(){
   const rows=currentFilter();
-  const cols=["score","address","borough","zip","units","per_door","market_value",
-    "value_basis","low_rate_mtge_date","low_rate_mtge_amt","est_maturity_10yr",
-    "months_to_maturity","maturing_soon","lender","owner","bbl","flags",
-    "acris_mortgage_url"];
+  const cols=["score","address","borough","zip","units","implied_ltv_now",
+    "value_change_pct","market_value","origination_value","value_basis",
+    "low_rate_mtge_date","low_rate_mtge_amt","loan_blanket","est_maturity_10yr",
+    "months_to_maturity","maturing_soon","years_owned","per_door","lender",
+    "owner","bbl","flags","acris_mortgage_url"];
   const head=cols.concat(["my_status","my_notes"]);
   const lines=[head.join(",")];
   rows.forEach(r=>{
@@ -266,13 +283,13 @@ function exportCSV(){
 function csv(v){ v=v==null?"":String(v); return /[",\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v; }
 
 ["q","boro","status","minscore"].forEach(id=>el(id).oninput=render);
-["door","mat"].forEach(id=>el(id).onchange=render);
+["lev","mat"].forEach(id=>el(id).onchange=render);
 el("status").onchange=render;
 el("export").onclick=exportCSV;
 
 el("foot").innerHTML="Generated "+new Date().toLocaleString()+
   " · Status &amp; notes are saved in this browser (localStorage) · "+
-  "Rate &amp; maturity are estimates from recording date + assumed loan term, not recorded facts.";
+  "Est. LTV = recorded loan ÷ calibrated current value; maturity = recording date + assumed term. Both are estimates — verify against the ACRIS mortgage doc.";
 
 boroList(); render();
 </script>

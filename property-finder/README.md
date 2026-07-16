@@ -1,9 +1,18 @@
-# NYC Maturing-Mortgage Property Finder
+# NYC Rent-Stabilized — Likely Sellers
 
 Screens NYC public records for **20–50 unit, presumptively rent-stabilized
-apartment buildings** that were financed during the low-rate era and whose
-mortgage is estimated to be **maturing soon** — i.e. owners who will likely
-face a refinance-or-sell decision at a much higher rate.
+apartment buildings** whose owner is under the most **pressure to sell**: a
+loan taken in the low-rate era (2011–2021) that is estimated to be **maturing
+soon** into a building that has **lost value** since — so its implied
+loan-to-value has blown out and a clean refinance is unlikely. This is the
+post-HSTPA / Signature-Bank distress pattern: financed near peak, worth much
+less now, loan coming due.
+
+Candidates are ranked by a **sell-pressure score** built mostly on **estimated
+current loan-to-value** (the thing that actually forces a sale), with loan
+maturity as the trigger and owner tenure as a tie-breaker. Staten Island is
+excluded by default; there's no cheap-$/door gate anymore (`$/door` is kept as
+an informational column).
 
 Output is a spreadsheet (`output/candidates.csv`) and a **self-contained,
 offline HTML target board** (`output/targets.html`) where you can sort,
@@ -45,17 +54,26 @@ needed). Or open `output/candidates.csv` in Excel/Sheets.
 
 1. **PLUTO screen** (`64uk-42ks`) — pull parcels that are 20–50 residential
    units, built before 1974, building class C/D (walk-up / elevator apartment),
-   excluding co-op classes, and cheap enough on assessed value to *possibly*
-   clear the $/door cap. This first-pass value gate is what makes the ACRIS
-   join tractable.
+   excluding co-op classes, in Manhattan/Bronx/Brooklyn/Queens. (Optional
+   `--max-door` re-imposes a cheapness cap; off by default.)
 2. **ACRIS Legals** (`8h5j-fqxa`) — for each parcel (matched by
    borough+block+lot), get every recorded document id.
 3. **ACRIS Master** (`bnx9-e6tj`) — pull those documents' type / date / amount,
    keeping deeds, mortgages, and satisfactions from 2011 on.
-4. **Value, date, score** — estimate market value & $/door, pick the operative
-   low-rate-era mortgage, estimate its maturity, and score refinance pressure.
+4. **Value, leverage, score** — estimate today's value (calibrated, below),
+   size the senior low-rate loan, compute **implied current LTV** and the value
+   change since financing, estimate maturity, and score sell-pressure.
 5. **ACRIS Parties** (`636b-3b5g`) — look up the lender name for each
    building's low-rate mortgage.
+
+### Valuation is calibrated to real sales
+NYC's `assesstot ÷ 0.45` badly understates rent-stabilized value (DOF values
+these off *regulated* income). Measured against **1,302 arm's-length ACRIS
+sales in our candidate pool**, actual price ≈ **4.7× total assessed value**, so
+we estimate current value as `assesstot × (per-borough multiplier)`
+(Bronx 4.71, Brooklyn 4.54, Manhattan 4.74, Queens 4.75). Re-derive after a
+fresh pull with `python tools/calibrate.py`. A recent real sale, when one
+exists, is always preferred over the assessment estimate.
 
 ---
 
@@ -73,11 +91,14 @@ needed). Or open `output/candidates.csv` in Excel/Sheets.
 | Sale price | ACRIS deed | **Hard fact, but** | A single deed can cover a **portfolio** — the price then isn't this building. Flagged as "bulk-sale price ignored." |
 | Lender | ACRIS parties | **Hard fact** | The named lender at recording; loan may have been sold/assigned since. |
 | **Rent-stabilized?** | *Proxy* | **Assumption** | Built <1974 + 6+ units + not condo/co-op. **Not a legal determination.** Verify via the building's DHCR registration / actual rent roll. Post-1974 421-a/J-51 stabilization and buildings that fully deregulated are *not* captured. |
-| **Market value / $/door** | *Estimate* | **Estimate** | If no recent arm's-length sale, value = assessed value ÷ 0.45. The 0.45 ratio is a class-wide average; any single building can be off by a lot. |
+| **Current value / $/door** | *Estimate* | **Estimate** | Recent real sale if available, else `assesstot × per-borough multiplier` (calibrated to real sales, ~3.9×). A class-wide factor; any single building can be off. |
+| Est. **origination value** | *Estimate* | **Estimate** | Purchase price if the loan was an acquisition, else `loan ÷ 0.70` (assumed LTV). |
+| **Implied current LTV** | *Estimate* | **Core signal, estimate** | `senior low-rate loan ÷ current value`. Suppressed for blanket/portfolio loans and implausible values. CEMA loans understate the balance, so real LTV can be *higher* than shown. |
+| **Value change since financing** | *Estimate* | **Estimate** | `current value ÷ origination value − 1`. |
 | **"Low-rate era"** | *Proxy* | **Assumption** | Defined as recorded 2011–2021. The *actual rate* is in the scanned doc, not in any field. |
 | **Estimated maturity** | *Estimate* | **Assumption** | recording date + assumed term (10/7/5 yr; 10yr weighted first). The *actual maturity* is in the scanned doc. A building can be interest-only, have extension options, or already have refinanced. |
 | **"Maturing soon"** | *Estimate* | **Assumption** | True if any assumed term matures within ~18 months back to ~36 months ahead of today. |
-| **Score / flags** | *Derived* | **Heuristic** | A ranking aid, not a valuation. See weights below. |
+| **Sell-pressure score / flags** | *Derived* | **Heuristic** | A ranking aid, not a valuation. See weights below. |
 
 ### Why the two big proxies exist
 NYC does **not** publish, in any queryable field:
@@ -92,19 +113,25 @@ Fannie/Freddie Small Balance Loan is the most common, hence weighted first).
 
 ---
 
-## The score (0–100)
+## The sell-pressure score (0–100)
 
 Transparent and tunable in [`analysis.py`](analysis.py) / [`config.py`](config.py):
 
-- **up to 45 pts — cheaper $/door** (the core value screen)
-- **up to 40 pts — estimated maturity near/at today** (peak ≈ 0–12 months out;
-  recently-matured loans score high too — they're the most distressed)
-- **up to 15 pts — low-rate loan still apparently outstanding** (no newer
-  mortgage/deed and no satisfaction recorded since)
+- **up to 50 pts — leverage / value loss** — implied current LTV (the thing
+  that actually forces a sale): ramps in from ~55% LTV, maxes past ~105%.
+  Where LTV can't be trusted (blanket loan) but a clean purchase price shows a
+  big value decline, a smaller value-loss credit (up to 30) applies instead.
+- **up to 35 pts — estimated maturity near/at today** (peak ≈ 0–12 months out;
+  recently-matured loans score high — they're the most distressed).
+- **up to 15 pts — loan still outstanding + long owner tenure.**
+- **× 0.35 dampener** if the building was **recently purchased** (an owner who
+  just bought is very unlikely to sell).
 
-Flags surface the caveats per row: `maturing soon (est.)`, `est. already
-matured`, `financed/sold since (may be refinanced)`, `satisfaction recorded
-since`, `bulk-sale price ignored`, `no low-rate-era mortgage found`.
+Flags surface the caveats per row: `underwater: est. LTV ≥ 100%`, `refi hard:
+est. LTV ≥ 90%`, `value down ~X% since financing (est.)`, `blanket/portfolio
+loan — per-building leverage N/A`, `loan may be understated (CEMA)`, `maturing
+soon (est.)`, `est. already matured`, `recently acquired (unlikely seller)`,
+`financed/sold since (may be refinanced)`.
 
 ---
 
@@ -138,15 +165,22 @@ any 421-a/J-51 status.
 
 ## Known limitations / things to improve
 
-- **CEMA / consolidated loans** understate the true mortgage balance (recorded
-  amount = new money only).
-- **Bulk deeds** are detected heuristically (sale > 2.5× assessed-implied
-  value → ignored); a genuine high sale could be misflagged, and a bulk deed
-  under that ratio could slip through.
-- The **assessed-value gate** (first pass) can miss a building whose eventual
-  sale-based value would land under $70k/door but whose assessment is high; a
-  1.15× cushion softens this but doesn't eliminate it.
-- **Rate and maturity are assumptions** — always open the mortgage doc.
-- Older parcels with **sparse ACRIS coverage** (common on Staten Island) get a
-  "no low-rate-era mortgage found" flag; that may reflect missing data, not a
-  free-and-clear building.
+- **Rate and maturity are assumptions** — the whole "maturing soon" signal is
+  recording-date + assumed term. Always open the mortgage doc.
+- **Blanket / portfolio loans** (one mortgage over many buildings) can't be
+  pinned to a single parcel. We suppress the per-building LTV when a loan spans
+  multiple candidate parcels, exceeds a plausible per-unit amount, or implies an
+  LTV > 1.5. Loans that blanket a candidate *plus non-candidate* buildings can
+  still slip through and overstate leverage — sanity-check the loan amount.
+- **CEMA / consolidated loans** understate the true balance (recorded amount =
+  new money only), so real LTV can be *higher* than shown; flagged when a
+  purchase price implies it.
+- **Value is calibrated but still an estimate** — the per-borough multiplier is
+  a median; individual buildings vary, and current assessments lag the market.
+- **Bulk deeds** (portfolio sales) are detected heuristically (price > 2.5×
+  assessed-implied value → ignored); edge cases can be mis-handled.
+- Parcels with **sparse ACRIS coverage** get a "no low-rate-era mortgage found"
+  flag; that may reflect missing data, not a free-and-clear building.
+- Natural next signal to add: **operational/financial distress** (open HPD
+  hazardous violations, tax-lien-sale eligibility, water/tax arrears) — strong
+  independent "motivated seller" evidence, joinable by BBL.

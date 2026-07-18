@@ -2326,7 +2326,7 @@ const VIOLATIONS = [
   "date": "04/10/2026",
   "description": "FAILURE TO PROPERLY PUT RECYCS OUT FOR COLLECTION(1TO8DWELLING UNITS)",
   "agency": "DSNY Other",
-  "status": "NEW ISSUANCE",
+  "status": "DEFAULTED",
   "amount": 25.0
  },
  {
@@ -2337,8 +2337,8 @@ const VIOLATIONS = [
   "date": "04/10/2026",
   "description": "LOOSE RUBBISH 1ST OCCURRENCE",
   "agency": "DSNY Enf Agt",
-  "status": "NEW ISSUANCE",
-  "amount": 50.0
+  "status": "DEFAULTED",
+  "amount": 80.0
  },
  {
   "property": "175 Beach 60 Street",

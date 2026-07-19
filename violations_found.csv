@@ -94,7 +94,7 @@ Property,Portal URL,Ticket #,Respondent,Date,Description,Agency,Status,Amount Du
 116-04 Merrick Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=116-04&street_name=Merrick+Blvd,049763481L,SOUTH HOMES INC,04/14/2026,RECYC PLACED FOR COLLECTION W NON-RECYC(1 TO 8 DWELLING UNITS),"DSNY Enf Agt
 ?",PAID IN FULL,$0.00
 116-06 Merrick Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=116-06&street_name=Merrick+Blvd,049625393X,SOUTH HOMES INC,04/11/2026,STORAGE OF RECEPTACLES (NON-COLLECTION DAY),"DSNY Enf Agt
-?",NEW ISSUANCE,$50.00
+?",DEFAULTED,$80.00
 116-06 Merrick Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=116-06&street_name=Merrick+Blvd,049761047J,SOUTH HOMES INC,04/14/2026,IMPROPER RECEPTACLE (FAILURE TO CONTAINERIZE)- RESIDENTIAL 1ST,"DSNY Enf Agt
 ?",PAID IN FULL,$0.00
 145-38 110 Avenue,https://a836-citypay.nyc.gov/citypay/ecb?house_number=145-38&street_name=110+Avenue,049515167K,BASAL FARHAD,01/12/2026,IMPROPER RECEPTACLE (FAILURE TO CONTAINERIZE)- RESIDENTIAL 1ST,"DSNY Other
@@ -234,7 +234,7 @@ Property,Portal URL,Ticket #,Respondent,Date,Description,Agency,Status,Amount Du
 44 East 132 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=44&street_name=East+132+Street,049634336Y,LGS PARTNERS LLC,01/23/2026,FAILURE TO CLEAN 18 INCHES INTO STREET,"DSNY Other
 ?",DEFAULTED,$300.00
 44 East 132 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=44&street_name=East+132+Street,049718217J,LGS PARTNERS LLC,04/10/2026,FAILURE TO CLEAN 18 INCHES INTO STREET,"DSNY Other
-?",NEW ISSUANCE,$50.00
+?",DEFAULTED,$80.00
 432 Beach 44 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=432&street_name=Beach+44+Street,049383528P,BREWSTER LAND CORP,12/19/2025,DIRTY SIDEWALK,"DSNY Other
 ?",DOCKETED,$300.00
 65-11 Bayfield Avenue,https://a836-citypay.nyc.gov/citypay/ecb?house_number=65-11&street_name=Bayfield+Avenue,049464682H,VILLAGE PLAZA HOMES,11/29/2025,RECYC PLACED FOR COLLECTION W NON-RECYC(1 TO 8 DWELLING UNITS),"DSNY Other
@@ -466,3 +466,4 @@ Property,Portal URL,Ticket #,Respondent,Date,Description,Agency,Status,Amount Du
 175 East 55 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=175&street_name=East+55+Street,049943209K,PLAZA HOMES LLC,07/07/2026,FAILURE TO CLEAN 18 INCHES INTO STREET,DSNY Other,NEW ISSUANCE,$50.00
 177 East 55 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=177&street_name=East+55+Street,049943208Z,PLAZA HOMES LLC,07/07/2026,FAILURE TO CLEAN 18 INCHES INTO STREET,DSNY Other,NEW ISSUANCE,$50.00
 305 Jefferson Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=305&street_name=Jefferson+Street,049858290K,305 JEFFERSON LLC,07/07/2026,IMPROPER RECEPTACLE FAILURE TO CONTAINERIZE - RESIDENTIAL 1ST,DSNY Recyc,NEW ISSUANCE,$50.00
+261 Fernside Pl,https://a836-citypay.nyc.gov/citypay/ecb?house_number=261&street_name=Fernside+Pl,049804727K,SOUTH HOMES INC,07/13/2026,FAILURE TO CLEAN 18 INCHES INTO STREET,DSNY Other,NEW ISSUANCE,$50.00

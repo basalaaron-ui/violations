@@ -1941,8 +1941,8 @@ const VIOLATIONS = [
   "date": "04/11/2026",
   "description": "STORAGE OF RECEPTACLES (NON-COLLECTION DAY)",
   "agency": "DSNY Enf Agt",
-  "status": "NEW ISSUANCE",
-  "amount": 50.0
+  "status": "DEFAULTED",
+  "amount": 80.0
  },
  {
   "property": "116-06 Merrick Blvd",
@@ -2711,8 +2711,8 @@ const VIOLATIONS = [
   "date": "04/10/2026",
   "description": "FAILURE TO CLEAN 18 INCHES INTO STREET",
   "agency": "DSNY Other",
-  "status": "NEW ISSUANCE",
-  "amount": 50.0
+  "status": "DEFAULTED",
+  "amount": 80.0
  },
  {
   "property": "432 Beach 44 Street",
@@ -5043,6 +5043,17 @@ const VIOLATIONS = [
   "date": "07/07/2026",
   "description": "IMPROPER RECEPTACLE FAILURE TO CONTAINERIZE - RESIDENTIAL 1ST",
   "agency": "DSNY Recyc",
+  "status": "NEW ISSUANCE",
+  "amount": 50.0
+ },
+ {
+  "property": "261 Fernside Pl",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=261&street_name=Fernside+Pl",
+  "ticket": "049804727K",
+  "respondent": "SOUTH HOMES INC",
+  "date": "07/13/2026",
+  "description": "FAILURE TO CLEAN 18 INCHES INTO STREET",
+  "agency": "DSNY Other",
   "status": "NEW ISSUANCE",
   "amount": 50.0
  }

@@ -150,7 +150,7 @@ Property,Portal URL,Ticket #,Respondent,Date,Description,Agency,Status,Amount Du
 173 Beach 60 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street,049658472P,PLAZA HOMES LLC,02/21/2026,DIRTY AREA,"DSNY Enf Agt
 ?",DEFAULTED,$300.00
 173 Beach 60 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street,049739688Z,PLAZA HOMES LLC,04/10/2026,DIRTY SIDEWALK,"DSNY Other
-?",NEW ISSUANCE,$50.00
+?",DEFAULTED,$80.00
 173 Beach 60 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street,049739695R,PLAZA HOMES LLC,04/16/2026,FAILURE TO CLEAN 18 INCHES INTO STREET,"DSNY Other
 ?",NEW ISSUANCE,$50.00
 173 Beach 60 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street,049690682N,PLAZA HOMES LLC,04/13/2026,DIRTY AREA,"DSNY Other
@@ -164,9 +164,9 @@ Property,Portal URL,Ticket #,Respondent,Date,Description,Agency,Status,Amount Du
 175 Beach 60 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=175&street_name=Beach+60+Street,049528582K,PLAZA HOMES LLC,12/13/2025,DIRTY AREA,"DSNY Enf Agt
 ?",DOCKETED,$300.00
 175 Beach 60 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=175&street_name=Beach+60+Street,049739689K,PLAZA HOMES LLC,04/10/2026,FAILURE TO PROPERLY PUT RECYCS OUT FOR COLLECTION(1TO8DWELLING UNITS),"DSNY Other
-?",NEW ISSUANCE,$25.00
+?",DEFAULTED,$25.00
 175 Beach 60 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=175&street_name=Beach+60+Street,049761037X,PLAZA HOMES LLC,04/10/2026,LOOSE RUBBISH 1ST OCCURRENCE,"DSNY Enf Agt
-?",NEW ISSUANCE,$50.00
+?",DEFAULTED,$80.00
 175 Beach 60 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=175&street_name=Beach+60+Street,049690683P,PLAZA HOMES LLC,04/13/2026,LOOSE RUBBISH 1ST OCCURRENCE,"DSNY Other
 ?",NEW ISSUANCE,$50.00
 1961 Fulton Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=1961&street_name=Fulton+Street,049623892L,PLAZA HOMES LLC,01/20/2026,"SNOW,ICE DIRT ON SIDEWALKS","DSNY Recyc

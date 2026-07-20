@@ -8,7 +8,7 @@ Property,Portal URL,Ticket #,Respondent,Date,Description,Agency,Status,Amount Du
 106-33 Guy R Brewer Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=106-33&street_name=Guy+R+Brewer+Blvd,049630967M,VILLAGE PLAZA HOMES,02/20/2026,DIRTY AREA,"DSNY Enf Agt
 ?",DEFAULTED,$300.00
 106-41 Guy R Brewer Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=106-41&street_name=Guy+R+Brewer+Blvd,049574061M,MANISION HOMES LLC,01/08/2026,IMPROPER DISPOSAL--BEDDING 1ST OCCURRENCE,"DSNY Other
-?",DEFAULTED,$300.00
+?",DOCKETED,$300.00
 107-09 Guy R Brewer Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=107-09&street_name=Guy+R+Brewer+Blvd,049324778H,VILLAGE PLAZA HOMES,10/14/2025,DIRTY SIDEWALK,"DSNY Enf Agt
 ?",DOCKETED,$300.00
 107-45 Sutphin Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=107-45&street_name=Sutphin+Blvd,049680204J,VILLAGE PLAZA HOMES,03/16/2026,IMPROPER RECEPTACLE (FAILURE TO CONTAINERIZE)- RESIDENTIAL 1ST,"DSNY Other
@@ -20,7 +20,7 @@ Property,Portal URL,Ticket #,Respondent,Date,Description,Agency,Status,Amount Du
 108-16 167 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=108-16&street_name=167+Street,049514884Z,ROCKAWAY STORAGE INC,11/22/2025,LOOSE RUBBISH 1ST OCCURRENCE,"DSNY Other
 ?",DOCKETED,$300.00
 109-06 Guy R Brewer Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-06&street_name=Guy+R+Brewer+Blvd,049574047X,BETA HOLDING CORP,01/05/2026,IMPROPER RECEPTACLE (FAILURE TO CONTAINERIZE)- RESIDENTIAL 1ST,"DSNY Other
-?",DEFAULTED,$300.00
+?",DOCKETED,$300.00
 109-06 Guy R Brewer Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-06&street_name=Guy+R+Brewer+Blvd,049544372M,BETA HOLDING CORP,03/12/2026,IMPROPER RECEPTACLE (FAILURE TO CONTAINERIZE)- RESIDENTIAL 1ST,"DSNY Other
 ?",DEFAULTED,$80.00
 109-06 Guy R Brewer Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-06&street_name=Guy+R+Brewer+Blvd,049396598N,BETA HOLDING CORP,12/18/2025,IMPROPER RECEPTACLE (FAILURE TO CONTAINERIZE)- RESIDENTIAL 1ST,"DSNY Other
@@ -36,15 +36,15 @@ Property,Portal URL,Ticket #,Respondent,Date,Description,Agency,Status,Amount Du
 109-12 Guy R Brewer Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12&street_name=Guy+R+Brewer+Blvd,049518407Y,VIVA DEVELOPMENT COR,11/13/2025,UNCOVERED RECEPTACLES 1ST OCCURRENCE,"DSNY Enf Agt
 ?",DOCKETED,$300.00
 109-12 Guy R Brewer Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12&street_name=Guy+R+Brewer+Blvd,049574097Y,VIVA DEVELOPMENT COR,01/20/2026,LOOSE RUBBISH 1ST OCCURRENCE,"DSNY Other
-?",DEFAULTED,$300.00
+?",DOCKETED,$300.00
 109-12 Guy R Brewer Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12&street_name=Guy+R+Brewer+Blvd,049747836L,VIVA DEVELOPMENT COR,03/25/2026,STORAGE OF RECEPTACLES (PLACED OUT PRIOR TO 6PM),"DSNY Other
 ?",DEFAULTED,$80.00
 109-12 Guy R Brewer Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12&street_name=Guy+R+Brewer+Blvd,049747837N,VIVA DEVELOPMENT COR,03/25/2026,IMPROPER RECEPTACLE (FAILURE TO CONTAINERIZE)- RESIDENTIAL 1ST,"DSNY Other
 ?",DEFAULTED,$80.00
 109-12 Guy R Brewer Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12&street_name=Guy+R+Brewer+Blvd,049574022J,VIVA DEVELOPMENT COR,12/26/2025,DIRTY SIDEWALK,"DSNY Other
-?",DEFAULTED,$300.00
+?",DOCKETED,$300.00
 109-12 Guy R Brewer Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12&street_name=Guy+R+Brewer+Blvd,049574033P,VIVA DEVELOPMENT COR,01/02/2026,LOOSE RUBBISH 1ST OCCURRENCE,"DSNY Other
-?",DEFAULTED,$300.00
+?",DOCKETED,$300.00
 109-12 Guy R Brewer Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12&street_name=Guy+R+Brewer+Blvd,049544371K,VIVA DEVELOPMENT COR,03/12/2026,IMPROPER RECEPTACLE (FAILURE TO CONTAINERIZE)- RESIDENTIAL 1ST,"DSNY Other
 ?",DEFAULTED,$80.00
 116-04 Merrick Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=116-04&street_name=Merrick+Blvd,049419529Z,SOUTH HOMES INC,10/21/2025,IMPROPER RECEPTACLE (FAILURE TO CONTAINERIZE)- RESIDENTIAL 1ST,"DSNY Other
@@ -208,7 +208,7 @@ Property,Portal URL,Ticket #,Respondent,Date,Description,Agency,Status,Amount Du
 2757 Kingsbridge Terrace,https://a836-citypay.nyc.gov/citypay/ecb?house_number=2757&street_name=Kingsbridge+Terrace,049679839P,INC 2753 EAST KINGSBRIDGE TERRACE,03/28/2026,FAILURE TO CLEAN 18 INCHES INTO STREET,"DSNY Other
 ?",DEFAULTED,$80.00
 2757 Kingsbridge Terrace,https://a836-citypay.nyc.gov/citypay/ecb?house_number=2757&street_name=Kingsbridge+Terrace,049617630K,INC 2753 EAST KINGSBRIDGE TERRACE,01/13/2026,IMPROPER RECEPTACLE (FAILURE TO CONTAINERIZE)- RESIDENTIAL 1ST,"DSNY Other
-?",DEFAULTED,$300.00
+?",DOCKETED,$300.00
 305 Jefferson Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=305&street_name=Jefferson+Street,0803761164,ALFRED BASAL,02/24/2026,"FAILING TO COMPLY WITH DEPT, BOARD OF HEALTH, OR COMMISSIONER S ORDER","DOHMH - BBugs
 ?",RESCHEDULED,"$1,000.00"
 305 Beach 84 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=305&street_name=Beach+84+Street,039175742R,SOUTH HOMES INC,02/03/2026,FAILURE TO MAINTAIN BUILDING IN CODE-COMPLIANT MANNER,"Dept of Bldgs
@@ -218,9 +218,9 @@ Property,Portal URL,Ticket #,Respondent,Date,Description,Agency,Status,Amount Du
 44 East 132 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=44&street_name=East+132+Street,049641562H,LGS PARTNERS LLC,03/24/2026,FAILURE TO CLEAN 18 INCHES INTO STREET,"DSNY Other
 ?",DEFAULTED,$80.00
 44 East 132 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=44&street_name=East+132+Street,049471510R,LGS PARTNERS LLC,12/29/2025,FAILURE TO CLEAN 18 INCHES INTO STREET,"DSNY Other
-?",DEFAULTED,$300.00
+?",DOCKETED,$300.00
 44 East 132 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=44&street_name=East+132+Street,047164358Z,LGS PARTNERS LLC,12/31/2025,FAILURE TO CLEAN 18 INCHES INTO STREET,"DSNY Enf Agt
-?",DEFAULTED,$300.00
+?",DOCKETED,$300.00
 44 East 132 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=44&street_name=East+132+Street,049641474H,LGS PARTNERS LLC,03/05/2026,FAILURE TO CLEAN 18 INCHES INTO STREET,"DSNY Other
 ?",DEFAULTED,$80.00
 44 East 132 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=44&street_name=East+132+Street,049607727H,LGS PARTNERS LLC,03/13/2026,FAILURE TO CLEAN 18 INCHES INTO STREET,"DSNY Other
@@ -232,7 +232,7 @@ Property,Portal URL,Ticket #,Respondent,Date,Description,Agency,Status,Amount Du
 44 East 132 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=44&street_name=East+132+Street,049380563R,LGS PARTNERS LLC,11/21/2025,FAILURE TO CLEAN 18 INCHES INTO STREET,"DSNY Other
 ?",DOCKETED,$300.00
 44 East 132 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=44&street_name=East+132+Street,049634336Y,LGS PARTNERS LLC,01/23/2026,FAILURE TO CLEAN 18 INCHES INTO STREET,"DSNY Other
-?",DEFAULTED,$300.00
+?",DOCKETED,$300.00
 44 East 132 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=44&street_name=East+132+Street,049718217J,LGS PARTNERS LLC,04/10/2026,FAILURE TO CLEAN 18 INCHES INTO STREET,"DSNY Other
 ?",DEFAULTED,$80.00
 432 Beach 44 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=432&street_name=Beach+44+Street,049383528P,BREWSTER LAND CORP,12/19/2025,DIRTY SIDEWALK,"DSNY Other
@@ -262,9 +262,9 @@ Property,Portal URL,Ticket #,Respondent,Date,Description,Agency,Status,Amount Du
 210 W 19 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=210&street_name=W+19+Street,049499275K,CHARLES H GREENTHAL,11/29/2025,FAILURE TO CLEAN 18 INCHES INTO STREET,"DSNY Other
 ?",DEFAULTED,$300.00
 167-37 147 Avenue,https://a836-citypay.nyc.gov/citypay/ecb?house_number=167-37&street_name=147+Avenue,049514743P,IATION NOT IN ITS I U S BANK TRUST NATIONAL ASSOC,01/17/2026,IMPROPER DISPOSAL--BEDDING 1ST OCCURRENCE,"DSNY Other
-?",DEFAULTED,$300.00
+?",DOCKETED,$300.00
 167-37 147 Avenue,https://a836-citypay.nyc.gov/citypay/ecb?house_number=167-37&street_name=147+Avenue,049514717L,IATION NOT IN ITS I U S BANK TRUST NATIONAL ASSOC,01/10/2026,IMPROPER RECEPTACLE (FAILURE TO CONTAINERIZE)- RESIDENTIAL 1ST,"DSNY Other
-?",DEFAULTED,$300.00
+?",DOCKETED,$300.00
 167-37 147 Avenue,https://a836-citypay.nyc.gov/citypay/ecb?house_number=167-37&street_name=147+Avenue,049514630Z,IATION NOT IN ITS I U S BANK TRUST NATIONAL ASSOC,12/16/2025,"SNOW,ICE DIRT ON SIDEWALKS","DSNY Other
 ?",DOCKETED,$350.00
 167-37 147 Avenue,https://a836-citypay.nyc.gov/citypay/ecb?house_number=167-37&street_name=147+Avenue,049763233M,IATION NOT IN ITS I U S BANK TRUST NATIONAL ASSOC,04/29/2026,DIRTY AREA,"DSNY Other
@@ -365,7 +365,7 @@ Property,Portal URL,Ticket #,Respondent,Date,Description,Agency,Status,Amount Du
 107-06 Sutphin Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=107-06&street_name=Sutphin+Blvd,014218094H,LA PIT STOP,12/01/2025,RECORDKEEPING,FIRE DEPARTMENT OF NYC,RESCHEDULED,"$1,000.00"
 814 WESTCHESTER,https://a836-citypay.nyc.gov/citypay/ecb?house_number=814&street_name=WESTCHESTER,049382388H,REAL SUPERMARKET,09/12/2025,IMPROPER RECEPTACLE NON-RESIDENTIAL 1ST,DSNY Other,PAID IN FULL,$0.00
 104-38 164 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=104-38&street_name=164+Street,049347117M,PLAZA HOMES LLC,08/22/2025,IMPROPER RECEPTACLE FAILURE TO CONTAINERIZE - RESIDENTIAL 1ST,DOS - ENFORCEMENT AGENTS,DOCKETED,$300.00
-109-45 Guy R Brewer Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-45&street_name=Guy+R+Brewer+Blvd,049574071X,MAZAL HOLDING CROP,01/12/2026,IMPROPER RECEPTACLE FAILURE TO CONTAINERIZE - RESIDENTIAL 1ST,DSNY Other,DEFAULTED,$300.00
+109-45 Guy R Brewer Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-45&street_name=Guy+R+Brewer+Blvd,049574071X,MAZAL HOLDING CROP,01/12/2026,IMPROPER RECEPTACLE FAILURE TO CONTAINERIZE - RESIDENTIAL 1ST,DSNY Other,DOCKETED,$300.00
 109-45 Guy R Brewer Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-45&street_name=Guy+R+Brewer+Blvd,049396464H,MAZAL HOLDING CROP,10/30/2025,IMPROPER RECEPTACLE FAILURE TO CONTAINERIZE - RESIDENTIAL 1ST,DSNY Other,DOCKETED,$300.00
 109-45 Guy R Brewer Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-45&street_name=Guy+R+Brewer+Blvd,049487723R,MAZAL HOLDING CROP,10/20/2025,IMPROPER RECEPTACLE FAILURE TO CONTAINERIZE - RESIDENTIAL 1ST,DOS - ENFORCEMENT AGENTS,DOCKETED,$300.00
 109-06 Guy R Brewer Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-06&street_name=Guy+R+Brewer+Blvd,049487405L,BETA HOLDING CORP,10/02/2025,IMPROPER RECEPTACLE FAILURE TO CONTAINERIZE - RESIDENTIAL 1ST,DOS - ENFORCEMENT AGENTS,DOCKETED,$300.00
@@ -446,7 +446,7 @@ Property,Portal URL,Ticket #,Respondent,Date,Description,Agency,Status,Amount Du
 25-04 Brookhaven Avenue,https://a836-citypay.nyc.gov/citypay/ecb?house_number=25-04&street_name=Brookhaven+Avenue,049349791N,PLAZA GARDENS REAL ESTATE CORP,10/24/2025,IMPROPER DISPOSAL--BEDDING 1ST OCCURRENCE,DSNY Other,DOCKETED,$300.00
 342 Beach 70 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=342&street_name=Beach+70+Street,049275158Z,SOUTH HOMES INC,10/18/2025,IMPROPER RECEPTACLE FAILURE TO CONTAINERIZE - RESIDENTIAL 1ST,DSNY Other,DOCKETED,$300.00
 342 Beach 70 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=342&street_name=Beach+70+Street,049394653H,SOUTH HOMES INC,09/13/2025,UNCOVERED RECEPTACLES 1ST OCCURRENCE,DOS - ENFORCEMENT AGENTS,DOCKETED,$300.00
-135-40 231 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=135-40&street_name=231+Street,049624774P,26TH STREET HOLDING LLC,01/09/2026,DIRTY SIDEWALK,DOS - ENFORCEMENT AGENTS,DEFAULTED,$300.00
+135-40 231 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=135-40&street_name=231+Street,049624774P,26TH STREET HOLDING LLC,01/09/2026,DIRTY SIDEWALK,DOS - ENFORCEMENT AGENTS,DOCKETED,$300.00
 3426 Boller Avenue,https://a836-citypay.nyc.gov/citypay/ecb?house_number=3426&street_name=Boller+Avenue,049513438Y,PLAZA GARDENS REAL ESTATE CORP,12/28/2025,"SNOW,ICE DIRT ON SIDEWALKS",DSNY Police,PAID IN FULL,$0.00
 3426 Boller Avenue,https://a836-citypay.nyc.gov/citypay/ecb?house_number=3426&street_name=Boller+Avenue,049533485P,PLAZA GARDENS REAL ESTATE CORP,12/27/2025,"SNOW,ICE DIRT ON SIDEWALKS",DSNY Police,PAID IN FULL,$0.00
 731 Quincy Avenue,https://a836-citypay.nyc.gov/citypay/ecb?house_number=731&street_name=Quincy+Avenue,049449716L,BABAR SHIBA,09/24/2025,STORAGE OF RECEPTACLES PLACED OUT PRIOR TO 6PM,DSNY Other,PAID IN FULL,$0.00

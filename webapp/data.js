@@ -1468,7 +1468,7 @@ const VIOLATIONS = [
   "date": "01/08/2026",
   "description": "IMPROPER DISPOSAL--BEDDING 1ST OCCURRENCE",
   "agency": "DSNY Other",
-  "status": "DEFAULTED",
+  "status": "DOCKETED",
   "amount": 300.0
  },
  {
@@ -1534,7 +1534,7 @@ const VIOLATIONS = [
   "date": "01/05/2026",
   "description": "IMPROPER RECEPTACLE (FAILURE TO CONTAINERIZE)- RESIDENTIAL 1ST",
   "agency": "DSNY Other",
-  "status": "DEFAULTED",
+  "status": "DOCKETED",
   "amount": 300.0
  },
  {
@@ -1622,7 +1622,7 @@ const VIOLATIONS = [
   "date": "01/20/2026",
   "description": "LOOSE RUBBISH 1ST OCCURRENCE",
   "agency": "DSNY Other",
-  "status": "DEFAULTED",
+  "status": "DOCKETED",
   "amount": 300.0
  },
  {
@@ -1655,7 +1655,7 @@ const VIOLATIONS = [
   "date": "12/26/2025",
   "description": "DIRTY SIDEWALK",
   "agency": "DSNY Other",
-  "status": "DEFAULTED",
+  "status": "DOCKETED",
   "amount": 300.0
  },
  {
@@ -1666,7 +1666,7 @@ const VIOLATIONS = [
   "date": "01/02/2026",
   "description": "LOOSE RUBBISH 1ST OCCURRENCE",
   "agency": "DSNY Other",
-  "status": "DEFAULTED",
+  "status": "DOCKETED",
   "amount": 300.0
  },
  {
@@ -2568,7 +2568,7 @@ const VIOLATIONS = [
   "date": "01/13/2026",
   "description": "IMPROPER RECEPTACLE (FAILURE TO CONTAINERIZE)- RESIDENTIAL 1ST",
   "agency": "DSNY Other",
-  "status": "DEFAULTED",
+  "status": "DOCKETED",
   "amount": 300.0
  },
  {
@@ -2623,7 +2623,7 @@ const VIOLATIONS = [
   "date": "12/29/2025",
   "description": "FAILURE TO CLEAN 18 INCHES INTO STREET",
   "agency": "DSNY Other",
-  "status": "DEFAULTED",
+  "status": "DOCKETED",
   "amount": 300.0
  },
  {
@@ -2634,7 +2634,7 @@ const VIOLATIONS = [
   "date": "12/31/2025",
   "description": "FAILURE TO CLEAN 18 INCHES INTO STREET",
   "agency": "DSNY Enf Agt",
-  "status": "DEFAULTED",
+  "status": "DOCKETED",
   "amount": 300.0
  },
  {
@@ -2700,7 +2700,7 @@ const VIOLATIONS = [
   "date": "01/23/2026",
   "description": "FAILURE TO CLEAN 18 INCHES INTO STREET",
   "agency": "DSNY Other",
-  "status": "DEFAULTED",
+  "status": "DOCKETED",
   "amount": 300.0
  },
  {
@@ -2865,7 +2865,7 @@ const VIOLATIONS = [
   "date": "01/17/2026",
   "description": "IMPROPER DISPOSAL--BEDDING 1ST OCCURRENCE",
   "agency": "DSNY Other",
-  "status": "DEFAULTED",
+  "status": "DOCKETED",
   "amount": 300.0
  },
  {
@@ -2876,7 +2876,7 @@ const VIOLATIONS = [
   "date": "01/10/2026",
   "description": "IMPROPER RECEPTACLE (FAILURE TO CONTAINERIZE)- RESIDENTIAL 1ST",
   "agency": "DSNY Other",
-  "status": "DEFAULTED",
+  "status": "DOCKETED",
   "amount": 300.0
  },
  {
@@ -3943,7 +3943,7 @@ const VIOLATIONS = [
   "date": "01/12/2026",
   "description": "IMPROPER RECEPTACLE FAILURE TO CONTAINERIZE - RESIDENTIAL 1ST",
   "agency": "DSNY Other",
-  "status": "DEFAULTED",
+  "status": "DOCKETED",
   "amount": 300.0
  },
  {
@@ -4834,7 +4834,7 @@ const VIOLATIONS = [
   "date": "01/09/2026",
   "description": "DIRTY SIDEWALK",
   "agency": "DOS - ENFORCEMENT AGENTS",
-  "status": "DEFAULTED",
+  "status": "DOCKETED",
   "amount": 300.0
  },
  {

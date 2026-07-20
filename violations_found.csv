@@ -98,7 +98,7 @@ Property,Portal URL,Ticket #,Respondent,Date,Description,Agency,Status,Amount Du
 116-06 Merrick Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=116-06&street_name=Merrick+Blvd,049761047J,SOUTH HOMES INC,04/14/2026,IMPROPER RECEPTACLE (FAILURE TO CONTAINERIZE)- RESIDENTIAL 1ST,"DSNY Enf Agt
 ?",PAID IN FULL,$0.00
 145-38 110 Avenue,https://a836-citypay.nyc.gov/citypay/ecb?house_number=145-38&street_name=110+Avenue,049515167K,BASAL FARHAD,01/12/2026,IMPROPER RECEPTACLE (FAILURE TO CONTAINERIZE)- RESIDENTIAL 1ST,"DSNY Other
-?",DEFAULTED,$300.00
+?",DOCKETED,$300.00
 145-38 110 Avenue,https://a836-citypay.nyc.gov/citypay/ecb?house_number=145-38&street_name=110+Avenue,049660665Y,BASAL FARHAD,04/04/2026,DIRTY SIDEWALK,"DSNY Other
 ?",DEFAULTED,$80.00
 148-15 Linden Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=148-15&street_name=Linden+Blvd,0216448220,ALEX KONDEN,11/23/2025,UNREASONABLE NOISE,"NYPD
@@ -106,7 +106,7 @@ Property,Portal URL,Ticket #,Respondent,Date,Description,Agency,Status,Amount Du
 150-42 120 Avenue,https://a836-citypay.nyc.gov/citypay/ecb?house_number=150-42&street_name=120+Avenue,049574155N,VILLAGE PLAZA HOMES,02/17/2026,SIDEWALK OBSTRUCTION,"DSNY Other
 ?",DEFAULTED,$300.00
 152-05 118 Avenue,https://a836-citypay.nyc.gov/citypay/ecb?house_number=152-05&street_name=118+Avenue,049598632N,VILLAGE PLAZA HOMES,01/05/2026,IMPROPER DISPOSAL--BEDDING 1ST OCCURRENCE,"DSNY Other
-?",DEFAULTED,$300.00
+?",DOCKETED,$300.00
 160-15 109 Avenue,https://a836-citypay.nyc.gov/citypay/ecb?house_number=160-15&street_name=109+Avenue,049518493J,VILLAGE PLAZA HOMES,12/04/2025,IMPROPER RECEPTACLE (FAILURE TO CONTAINERIZE)- RESIDENTIAL 1ST,"DSNY Enf Agt
 ?",DOCKETED,$300.00
 170-04 107 Avenue,https://a836-citypay.nyc.gov/citypay/ecb?house_number=170-04&street_name=107+Avenue,049569617M,MANSION HOMES INC,12/15/2025,"SNOW,ICE DIRT ON SIDEWALKS","DSNY Other
@@ -118,17 +118,17 @@ Property,Portal URL,Ticket #,Respondent,Date,Description,Agency,Status,Amount Du
 173 Beach 60 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street,049761114K,PLAZA HOMES LLC,04/27/2026,DIRTY AREA,"DSNY Enf Agt
 ?",NEW ISSUANCE,$50.00
 173 Beach 60 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street,049638840L,PLAZA HOMES LLC,01/13/2026,DIRTY AREA,"DSNY Enf Agt
-?",DEFAULTED,$300.00
+?",DOCKETED,$300.00
 173 Beach 60 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street,049383580M,PLAZA HOMES LLC,01/22/2026,DIRTY AREA,"DSNY Other
-?",DEFAULTED,$300.00
+?",DOCKETED,$300.00
 173 Beach 60 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street,049383565Y,PLAZA HOMES LLC,01/12/2026,DIRTY AREA,"DSNY Other
-?",DEFAULTED,$300.00
+?",DOCKETED,$300.00
 173 Beach 60 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street,049609831R,PLAZA HOMES LLC,01/10/2026,DIRTY AREA,"DSNY Other
-?",DEFAULTED,$300.00
+?",DOCKETED,$300.00
 173 Beach 60 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street,049604340J,PLAZA HOMES LLC,01/10/2026,DIRTY AREA,"DSNY Enf Agt
-?",DEFAULTED,$300.00
+?",DOCKETED,$300.00
 173 Beach 60 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street,049383570Z,PLAZA HOMES LLC,01/16/2026,DIRTY AREA,"DSNY Other
-?",DEFAULTED,$300.00
+?",DOCKETED,$300.00
 173 Beach 60 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street,049441828J,PLAZA HOMES LLC,11/29/2025,LOOSE RUBBISH 1ST OCCURRENCE,"DSNY Other
 ?",DOCKETED,$300.00
 173 Beach 60 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street,049739614X,PLAZA HOMES LLC,03/20/2026,DIRTY AREA,"DSNY Other
@@ -136,9 +136,9 @@ Property,Portal URL,Ticket #,Respondent,Date,Description,Agency,Status,Amount Du
 173 Beach 60 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street,049739636R,PLAZA HOMES LLC,03/26/2026,FAILURE TO CLEAN 18 INCHES INTO STREET,"DSNY Other
 ?",DEFAULTED,$80.00
 173 Beach 60 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street,049383561R,PLAZA HOMES LLC,01/08/2026,DIRTY AREA,"DSNY Other
-?",DEFAULTED,$300.00
+?",DOCKETED,$300.00
 173 Beach 60 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street,049609801X,PLAZA HOMES LLC,01/03/2026,DIRTY AREA,"DSNY Other
-?",DEFAULTED,$300.00
+?",DOCKETED,$300.00
 173 Beach 60 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street,049690628M,PLAZA HOMES LLC,03/28/2026,DIRTY AREA,"DSNY Other
 ?",DEFAULTED,$80.00
 173 Beach 60 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street,049739699Y,PLAZA HOMES LLC,04/17/2026,DIRTY AREA,"DSNY Other
@@ -156,7 +156,7 @@ Property,Portal URL,Ticket #,Respondent,Date,Description,Agency,Status,Amount Du
 173 Beach 60 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street,049690682N,PLAZA HOMES LLC,04/13/2026,DIRTY AREA,"DSNY Other
 ?",NEW ISSUANCE,$50.00
 173 Beach 60 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street,049609881P,PLAZA HOMES LLC,01/24/2026,DIRTY AREA,"DSNY Other
-?",DEFAULTED,$300.00
+?",DOCKETED,$300.00
 173 Beach 60 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street,049690718X,PLAZA HOMES LLC,04/29/2026,DIRTY AREA,"DSNY Other
 ?",PAID IN FULL,$0.00
 175 Beach 60 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=175&street_name=Beach+60+Street,049464758P,PLAZA HOMES LLC,12/17/2025,"SNOW,ICE DIRT ON SIDEWALKS","DSNY Other
@@ -248,7 +248,7 @@ Property,Portal URL,Ticket #,Respondent,Date,Description,Agency,Status,Amount Du
 88-14 161 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=88-14&street_name=161+Street,039168881L,26TH ST HOLDING L L,12/02/2025,FAIL TO COMPLY W COMMISSIONER ORDER TO FILE CERT OF CORRECTION W DOB,"Dept of Bldgs
 ?",DOCKETED,"$6,250.00"
 1475 Hicks Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=1475&street_name=Hicks+Street,049584041Y,SOUTH HOMES INC,01/17/2026,DIRTY AREA,"DSNY Police
-?",DEFAULTED,$300.00
+?",DOCKETED,$300.00
 342 Beach 70 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=342&street_name=Beach+70+Street,049531993M,SOUTH HOMES INC,12/09/2025,UNCOVERED RECEPTACLES 1ST OCCURRENCE,"DSNY Enf Agt
 ?",DOCKETED,$300.00
 219-08 138 Road,https://a836-citypay.nyc.gov/citypay/ecb?house_number=219-08&street_name=138+Road,049658964L,305 JEFFERSON LLC,04/13/2026,DIRTY SIDEWALK,"DSNY Other
@@ -436,7 +436,7 @@ Property,Portal URL,Ticket #,Respondent,Date,Description,Agency,Status,Amount Du
 646 Grand Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=646&street_name=Grand+Street,049121794H,GRAND STREET PLAZA LLC,09/10/2025,IMPROPER RECEPTACLE FAILURE TO CONTAINERIZE - RESIDENTIAL 1ST,DSNY Other,DOCKETED,$300.00
 646 Grand Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=646&street_name=Grand+Street,049121768Y,GRAND STREET PLAZA LLC,08/15/2025,IMPROPER RECEPTACLE FAILURE TO CONTAINERIZE - RESIDENTIAL 1ST,DSNY Other,DOCKETED,$300.00
 44 East 132 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=44&street_name=East+132+Street,049243102N,LGS PARTNERS LLC,08/09/2025,STORAGE OF RECEPTACLES NON-COLLECTION DAY,DSNY Other,DOCKETED,$300.00
-25-04 Brookhaven Avenue,https://a836-citypay.nyc.gov/citypay/ecb?house_number=25-04&street_name=Brookhaven+Avenue,049609818M,PLAZA GARDENS REAL ESTATE CORP,01/06/2026,DIRTY AREA,DSNY Other,DEFAULTED,$300.00
+25-04 Brookhaven Avenue,https://a836-citypay.nyc.gov/citypay/ecb?house_number=25-04&street_name=Brookhaven+Avenue,049609818M,PLAZA GARDENS REAL ESTATE CORP,01/06/2026,DIRTY AREA,DSNY Other,DOCKETED,$300.00
 87-08 Justice Avenue,https://a836-citypay.nyc.gov/citypay/ecb?house_number=87-08&street_name=Justice+Avenue,0216862645,RAMDAS,12/23/2025,"RIGHT OF WAY - FAILURE TO YIELD, PHYSICAL INJURY",NYPD,HEARING COMPLETED,$0.00
 301 Seagirt Avenue,https://a836-citypay.nyc.gov/citypay/ecb?house_number=301&street_name=Seagirt+Avenue,0803703075,C O MANAGEMENT,12/12/2025,FAIL TO ELIMINATE RODENT INFESTATION SHOWN BY ACTIVE RODENT SIGNS 1ST,DOHMH - PCS,DEFAULTED,$600.00
 301 Seagirt Avenue,https://a836-citypay.nyc.gov/citypay/ecb?house_number=301&street_name=Seagirt+Avenue,0803703066,C O MANAGEMENT,12/12/2025,"FAIL TO ELIMINATE CONDITIONS CONDUCIVE TO RODENT-DEBRIS,VEGETATION 1ST",DOHMH - PCS,DEFAULTED,$600.00

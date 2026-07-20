@@ -1963,7 +1963,7 @@ const VIOLATIONS = [
   "date": "01/12/2026",
   "description": "IMPROPER RECEPTACLE (FAILURE TO CONTAINERIZE)- RESIDENTIAL 1ST",
   "agency": "DSNY Other",
-  "status": "DEFAULTED",
+  "status": "DOCKETED",
   "amount": 300.0
  },
  {
@@ -2007,7 +2007,7 @@ const VIOLATIONS = [
   "date": "01/05/2026",
   "description": "IMPROPER DISPOSAL--BEDDING 1ST OCCURRENCE",
   "agency": "DSNY Other",
-  "status": "DEFAULTED",
+  "status": "DOCKETED",
   "amount": 300.0
  },
  {
@@ -2073,7 +2073,7 @@ const VIOLATIONS = [
   "date": "01/13/2026",
   "description": "DIRTY AREA",
   "agency": "DSNY Enf Agt",
-  "status": "DEFAULTED",
+  "status": "DOCKETED",
   "amount": 300.0
  },
  {
@@ -2084,7 +2084,7 @@ const VIOLATIONS = [
   "date": "01/22/2026",
   "description": "DIRTY AREA",
   "agency": "DSNY Other",
-  "status": "DEFAULTED",
+  "status": "DOCKETED",
   "amount": 300.0
  },
  {
@@ -2095,7 +2095,7 @@ const VIOLATIONS = [
   "date": "01/12/2026",
   "description": "DIRTY AREA",
   "agency": "DSNY Other",
-  "status": "DEFAULTED",
+  "status": "DOCKETED",
   "amount": 300.0
  },
  {
@@ -2106,7 +2106,7 @@ const VIOLATIONS = [
   "date": "01/10/2026",
   "description": "DIRTY AREA",
   "agency": "DSNY Other",
-  "status": "DEFAULTED",
+  "status": "DOCKETED",
   "amount": 300.0
  },
  {
@@ -2117,7 +2117,7 @@ const VIOLATIONS = [
   "date": "01/10/2026",
   "description": "DIRTY AREA",
   "agency": "DSNY Enf Agt",
-  "status": "DEFAULTED",
+  "status": "DOCKETED",
   "amount": 300.0
  },
  {
@@ -2128,7 +2128,7 @@ const VIOLATIONS = [
   "date": "01/16/2026",
   "description": "DIRTY AREA",
   "agency": "DSNY Other",
-  "status": "DEFAULTED",
+  "status": "DOCKETED",
   "amount": 300.0
  },
  {
@@ -2172,7 +2172,7 @@ const VIOLATIONS = [
   "date": "01/08/2026",
   "description": "DIRTY AREA",
   "agency": "DSNY Other",
-  "status": "DEFAULTED",
+  "status": "DOCKETED",
   "amount": 300.0
  },
  {
@@ -2183,7 +2183,7 @@ const VIOLATIONS = [
   "date": "01/03/2026",
   "description": "DIRTY AREA",
   "agency": "DSNY Other",
-  "status": "DEFAULTED",
+  "status": "DOCKETED",
   "amount": 300.0
  },
  {
@@ -2282,7 +2282,7 @@ const VIOLATIONS = [
   "date": "01/24/2026",
   "description": "DIRTY AREA",
   "agency": "DSNY Other",
-  "status": "DEFAULTED",
+  "status": "DOCKETED",
   "amount": 300.0
  },
  {
@@ -2788,7 +2788,7 @@ const VIOLATIONS = [
   "date": "01/17/2026",
   "description": "DIRTY AREA",
   "agency": "DSNY Police",
-  "status": "DEFAULTED",
+  "status": "DOCKETED",
   "amount": 300.0
  },
  {
@@ -4724,7 +4724,7 @@ const VIOLATIONS = [
   "date": "01/06/2026",
   "description": "DIRTY AREA",
   "agency": "DSNY Other",
-  "status": "DEFAULTED",
+  "status": "DOCKETED",
   "amount": 300.0
  },
  {

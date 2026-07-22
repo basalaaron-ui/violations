@@ -1897,8 +1897,8 @@ const VIOLATIONS = [
   "date": "04/12/2026",
   "description": "STORAGE OF RECEPTACLES (NON-COLLECTION DAY)",
   "agency": "DSNY Other",
-  "status": "NEW ISSUANCE",
-  "amount": 50.0
+  "status": "DEFAULTED",
+  "amount": 80.0
  },
  {
   "property": "109-12 Guy R Brewer Blvd",
@@ -2271,8 +2271,8 @@ const VIOLATIONS = [
   "date": "04/13/2026",
   "description": "DIRTY AREA",
   "agency": "DSNY Other",
-  "status": "NEW ISSUANCE",
-  "amount": 50.0
+  "status": "DEFAULTED",
+  "amount": 80.0
  },
  {
   "property": "173 Beach 60 Street",
@@ -2348,8 +2348,8 @@ const VIOLATIONS = [
   "date": "04/13/2026",
   "description": "LOOSE RUBBISH 1ST OCCURRENCE",
   "agency": "DSNY Other",
-  "status": "NEW ISSUANCE",
-  "amount": 50.0
+  "status": "DEFAULTED",
+  "amount": 80.0
  },
  {
   "property": "1961 Fulton Street",
@@ -2491,7 +2491,7 @@ const VIOLATIONS = [
   "date": "04/12/2026",
   "description": "SPILLAGE FROM A RECEPTACLE 1ST OFFENSE",
   "agency": "DSNY Other",
-  "status": "NEW ISSUANCE",
+  "status": "DEFAULTED",
   "amount": 100.0
  },
  {
@@ -2843,8 +2843,8 @@ const VIOLATIONS = [
   "date": "03/11/2026",
   "description": "FAILURE TO CLEAN 18 INCHES INTO STREET",
   "agency": "DSNY Other",
-  "status": "DEFAULTED",
-  "amount": 80.0
+  "status": "PAID IN FULL",
+  "amount": 0.0
  },
  {
   "property": "210 W 19 Street",
@@ -3514,8 +3514,8 @@ const VIOLATIONS = [
   "date": "05/19/2026",
   "description": "ILLEGAL USE IN RESIDENTIAL DISTRICT",
   "agency": "Dept of Bldgs",
-  "status": "NEW ISSUANCE",
-  "amount": 1250.0
+  "status": "HEARING COMPLETED",
+  "amount": 0.0
  },
  {
   "property": "261 Fernside Pl",
@@ -3811,8 +3811,8 @@ const VIOLATIONS = [
   "date": "05/29/2026",
   "description": "INSPECTION AND TESTING",
   "agency": "FIRE DEPARTMENT OF NYC",
-  "status": "NEW ISSUANCE",
-  "amount": 0.0
+  "status": "DEFAULTED",
+  "amount": 5000.0
  },
  {
   "property": "167-37 147 Avenue",
@@ -5053,6 +5053,17 @@ const VIOLATIONS = [
   "respondent": "SOUTH HOMES INC",
   "date": "07/13/2026",
   "description": "FAILURE TO CLEAN 18 INCHES INTO STREET",
+  "agency": "DSNY Other",
+  "status": "NEW ISSUANCE",
+  "amount": 50.0
+ },
+ {
+  "property": "1475 Hicks Street",
+  "url": "https://a836-citypay.nyc.gov/citypay/ecb?house_number=1475&street_name=Hicks+Street",
+  "ticket": "049899844Y",
+  "respondent": "SOUTH HOMES INC",
+  "date": "07/14/2026",
+  "description": "DIRTY SIDEWALK",
   "agency": "DSNY Other",
   "status": "NEW ISSUANCE",
   "amount": 50.0

@@ -86,7 +86,7 @@ Property,Portal URL,Ticket #,Respondent,Date,Description,Agency,Status,Amount Du
 109-12 Guy R Brewer Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12&street_name=Guy+R+Brewer+Blvd,049697547M,VIVA DEVELOPMENT COR,03/30/2026,IMPROPER RECEPTACLE (FAILURE TO CONTAINERIZE)- RESIDENTIAL 1ST,"DSNY Enf Agt
 ?",DEFAULTED,$80.00
 109-12 Guy R Brewer Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12&street_name=Guy+R+Brewer+Blvd,049622986H,VIVA DEVELOPMENT COR,04/12/2026,STORAGE OF RECEPTACLES (NON-COLLECTION DAY),"DSNY Other
-?",NEW ISSUANCE,$50.00
+?",DEFAULTED,$80.00
 109-12 Guy R Brewer Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12&street_name=Guy+R+Brewer+Blvd,049716670Z,VIVA DEVELOPMENT COR,04/15/2026,STORAGE OF RECEPTACLES (PLACED OUT PRIOR TO 6PM),"DSNY Enf Agt
 ?",NEW ISSUANCE,$50.00
 109-12 Guy R Brewer Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12&street_name=Guy+R+Brewer+Blvd,049622953L,VIVA DEVELOPMENT COR,04/05/2026,STORAGE OF RECEPTACLES (NON-COLLECTION DAY),"DSNY Other
@@ -154,7 +154,7 @@ Property,Portal URL,Ticket #,Respondent,Date,Description,Agency,Status,Amount Du
 173 Beach 60 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street,049739695R,PLAZA HOMES LLC,04/16/2026,FAILURE TO CLEAN 18 INCHES INTO STREET,"DSNY Other
 ?",NEW ISSUANCE,$50.00
 173 Beach 60 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street,049690682N,PLAZA HOMES LLC,04/13/2026,DIRTY AREA,"DSNY Other
-?",NEW ISSUANCE,$50.00
+?",DEFAULTED,$80.00
 173 Beach 60 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street,049609881P,PLAZA HOMES LLC,01/24/2026,DIRTY AREA,"DSNY Other
 ?",DOCKETED,$300.00
 173 Beach 60 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=173&street_name=Beach+60+Street,049690718X,PLAZA HOMES LLC,04/29/2026,DIRTY AREA,"DSNY Other
@@ -168,7 +168,7 @@ Property,Portal URL,Ticket #,Respondent,Date,Description,Agency,Status,Amount Du
 175 Beach 60 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=175&street_name=Beach+60+Street,049761037X,PLAZA HOMES LLC,04/10/2026,LOOSE RUBBISH 1ST OCCURRENCE,"DSNY Enf Agt
 ?",DEFAULTED,$80.00
 175 Beach 60 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=175&street_name=Beach+60+Street,049690683P,PLAZA HOMES LLC,04/13/2026,LOOSE RUBBISH 1ST OCCURRENCE,"DSNY Other
-?",NEW ISSUANCE,$50.00
+?",DEFAULTED,$80.00
 1961 Fulton Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=1961&street_name=Fulton+Street,049623892L,PLAZA HOMES LLC,01/20/2026,"SNOW,ICE DIRT ON SIDEWALKS","DSNY Recyc
 ?",DEFAULTED,$130.00
 1961 Fulton Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=1961&street_name=Fulton+Street,049623893N,NYC PARKS DEPT,01/20/2026,"SNOW,ICE DIRT ON SIDEWALKS","DSNY Recyc
@@ -194,7 +194,7 @@ Property,Portal URL,Ticket #,Respondent,Date,Description,Agency,Status,Amount Du
 1961 Fulton Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=1961&street_name=Fulton+Street,0803798903,PLAZA HOMES LLC,04/06/2026,"NUISANCE CREATED, COMMITTED, MAINTAINED OR ALLOWED TO EXIST","DOHMH - PCS
 ?",RESCHEDULED,"$1,000.00"
 1972 Bathgate Avenue,https://a836-citypay.nyc.gov/citypay/ecb?house_number=1972&street_name=Bathgate+Avenue,047030301Y,VILLAGE PLAZA HOMES,04/12/2026,SPILLAGE FROM A RECEPTACLE 1ST OFFENSE,"DSNY Other
-?",NEW ISSUANCE,$100.00
+?",DEFAULTED,$100.00
 1974 Bathgate Avenue,https://a836-citypay.nyc.gov/citypay/ecb?house_number=1974&street_name=Bathgate+Avenue,049616725Z,VILLAGE PLAZA HOMES,03/28/2026,STORAGE OF RECEPTACLES (PLACED OUT PRIOR TO 6PM),"DSNY Enf Agt
 ?",DEFAULTED,$80.00
 1974 Bathgate Avenue,https://a836-citypay.nyc.gov/citypay/ecb?house_number=1974&street_name=Bathgate+Avenue,049559153Y,VILLAGE PLAZA HOMES,02/18/2026,UNCOVERED RECEPTACLES 1ST OCCURRENCE,"DSNY Enf Agt
@@ -258,7 +258,7 @@ Property,Portal URL,Ticket #,Respondent,Date,Description,Agency,Status,Amount Du
 731 Quincy Avenue,https://a836-citypay.nyc.gov/citypay/ecb?house_number=731&street_name=Quincy+Avenue,049562045Y,731 QUINCY LLC,02/05/2026,"SNOW,ICE DIRT ON SIDEWALKS","DSNY Other
 ?",PAID IN FULL,$0.00
 4518 Richardson Avenue,https://a836-citypay.nyc.gov/citypay/ecb?house_number=4518&street_name=Richardson+Avenue,049663500J,AVIV DEVELOPMENT COR,03/11/2026,FAILURE TO CLEAN 18 INCHES INTO STREET,"DSNY Other
-?",DEFAULTED,$80.00
+?",PAID IN FULL,$0.00
 210 W 19 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=210&street_name=W+19+Street,049499275K,CHARLES H GREENTHAL,11/29/2025,FAILURE TO CLEAN 18 INCHES INTO STREET,"DSNY Other
 ?",DEFAULTED,$300.00
 167-37 147 Avenue,https://a836-citypay.nyc.gov/citypay/ecb?house_number=167-37&street_name=147+Avenue,049514743P,IATION NOT IN ITS I U S BANK TRUST NATIONAL ASSOC,01/17/2026,IMPROPER DISPOSAL--BEDDING 1ST OCCURRENCE,"DSNY Other
@@ -326,7 +326,7 @@ Property,Portal URL,Ticket #,Respondent,Date,Description,Agency,Status,Amount Du
 1737 Montgomery Avenue,https://a836-citypay.nyc.gov/citypay/ecb?house_number=1737&street_name=Montgomery+Avenue,049844341Y,VILLAGE PLAZA HOMES INC,06/13/2026,DIRTY SIDEWALK,DSNY Other,NEW ISSUANCE,$50.00
 1961 Fulton Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=1961&street_name=Fulton+Street,014254548L,FAMILY EXPRESS DELI INC,06/09/2026,GENERAL MAINTENANCE,FIRE DEPARTMENT OF NYC,NEW ISSUANCE,$0.00
 175 Beach 60 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=175&street_name=Beach+60+Street,049442294Z,PLAZA HOMES LLC,06/04/2026,FAILURE TO CLEAN 18 INCHES INTO STREET,DSNY Other,NEW ISSUANCE,$50.00
-181-42 144 Avenue,https://a836-citypay.nyc.gov/citypay/ecb?house_number=181-42&street_name=144+Avenue,039189187Y,COUNTRY PLAZA HOMES INC,05/19/2026,ILLEGAL USE IN RESIDENTIAL DISTRICT,Dept of Bldgs,NEW ISSUANCE,"$1,250.00"
+181-42 144 Avenue,https://a836-citypay.nyc.gov/citypay/ecb?house_number=181-42&street_name=144+Avenue,039189187Y,COUNTRY PLAZA HOMES INC,05/19/2026,ILLEGAL USE IN RESIDENTIAL DISTRICT,Dept of Bldgs,HEARING COMPLETED,$0.00
 261 Fernside Pl,https://a836-citypay.nyc.gov/citypay/ecb?house_number=261&street_name=Fernside+Pl,049804630Y,SOUTH HOMES INC,06/17/2026,FAILURE TO CLEAN 18 INCHES INTO STREET,DSNY Other,NEW ISSUANCE,$50.00
 222-44 143 Avenue,https://a836-citypay.nyc.gov/citypay/ecb?house_number=222-44&street_name=143+Avenue,049829389H,143RD AVENUE HOLDINGS LLC,06/08/2026,FAILURE TO PROPERLY PUT RECYCS OUT FOR COLLECTION 1TO8DWELLING UNITS,DOS - ENFORCEMENT AGENTS,NEW ISSUANCE,$25.00
 218-42 140 Avenue,https://a836-citypay.nyc.gov/citypay/ecb?house_number=218-42&street_name=140+Avenue,048345933P,VILLAGE PLAZA HOMES INC,06/01/2026,FAIL TO RECYCLE ORGANIC WASTE 1-8 DWELLING UNITS 1ST,DSNY Other,NEW ISSUANCE,$25.00
@@ -353,7 +353,7 @@ Property,Portal URL,Ticket #,Respondent,Date,Description,Agency,Status,Amount Du
 731 Quincy Avenue,https://a836-citypay.nyc.gov/citypay/ecb?house_number=731&street_name=Quincy+Avenue,049828339P,731 QUINCY LLC,06/09/2026,DIRTY SIDEWALK,DSNY Other,NEW ISSUANCE,$50.00
 140-28 159 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=140-28&street_name=159+Street,049819647M,AJIMAVO ANTHONIA SENAMI,06/08/2026,FAILURE TO CLEAN 18 INCHES INTO STREET,DSNY Other,PAID IN FULL,$0.00
 219-08 138 Road,https://a836-citypay.nyc.gov/citypay/ecb?house_number=219-08&street_name=138+Road,049763274Z,305 JEFFERSON LLC,05/11/2026,FAILURE TO CLEAN 18 INCHES INTO STREET,DSNY Other,PAID IN FULL,$0.00
-175-51 Dalny Road,https://a836-citypay.nyc.gov/citypay/ecb?house_number=175-51&street_name=Dalny+Road,014252462L,DALNY PLAZA HOMES LLC,05/29/2026,INSPECTION AND TESTING,FIRE DEPARTMENT OF NYC,NEW ISSUANCE,$0.00
+175-51 Dalny Road,https://a836-citypay.nyc.gov/citypay/ecb?house_number=175-51&street_name=Dalny+Road,014252462L,DALNY PLAZA HOMES LLC,05/29/2026,INSPECTION AND TESTING,FIRE DEPARTMENT OF NYC,DEFAULTED,"$5,000.00"
 167-37 147 Avenue,https://a836-citypay.nyc.gov/citypay/ecb?house_number=167-37&street_name=147+Avenue,049763247N,U S BANK TRUST NATIONAL ASSOC,05/02/2026,DIRTY AREA,DSNY Other,NEW ISSUANCE,$50.00
 303 Beach 86 St,https://a836-citypay.nyc.gov/citypay/ecb?house_number=303&street_name=Beach+86+St,049690762N,HILLSIDE PLAZA HOMES LLC,05/18/2026,DIRTY AREA,DSNY Other,NEW ISSUANCE,$50.00
 303 Beach 86 St,https://a836-citypay.nyc.gov/citypay/ecb?house_number=303&street_name=Beach+86+St,049690701J,HILLSIDE PLAZA HOMES LLC,04/23/2026,DIRTY SIDEWALK,DSNY Other,NEW ISSUANCE,$50.00
@@ -467,3 +467,4 @@ Property,Portal URL,Ticket #,Respondent,Date,Description,Agency,Status,Amount Du
 177 East 55 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=177&street_name=East+55+Street,049943208Z,PLAZA HOMES LLC,07/07/2026,FAILURE TO CLEAN 18 INCHES INTO STREET,DSNY Other,NEW ISSUANCE,$50.00
 305 Jefferson Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=305&street_name=Jefferson+Street,049858290K,305 JEFFERSON LLC,07/07/2026,IMPROPER RECEPTACLE FAILURE TO CONTAINERIZE - RESIDENTIAL 1ST,DSNY Recyc,NEW ISSUANCE,$50.00
 261 Fernside Pl,https://a836-citypay.nyc.gov/citypay/ecb?house_number=261&street_name=Fernside+Pl,049804727K,SOUTH HOMES INC,07/13/2026,FAILURE TO CLEAN 18 INCHES INTO STREET,DSNY Other,NEW ISSUANCE,$50.00
+1475 Hicks Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=1475&street_name=Hicks+Street,049899844Y,SOUTH HOMES INC,07/14/2026,DIRTY SIDEWALK,DSNY Other,NEW ISSUANCE,$50.00

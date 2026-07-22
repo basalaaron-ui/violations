@@ -7313,5 +7313,49 @@ const HPD = [
   "description": "\u00a7 27-2005, 27-2007, 27-2041.1 HMC, \u00a7238, \u00a7 309; \u00a7 107 (2) ( C) MDL AND 28 RCNY \u00a725-171: REPLACE OR REPAIR THE SELF-CLOSING DOORS THAT IS MISSING OR DEFECTIVE HINGES AT COMPACTOR CLOSET DOOR AT PUBLIC HALLWAY , 7th STORY",
   "apt": "",
   "story": "7"
+ },
+ {
+  "property": "104-38 164 Street",
+  "type": "COMPLAINT",
+  "id": "28977115",
+  "cls": "NON EMERGENCY",
+  "status": "Open",
+  "date": "07/21/2026",
+  "description": "UNSANITARY CONDITION - PESTS: MICE (ENTIRE APARTMENT)",
+  "apt": "1STFL",
+  "story": ""
+ },
+ {
+  "property": "104-38 164 Street",
+  "type": "COMPLAINT",
+  "id": "28977116",
+  "cls": "NON EMERGENCY",
+  "status": "Open",
+  "date": "07/21/2026",
+  "description": "UNSANITARY CONDITION - PESTS: ROACHES (ENTIRE APARTMENT)",
+  "apt": "1STFL",
+  "story": ""
+ },
+ {
+  "property": "104-38 164 Street",
+  "type": "COMPLAINT",
+  "id": "28977117",
+  "cls": "EMERGENCY",
+  "status": "Open",
+  "date": "07/21/2026",
+  "description": "FLOORING/STAIRS - FLOOR: HOLE IN WALKING AREA (ENTIRE APARTMENT)",
+  "apt": "1STFL",
+  "story": ""
+ },
+ {
+  "property": "104-38 164 Street",
+  "type": "COMPLAINT",
+  "id": "28977118",
+  "cls": "EMERGENCY",
+  "status": "Open",
+  "date": "07/21/2026",
+  "description": "UNSANITARY CONDITION - MOLD: N/A (BATHROOM)",
+  "apt": "1STFL",
+  "story": ""
  }
 ];

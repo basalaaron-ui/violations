@@ -2667,8 +2667,8 @@ const VIOLATIONS = [
   "date": "04/15/2026",
   "description": "FAILURE TO CLEAN 18 INCHES INTO STREET",
   "agency": "DSNY Other",
-  "status": "NEW ISSUANCE",
-  "amount": 50.0
+  "status": "DEFAULTED",
+  "amount": 80.0
  },
  {
   "property": "44 East 132 Street",

@@ -1853,7 +1853,7 @@ const VIOLATIONS = [
   "date": "04/15/2026",
   "description": "FAILURE TO PROPERLY PUT RECYCS OUT FOR COLLECTION(1TO8DWELLING UNITS)",
   "agency": "DSNY Recyc",
-  "status": "NEW ISSUANCE",
+  "status": "DEFAULTED",
   "amount": 25.0
  },
  {
@@ -1908,8 +1908,8 @@ const VIOLATIONS = [
   "date": "04/15/2026",
   "description": "STORAGE OF RECEPTACLES (PLACED OUT PRIOR TO 6PM)",
   "agency": "DSNY Enf Agt",
-  "status": "NEW ISSUANCE",
-  "amount": 50.0
+  "status": "DEFAULTED",
+  "amount": 80.0
  },
  {
   "property": "109-12 Guy R Brewer Blvd",

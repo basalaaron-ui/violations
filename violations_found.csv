@@ -78,7 +78,7 @@ Property,Portal URL,Ticket #,Respondent,Date,Description,Agency,Status,Amount Du
 107-11 Guy R Brewer Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=107-11&street_name=Guy+R+Brewer+Blvd,049703069P,VILLAGE PLAZA HOMES,03/30/2026,IMPROPER RECEPTACLE (FAILURE TO CONTAINERIZE)- RESIDENTIAL 1ST,"DSNY Enf Agt
 ?",DEFAULTED,$80.00
 108-16 167 Street,https://a836-citypay.nyc.gov/citypay/ecb?house_number=108-16&street_name=167+Street,049742854M,ROCKAWAY STORAGE INC,04/15/2026,FAILURE TO PROPERLY PUT RECYCS OUT FOR COLLECTION(1TO8DWELLING UNITS),"DSNY Recyc
-?",NEW ISSUANCE,$25.00
+?",DEFAULTED,$25.00
 109-08 Guy R Brewer Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-08&street_name=Guy+R+Brewer+Blvd,049697548Y,VIVA DEVELOPMENT COR,03/30/2026,IMPROPER RECEPTACLE (FAILURE TO CONTAINERIZE)- RESIDENTIAL 1ST,"DSNY Enf Agt
 ?",DEFAULTED,$80.00
 109-12 Guy R Brewer Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12&street_name=Guy+R+Brewer+Blvd,049776443N,VIVA DEVELOPMENT COR,04/23/2026,IMPROPER RECEPTACLE (FAILURE TO CONTAINERIZE)- RESIDENTIAL 1ST,"DSNY Other
@@ -88,7 +88,7 @@ Property,Portal URL,Ticket #,Respondent,Date,Description,Agency,Status,Amount Du
 109-12 Guy R Brewer Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12&street_name=Guy+R+Brewer+Blvd,049622986H,VIVA DEVELOPMENT COR,04/12/2026,STORAGE OF RECEPTACLES (NON-COLLECTION DAY),"DSNY Other
 ?",DEFAULTED,$80.00
 109-12 Guy R Brewer Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12&street_name=Guy+R+Brewer+Blvd,049716670Z,VIVA DEVELOPMENT COR,04/15/2026,STORAGE OF RECEPTACLES (PLACED OUT PRIOR TO 6PM),"DSNY Enf Agt
-?",NEW ISSUANCE,$50.00
+?",DEFAULTED,$80.00
 109-12 Guy R Brewer Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=109-12&street_name=Guy+R+Brewer+Blvd,049622953L,VIVA DEVELOPMENT COR,04/05/2026,STORAGE OF RECEPTACLES (NON-COLLECTION DAY),"DSNY Other
 ?",DEFAULTED,$80.00
 116-04 Merrick Blvd,https://a836-citypay.nyc.gov/citypay/ecb?house_number=116-04&street_name=Merrick+Blvd,049763481L,SOUTH HOMES INC,04/14/2026,RECYC PLACED FOR COLLECTION W NON-RECYC(1 TO 8 DWELLING UNITS),"DSNY Enf Agt
